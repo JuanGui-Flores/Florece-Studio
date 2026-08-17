@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://jgv.ai/sitemap.xml
+Sitemap: https://florece-studio.com/sitemap.xml
