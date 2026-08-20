@@ -6,21 +6,29 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      // Agrega la clase que tenés definida en el CSS
+      entry.target.classList.add('is-visible'); 
       observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Función global para aceptar cookies al hacer clic en el botón
+// Lógica de cookies y arranque
 function acceptCookies() {
   localStorage.setItem('cookiesAccepted', 'true');
   const cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner) {
-    cookieBanner.style.display = 'none';
-  }
+  if (cookieBanner) cookieBanner.style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+    cookieBanner.style.display = 'flex';
+  }
+
+  const revealElements = document.querySelectorAll('.reveal');
+  revealElements.forEach(el => observer.observe(el));
+});
 
 // Inicialización de lógica al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
