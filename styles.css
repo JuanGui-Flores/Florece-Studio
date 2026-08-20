@@ -1,15 +1,15 @@
 :root {
-  --bg: #0C0F1A;                             /* Fondo azul profundo noche */
-  --ink: #FFFFFF;                            /* Texto principal en blanco puro */
-  --ink-dim: #9099B3;                        /* Texto secundario azul tenue */
-  --accent: #191970;                         /* Midnight Blue corporativo */
-  --accent-gold: #C5A059;                    /* Detalle oro viejo discreto */
-  
-  /* Glassmorphism en Midnight Blue */
-  --glass-bg: rgba(25, 25, 112, 0.30);       /* Tarjetas de cristal azulado */
-  --glass-border: rgba(255, 255, 255, 0.10); /* Borde de cristal ultra refinado */
-  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
-  
+  --bg: #0C0F1A; 
+  --ink: #FFFFFF; 
+  --ink-dim: #9099B3; 
+  --accent: #4F46E5;          /* Cambiado a un azul violeta brillante y legible */
+  --accent-gold: #C5A059; 
+
+  /* Ajuste de tarjetas Glassmorphism para que resalten sobre el fondo */
+  --glass-bg: rgba(30, 41, 59, 0.40); 
+  --glass-border: rgba(255, 255, 255, 0.12); 
+  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+
   --line-strong: rgba(255, 255, 255, 0.18);
   --line-soft: rgba(255, 255, 255, 0.06);
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -548,9 +548,14 @@ footer {
 
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  visibility: visible !important;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
