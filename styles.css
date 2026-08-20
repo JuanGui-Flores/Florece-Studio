@@ -1,19 +1,28 @@
 :root {
-  /* Fondo y Fondos Oscuros */
+  /* Fondos Oscuros */
   --bg-dark: #09090b;
-  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 
-  /* Texto e Identidad (Extraídos del Logo) */
-  --ink-primary: #F2EFE9;      /* Blanco hueso/crema cálido del tallo */
-  --ink-dim: rgba(242, 239, 233, 0.6);
+  /* Textos Extraídos del Tallo/Flor */
+  --ink-primary: #F2EFE9;                     /* Crema cálido */
+  --ink-dim: rgba(242, 239, 233, 0.6);        /* Crema secundario */
   --line-soft: rgba(242, 239, 233, 0.12);
+  --line-strong: rgba(242, 239, 233, 0.25);
 
-  /* Color de Acento Principal (Azul Tech / Periwinkle de los pétalos) */
+  /* Acento Azul Tech (Pétalos) */
   --accent-blue: #637CFA;
-  --accent-blue-glow: rgba(99, 124, 250, 0.25);
-  --accent-gold: var(--accent-blue); /* Sobrescribe la variable vieja para no romper estilos */
+  --accent-blue-glow: rgba(99, 124, 250, 0.35);
+
+  /* Mapeo de compatibilidad con código antiguo */
+  --bg: var(--bg-dark);
+  --ink: var(--ink-primary);
+  --accent: var(--accent-blue);
+
+  /* Fuentes Base */
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 * {
@@ -22,12 +31,13 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-dark);
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
+  background-color: var(--bg-dark);
+  color: var(--ink-primary);
   font-family: var(--sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -52,6 +62,7 @@ img, svg {
     linear-gradient(var(--line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
   background-size: 36px 36px;
+  opacity: 0.15;
 }
 
 /* Forzar que el contenido principal se sobreponga a la rejilla */
@@ -75,7 +86,7 @@ main {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-blue);
   margin: 0 0 14px;
   display: flex;
   align-items: center;
@@ -87,7 +98,7 @@ main {
   content: '';
   width: 18px;
   height: 1px;
-  background: var(--accent);
+  background: var(--accent-blue);
 }
 
 /* ---------- GLASSMORPHISM ---------- */
@@ -100,6 +111,7 @@ main {
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 12px;
+  color: var(--ink-primary);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -119,7 +131,7 @@ main {
 }
 
 .glass-card:hover {
-  box-shadow: 0 12px 40px 0 rgba(1, 62, 55, 0.12);
+  box-shadow: 0 12px 40px 0 rgba(99, 124, 250, 0.15);
 }
 
 .corner {
@@ -176,11 +188,11 @@ header {
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.02em;
-  color: var(--ink);
+  color: var(--ink-primary);
 }
 
 .wordmark span {
-  color: var(--accent);
+  color: var(--accent-blue);
 }
 
 .meta-row {
@@ -194,7 +206,7 @@ header {
 }
 
 .meta-row .dot {
-  color: var(--accent);
+  color: var(--accent-blue);
 }
 
 /* ---------- HERO ---------- */
@@ -215,11 +227,11 @@ h1 {
   letter-spacing: -0.01em;
   margin: 0 0 28px;
   max-width: 14ch;
-  color: var(--ink);
+  color: var(--ink-primary);
 }
 
-h1 .accent-word {
-  color: var(--accent);
+.accent-word {
+  color: var(--accent-blue) !important;
 }
 
 .lede {
@@ -236,13 +248,20 @@ h1 .accent-word {
   align-items: center;
 }
 
-/* ---------- HOVER Y SOMBRAS EN BOTONES ---------- */
+/* ---------- BOTONES ---------- */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
   background-color: var(--accent-blue) !important;
-  color: #000 !important;
+  color: #09090b !important;
   font-weight: 600;
+  text-decoration: none;
   border: none !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -250,23 +269,20 @@ h1 .accent-word {
   transform: translateY(-2px);
 }
 
-.accent-word {
-  color: var(--accent-blue);
-}
-
 .btn-ghost {
   font-family: var(--mono);
   font-size: 0.85rem;
-  color: var(--ink);
+  color: var(--ink-primary);
   text-decoration: none;
   border-bottom: 1px solid var(--line-strong);
   padding-bottom: 2px;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .btn-ghost:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
 }
 
 /* ---------- SECCIONES ---------- */
@@ -288,7 +304,7 @@ h2 {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.22;
   margin: 0;
-  color: var(--ink);
+  color: var(--ink-primary);
 }
 
 p {
@@ -315,7 +331,7 @@ p {
 .step-num {
   font-family: var(--mono);
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--accent-blue);
   letter-spacing: 0.06em;
   margin-bottom: 16px;
   display: block;
@@ -327,7 +343,7 @@ p {
   font-size: 1.15rem;
   font-weight: 600;
   margin: 0 0 12px;
-  color: var(--ink);
+  color: var(--ink-primary);
 }
 
 .step p {
@@ -367,7 +383,7 @@ p {
 .stat-block .big {
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-blue);
   line-height: 1;
 }
 
@@ -388,7 +404,7 @@ p {
 }
 
 .founder-line strong {
-  color: var(--ink);
+  color: var(--ink-primary);
   font-weight: 600;
 }
 
@@ -415,7 +431,7 @@ p {
   font-family: var(--mono);
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--ink-primary);
 }
 
 .price-row .desc {
@@ -428,7 +444,7 @@ p {
 .price-row .amount {
   font-family: var(--mono);
   font-size: 1.3rem;
-  color: var(--accent);
+  color: var(--accent-blue);
   white-space: nowrap;
   font-weight: 700;
 }
@@ -474,7 +490,7 @@ p {
 
 .form-group label {
   font-size: 0.85rem;
-  color: #f1f5f9;
+  color: var(--ink-primary);
   font-weight: 500;
 }
 
@@ -482,9 +498,9 @@ p {
 .contact-form input[type="email"],
 .contact-form textarea {
   padding: 12px 16px;
-  background-color: #0f172a;
+  background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--line-soft);
-  color: #ffffff;
+  color: var(--ink-primary);
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.95rem;
@@ -492,7 +508,7 @@ p {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #94a3b8;
+  color: var(--ink-dim);
 }
 
 .btn-submit {
@@ -564,7 +580,7 @@ footer {
 }
 
 .cookie-banner p a {
-  color: var(--ink);
+  color: var(--ink-primary);
   text-decoration: underline;
 }
 
@@ -575,20 +591,20 @@ footer {
 }
 
 .btn-cookie {
-  background: var(--accent);
-  color: #FFFFFF;
-  border: 1px solid var(--line-strong);
+  background: var(--accent-blue);
+  color: #09090b;
+  border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-family: var(--sans);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-cookie:hover {
-  background: #3730a3;
+  opacity: 0.9;
 }
 
 /* ---------- RESPONSIVE & REDUCED MOTION ---------- */
@@ -630,10 +646,26 @@ footer {
 /* ---------- CURSOR ADAPTADO AL LOGO ---------- */
 @media (min-width: 1025px) {
   .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
     background-color: var(--accent-blue);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
   }
 
   .cursor-ring {
-    border-color: rgba(99, 124, 250, 0.4);
+    position: fixed;
+    top: -12px;
+    left: -12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(99, 124, 250, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
   }
 }
