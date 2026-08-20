@@ -637,3 +637,10 @@ footer {
   cursor: pointer;
   margin-top: 0.5rem;
 }
+
+/* Desactivar el ocultamiento de las animaciones para mostrar el sitio */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
