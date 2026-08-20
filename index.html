@@ -10,11 +10,7 @@
   <!-- Open Graph / Meta etiquetas para redes sociales -->
   <meta property="og:title" content="Florece Studio — Agentes de IA en producción para pymes">
   <meta property="og:description" content="Menos diagnóstico. Más producción. Agentes de IA a medida para la operación real de tu empresa.">
-<<<<<<< HEAD
   <meta property="og:image" content="assets/logo.jpeg">
-=======
-  <meta property="og:image" content="assets/og-image.png">
->>>>>>> 86f30a8de9502cebff6be9c0fe372e62a2312016
   <meta property="og:type" content="website">
 
   <!-- Favicon e Hojas de Estilo -->
@@ -70,7 +66,6 @@
     ]
   }
   </script>
-</head>
 </head>
 <body>
 
@@ -197,18 +192,31 @@
       <div class="glass-card cta-final reveal">
         <div class="eyebrow">EL SIGUIENTE PASO</div>
         <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
-        <p class="lede">Agendá una llamada de 20 minutos sin costo. Analizamos tu operación y te mostramos exactamente dónde podés ganar tiempo y escala.</p>
-        <div class="cta-row">
+        <p class="lede">Agendá una llamada de 20 minutos sin costo o envianos un mensaje directo.</p>
+        
+        <div class="cta-row" style="margin-bottom: 2rem;">
           <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-l-0g_A40-lU1M8-f4C4U1o2x2M" target="_blank" rel="noopener noreferrer" class="btn">Agendar llamada estratégica →</a>
-          <a href="mailto:hola@jgv.ai" class="btn-ghost">o enviar mail a hola@jgv.ai</a>
         </div>
+
+        <!-- FORMULARIO DE CONTACTO WEB3FORMS -->
+        <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto; text-align: left;">
+          <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+          <input type="checkbox" name="botcheck" style="display: none;">
+          <input type="hidden" name="subject" value="Nuevo lead desde Florece Studio">
+
+          <input type="text" name="name" required placeholder="Tu nombre" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;">
+          <input type="email" name="email" required placeholder="Tu email" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;">
+          <textarea name="message" rows="4" required placeholder="¿Cómo podemos ayudarte?" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;"></textarea>
+
+          <button type="submit" class="btn" style="cursor: pointer;">Enviar mensaje</button>
+        </form>
+
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER ACTUALIZADO -->
   <footer>
     <div class="foot-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--line-soft); font-size: 0.85rem; color: var(--ink-dim);">
       <span>Florece Studio — 2026</span>
@@ -221,7 +229,6 @@
     </div>
   </footer>
 
-  <!-- BANNER DE COOKIES CORTÉS Y ELEGANTE -->
   <div id="cookie-banner" class="cookie-banner" style="display: none;">
     <p>Utilizamos cookies técnicas necesarias para el correcto funcionamiento del sitio. Para más detalle, revise nuestra <a href="privacidad.html">Política de Privacidad</a>.</p>
     <div class="cookie-actions">
@@ -229,22 +236,7 @@
     </div>
   </div>
 
-  <script>
-    // Lógica para mostrar/ocultar el banner de cookies
-    document.addEventListener('DOMContentLoaded', () => {
-      if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'flex';
-      }
-    });
-
-    function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-  </script>
+  <!-- Carga del archivo JavaScript separado -->
+  <script src="script.js" defer></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 86f30a8de9502cebff6be9c0fe372e62a2312016
