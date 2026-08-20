@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Manejo de animaciones reveal al hacer scroll
+  // Ajuste para móviles: threshold bajo y margen para activar la animación antes de tiempo
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.01
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
       }
     });
-  }, { threshold: 0.1 });
+  }, observerOptions);
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-  // Verificar estado del banner de cookies
+  // Banner de cookies
   if (!localStorage.getItem('cookiesAccepted')) {
     const banner = document.getElementById('cookie-banner');
     if (banner) banner.style.display = 'flex';
