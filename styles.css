@@ -1,18 +1,19 @@
 :root {
-  --bg: #0C0F1A;                             /* Fondo azul profundo noche */
-  --ink: #FFFFFF;                            /* Texto principal */
-  --ink-dim: #9099B3;                        /* Texto secundario */
-  --accent: #4F46E5;                         /* Azul violeta con alto contraste */
-  --accent-gold: #C5A059;                    
-  
-  --glass-bg: rgba(30, 41, 59, 0.40);       
-  --glass-border: rgba(255, 255, 255, 0.12); 
-  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
-  
-  --line-strong: rgba(255, 255, 255, 0.18);
-  --line-soft: rgba(255, 255, 255, 0.06);
-  --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  /* Fondo y Fondos Oscuros */
+  --bg-dark: #09090b;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+
+  /* Texto e Identidad (Extraídos del Logo) */
+  --ink-primary: #F2EFE9;      /* Blanco hueso/crema cálido del tallo */
+  --ink-dim: rgba(242, 239, 233, 0.6);
+  --line-soft: rgba(242, 239, 233, 0.12);
+
+  /* Color de Acento Principal (Azul Tech / Periwinkle de los pétalos) */
+  --accent-blue: #637CFA;
+  --accent-blue-glow: rgba(99, 124, 250, 0.25);
+  --accent-gold: var(--accent-blue); /* Sobrescribe la variable vieja para no romper estilos */
 }
 
 * {
@@ -235,29 +236,22 @@ h1 .accent-word {
   align-items: center;
 }
 
+/* ---------- HOVER Y SOMBRAS EN BOTONES ---------- */
 .btn {
-  font-family: var(--mono);
+  background-color: var(--accent-blue) !important;
+  color: #000 !important;
   font-weight: 600;
-  font-size: 0.92rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: var(--accent);
-  color: #FFFFFF;
-  border: none;
-  padding: 15px 26px;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform .15s ease, box-shadow .15s ease;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  border: none !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn:hover {
+  box-shadow: 0 10px 30px -5px var(--accent-blue-glow) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -8px rgba(79, 70, 229, 0.5);
+}
+
+.accent-word {
+  color: var(--accent-blue);
 }
 
 .btn-ghost {
@@ -630,5 +624,16 @@ footer {
   }
   .cta-final {
     padding: 28px;
+  }
+}
+
+/* ---------- CURSOR ADAPTADO AL LOGO ---------- */
+@media (min-width: 1025px) {
+  .cursor-dot {
+    background-color: var(--accent-blue);
+  }
+
+  .cursor-ring {
+    border-color: rgba(99, 124, 250, 0.4);
   }
 }
