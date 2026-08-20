@@ -1,102 +1,18 @@
 :root {
-  --bg: #0C0F1A; 
-  --ink: #FFFFFF; 
-  --ink-dim: #9099B3; 
-  --accent: #4F46E5;          /* Cambiado a un azul violeta brillante y legible */
-  --accent-gold: #C5A059; 
-
-  /* Ajuste de tarjetas Glassmorphism para que resalten sobre el fondo */
-  --glass-bg: rgba(30, 41, 59, 0.40); 
+  --bg: #0C0F1A;                             /* Fondo azul profundo noche */
+  --ink: #FFFFFF;                            /* Texto principal */
+  --ink-dim: #9099B3;                        /* Texto secundario */
+  --accent: #4F46E5;                         /* Azul violeta con alto contraste */
+  --accent-gold: #C5A059;                    
+  
+  --glass-bg: rgba(30, 41, 59, 0.40);       
   --glass-border: rgba(255, 255, 255, 0.12); 
   --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
-
+  
   --line-strong: rgba(255, 255, 255, 0.18);
   --line-soft: rgba(255, 255, 255, 0.06);
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
   --sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-}
-
-/* Estilos para el banner de cookies y enlaces legales */
-.cookie-banner {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  left: 20px;
-  max-width: 480px;
-  margin: 0 auto;
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: var(--glass-shadow);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.cookie-banner p {
-  color: var(--ink-dim);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.cookie-banner p a {
-  color: var(--ink);
-  text-decoration: underline;
-}
-
-.cookie-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: flex-end;
-}
-
-.btn-cookie {
-  background: var(--accent);
-  color: #FFFFFF;
-  border: 1px solid var(--line-strong);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-family: var(--sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-cookie:hover {
-  background: #22228C;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.legal-content {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-  color: var(--ink-dim);
-  line-height: 1.7;
-}
-
-.legal-content h1, .legal-content h2 {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.legal-content h1 {
-  font-size: 2.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.legal-content h2 {
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--line-soft);
-  padding-bottom: 0.5rem;
 }
 
 * {
@@ -125,7 +41,7 @@ img, svg {
   max-width: 100%;
 }
 
-/* Fondo de rejilla continua (visible a través de las tarjetas de vidrio) */
+/* Fondo de rejilla */
 .grid-bg {
   position: fixed;
   inset: 0;
@@ -135,6 +51,14 @@ img, svg {
     linear-gradient(var(--line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
   background-size: 36px 36px;
+}
+
+/* Forzar que el contenido principal se sobreponga a la rejilla */
+main {
+  position: relative;
+  z-index: 2;
+  display: block;
+  min-height: 100vh;
 }
 
 .wrap {
@@ -165,11 +89,11 @@ img, svg {
   background: var(--accent);
 }
 
-/* ---------- CLASE REUTILIZABLE GLASSMORPHISM ---------- */
+/* ---------- GLASSMORPHISM ---------- */
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Soporte Safari */
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 12px;
@@ -213,7 +137,7 @@ img, svg {
 .corner.bl { bottom: 28px; left: 24px; }
 .corner.br { bottom: 28px; right: 24px; }
 
-/* ---------- HEADER / TITLE BLOCK ---------- */
+/* ---------- HEADER ---------- */
 header {
   position: relative;
   z-index: 2;
@@ -301,7 +225,7 @@ h1 .accent-word {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: var(--accent);
-  color: #FFEFB3;
+  color: #FFFFFF;
   border: none;
   padding: 15px 26px;
   border-radius: 6px;
@@ -311,17 +235,12 @@ h1 .accent-word {
   align-items: center;
   gap: 10px;
   transition: transform .15s ease, box-shadow .15s ease;
-  box-shadow: 0 4px 14px rgba(1, 62, 55, 0.15);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -8px rgba(1, 62, 55, 0.4);
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
+  box-shadow: 0 8px 24px -8px rgba(79, 70, 229, 0.5);
 }
 
 .btn-ghost {
@@ -342,7 +261,9 @@ h1 .accent-word {
 /* ---------- SECCIONES ---------- */
 section {
   position: relative;
+  z-index: 2;
   padding: 40px 0;
+  display: block;
 }
 
 .section-head {
@@ -509,7 +430,7 @@ p {
   padding-left: 8px;
 }
 
-/* ---------- CTA FINAL ---------- */
+/* ---------- FORMULARIO DE CONTACTO ---------- */
 .cta-final {
   text-align: left;
   padding: 48px;
@@ -525,11 +446,54 @@ p {
   margin-bottom: 36px;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 12px 16px;
+  background-color: #0f172a;
+  border: 1px solid var(--line-soft);
+  color: #ffffff;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.btn-submit {
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
 /* ---------- FOOTER ---------- */
 footer {
   padding: 40px 24px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .foot-row {
@@ -558,6 +522,61 @@ footer {
   transform: translateY(0);
 }
 
+/* ---------- COOKIE BANNER ---------- */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--glass-shadow);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cookie-banner p {
+  color: var(--ink-dim);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cookie-banner p a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.btn-cookie {
+  background: var(--accent);
+  color: #FFFFFF;
+  border: 1px solid var(--line-strong);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cookie:hover {
+  background: #3730a3;
+}
 
 /* ---------- RESPONSIVE & REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -593,48 +612,4 @@ footer {
   .cta-final {
     padding: 28px;
   }
-}
-
-/* Formulario de contacto */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  color: #f1f5f9;
-  font-weight: 500;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  padding: 12px 16px;
-  background-color: #0f172a;
-  border: 1px solid var(--line-soft, #334155);
-  color: #ffffff;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 0.95rem;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #94a3b8;
-}
-
-.btn-submit {
-  cursor: pointer;
-  margin-top: 0.5rem;
 }
