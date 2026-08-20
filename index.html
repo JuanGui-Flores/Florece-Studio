@@ -1,242 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Florece Studio — Presencia digital que exige excelencia.</title>
-  <meta name="description" content="Desarrollamos e integramos agentes de IA en producción para PyMEs. Sin teoría, código funcionando desde la semana 1.">
-  
-  <!-- Open Graph / Meta etiquetas para redes sociales -->
-  <meta property="og:title" content="Florece Studio — Agentes de IA en producción para pymes">
-  <meta property="og:description" content="Menos diagnóstico. Más producción. Agentes de IA a medida para la operación real de tu empresa.">
-  <meta property="og:image" content="assets/logo.jpeg">
-  <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Favicon e Hojas de Estilo -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <title>Florece Studio — Presencia digital que exige excelencia.</title>
+    <meta
+      name="description"
+      content="Desarrollamos e integramos agentes de IA en producción para PyMEs. Sin teoría, código funcionando desde la semana 1."
+    />
 
-  <!-- Schema.org - Datos Estructurados para GEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+    <!-- Open Graph / Meta etiquetas para redes sociales -->
+    <meta
+      property="og:title"
+      content="Florece Studio — Agentes de IA en producción para pymes"
+    />
+    <meta
+      property="og:description"
+      content="Menos diagnóstico. Más producción. Agentes de IA a medida para la operación real de tu empresa."
+    />
+    <meta property="og:image" content="assets/logo.jpeg" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon e Hojas de Estilo -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Schema.org - Datos Estructurados para GEO -->
+    <script type="application/ld+json">
       {
-        "@type": "Organization",
-        "@id": "https://jgv.ai/#organization",
-        "name": "Florece Studio",
-        "url": "https://jgv.ai/",
-        "logo": "https://jgv.ai/assets/og-image.png",
-        "description": "Estudio de desarrollo e integración de agentes de IA en producción para pymes.",
-        "founder": {
-          "@type": "Person",
-          "name": "Juan Guillermo Flores Vargas",
-          "jobTitle": "Desarrollador de Software"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://jgv.ai/#website",
-        "url": "https://jgv.ai/",
-        "name": "Florece Studio",
-        "publisher": {
-          "@id": "https://jgv.ai/#organization"
-        }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://jgv.ai/#service",
-        "name": "Florece Studio",
-        "url": "https://jgv.ai/",
-        "provider": {
-          "@id": "https://jgv.ai/#organization"
-        },
-        "areaServed": "Worldwide",
-        "serviceType": [
-          "Desarrollo de Agentes de IA",
-          "Automatización de Procesos con IA",
-          "Integración de LLMs en Producción"
-        ],
-        "priceRange": "$$"
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://jgv.ai/#organization",
+            "name": "Florece Studio",
+            "url": "https://jgv.ai/",
+            "logo": "https://jgv.ai/assets/og-image.png",
+            "description": "Estudio de desarrollo e integración de agentes de IA en producción para pymes.",
+            "founder": {
+              "@type": "Person",
+              "name": "Juan Guillermo Flores Vargas",
+              "jobTitle": "Desarrollador de Software"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://jgv.ai/#website",
+            "url": "https://jgv.ai/",
+            "name": "Florece Studio",
+            "publisher": {
+              "@id": "https://jgv.ai/#organization"
+            }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://jgv.ai/#service",
+            "name": "Florece Studio",
+            "url": "https://jgv.ai/",
+            "provider": {
+              "@id": "https://jgv.ai/#organization"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": [
+              "Desarrollo de Agentes de IA",
+              "Automatización de Procesos con IA",
+              "Integración de LLMs en Producción"
+            ],
+            "priceRange": "$$"
+          }
+        ]
       }
-    ]
-  }
-  </script>
-</head>
-<body>
+    </script>
+  </head>
+  <body>
+    <div class="grid-bg" aria-hidden="true"></div>
 
-<div class="grid-bg" aria-hidden="true"></div>
-
-<header>
-  <div class="titleblock glass-card">
-    <div class="wordmark">FLORECE<span>·</span>STUDIO</div>
-    <div class="meta-row">
-      <span>DOC 001</span>
-      <span class="dot">·</span>
-      <span>ESTADO: OPERATIVO</span>
-      <span class="dot">·</span>
-      <span>REV 1.0</span>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="wrap">
-      <span class="corner tl" aria-hidden="true"></span>
-      <span class="corner tr" aria-hidden="true"></span>
-      <span class="corner bl" aria-hidden="true"></span>
-      <span class="corner br" aria-hidden="true"></span>
-      
-      <h1 class="reveal">Liberá tu negocio.<br><span class="accent-word">Escalá sin límites.</span></h1>
-      <p class="lede reveal">Diseñamos el motor operativo que tu empresa necesita para crecer sin multiplicar las horas de trabajo ni el estrés de tu equipo.</p>
-      <div class="cta-row reveal">
-        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-l-0g_A40-lU1M8-f4C4U1o2x2M" target="_blank" rel="noopener noreferrer" class="btn">Reservar una llamada →</a>
-        <a href="#proceso" class="btn-ghost">Ver cómo trabajamos</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="problema">
-    <div class="wrap">
-      <div class="glass-card reveal" style="padding: 40px;">
-        <div class="eyebrow">El problema</div>
-        <h2>Ya usás IA. Tu negocio, todavía no.</h2>
-        <p class="body-text" style="margin-top: 16px; margin-bottom:0;">Vos probás ChatGPT o Claude en lo personal — respondés un mail más rápido, armás un texto en minutos. Pero esas horas ganadas nunca llegan a tu equipo, a tus procesos, a tus números. Se quedan en tu escritorio. Ese hueco entre lo que probás y lo que realmente corre en tu operación es exactamente donde entra un agente construido a medida — no una suscripción genérica más.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="proceso">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Cómo trabajamos</div>
-        <h2>Tres etapas. Sin vueltas.</h2>
-      </div>
-      <div class="process reveal">
-        <div class="step glass-card">
-          <span class="step-num">01 / DIAGNÓSTICO</span>
-          <h3>Miramos tu operación real</h3>
-          <p>Identificamos una tarea puntual que se repite todos los días y que tiene impacto medible si se automatiza — no una lista genérica de "casos de uso de IA".</p>
-          <span class="dur">Duración: 1 semana</span>
-        </div>
-        <div class="step glass-card">
-          <span class="step-num">02 / IMPLEMENTACIÓN</span>
-          <h3>El agente, sobre tus herramientas</h3>
-          <p>Se integra a lo que ya usás — correo, WhatsApp, planillas y más. Nada de plataformas genéricas que después tenés que aprender a operar solo.</p>
-          <span class="dur">Duración: 2–4 semanas</span>
-        </div>
-        <div class="step glass-card">
-          <span class="step-num">03 / PUESTA EN MARCHA</span>
-          <h3>Sale a correr, con vos en control</h3>
-          <p>Vos aprobás lo que importa. Se mide, se ajusta durante las primeras semanas, y queda corriendo solo en lo rutinario.</p>
-          <span class="dur">Soporte: 30 días incluidos</span>
+    <header>
+      <div class="titleblock glass-card">
+        <div class="wordmark">FLORECE<span>·</span>STUDIO</div>
+        <div class="meta-row">
+          <span>DOC 001</span>
+          <span class="dot">·</span>
+          <span>ESTADO: OPERATIVO</span>
+          <span class="dot">·</span>
+          <span>REV 1.0</span>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="diferencia">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Por qué esto es distinto</div>
-        <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
-      </div>
-      <div class="diff-grid">
-        <div class="glass-card reveal" style="padding: 32px;">
-          <p class="body-text">Según el MIT, solo el 5% de las implementaciones de IA generan un impacto real en el retorno de inversión. La razón, casi siempre, es la misma: alguien vendió estrategia y nadie se hizo cargo de la ingeniería real.</p>
-          <p class="body-text" style="margin-bottom:0;">Florece Studio lo construye una persona que programa — no un equipo comercial con un mazo de slides. Vos hablás con quien después escribe el código y lo pone a funcionar.</p>
-        </div>
-        <div class="stat-block glass-card reveal">
-          <div class="big">5%</div>
-          <div class="cap">de las implementaciones de IA logran ROI real — investigación del MIT</div>
-          <div class="founder-line">Detrás de Florece Studio: <strong>Juan Guillermo Flores Vargas</strong>, desarrollador. Un solo interlocutor, del diagnóstico al código en producción.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
 
-  <section id="precios">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Precios</div>
-        <h2>Sin sorpresas.</h2>
-      </div>
-      <div class="price-list glass-card reveal">
-        <div class="price-row">
-          <div>
-            <div class="name">Diagnóstico Operativo</div>
-            <div class="desc">Mapeamos tu operación actual, detectamos cuellos de botella y diseñamos la arquitectura exacta de solución.</div>
+          <h1 class="reveal">
+            Liberá tu negocio.<br /><span class="accent-word"
+              >Escalá sin límites.</span
+            >
+          </h1>
+          <p class="lede reveal">
+            Diseñamos el motor operativo que tu empresa necesita para crecer sin
+            multiplicar las horas de trabajo ni el estrés de tu equipo.
+          </p>
+          <div class="cta-row reveal">
+            <a
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-l-0g_A40-lU1M8-f4C4U1o2x2M"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              >Reservar una llamada →</a
+            >
+            <a href="#proceso" class="btn-ghost">Ver cómo trabajamos</a>
           </div>
-          <div class="amount">Propuesta a medida</div>
         </div>
-        <div class="price-row">
-          <div>
-            <div class="name">Implementación Llave en Mano</div>
-            <div class="desc">Desarrollo, integración total con tus sistemas, capacitación de tu equipo y 30 días de soporte garantizado.</div>
+      </section>
+
+      <section id="problema">
+        <div class="wrap">
+          <div class="glass-card reveal" style="padding: 40px">
+            <div class="eyebrow">El problema</div>
+            <h2>Ya usás IA. Tu negocio, todavía no.</h2>
+            <p class="body-text" style="margin-top: 16px; margin-bottom: 0">
+              Vos probás ChatGPT o Claude en lo personal — respondés un mail más
+              rápido, armás un texto en minutos. Pero esas horas ganadas nunca
+              llegan a tu equipo, a tus procesos, a tus números. Se quedan en tu
+              escritorio. Ese hueco entre lo que probás y lo que realmente corre
+              en tu operación es exactamente donde entra un agente construido a
+              medida — no una suscripción genérica más.
+            </p>
           </div>
-          <div class="amount">Cotización personalizada</div>
         </div>
-      </div>
-      <p class="price-note reveal">Proyectos con alcance y precio fijo acordados previamente. Sin costos ocultos ni sorpresas.</p>
-    </div>
-  </section>
+      </section>
 
-  <section id="contacto">
-    <div class="wrap">
-      <div class="glass-card cta-final reveal">
-        <div class="eyebrow">EL SIGUIENTE PASO</div>
-        <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
-        <p class="lede">Agendá una llamada de 20 minutos sin costo o envianos un mensaje directo.</p>
-        
-        <div class="cta-row" style="margin-bottom: 2rem;">
-          <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-l-0g_A40-lU1M8-f4C4U1o2x2M" target="_blank" rel="noopener noreferrer" class="btn">Agendar llamada estratégica →</a>
+      <section id="proceso">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Cómo trabajamos</div>
+            <h2>Tres etapas. Sin vueltas.</h2>
+          </div>
+          <div class="process reveal">
+            <div class="step glass-card">
+              <span class="step-num">01 / DIAGNÓSTICO</span>
+              <h3>Miramos tu operación real</h3>
+              <p>
+                Identificamos una tarea puntual que se repite todos los días y
+                que tiene impacto medible si se automatiza — no una lista
+                genérica de "casos de uso de IA".
+              </p>
+              <span class="dur">Duración: 1 semana</span>
+            </div>
+            <div class="step glass-card">
+              <span class="step-num">02 / IMPLEMENTACIÓN</span>
+              <h3>El agente, sobre tus herramientas</h3>
+              <p>
+                Se integra a lo que ya usás — correo, WhatsApp, planillas y más.
+                Nada de plataformas genéricas que después tenés que aprender a
+                operar solo.
+              </p>
+              <span class="dur">Duración: 2–4 semanas</span>
+            </div>
+            <div class="step glass-card">
+              <span class="step-num">03 / PUESTA EN MARCHA</span>
+              <h3>Sale a correr, con vos en control</h3>
+              <p>
+                Vos aprobás lo que importa. Se mide, se ajusta durante las
+                primeras semanas, y queda corriendo solo en lo rutinario.
+              </p>
+              <span class="dur">Soporte: 30 días incluidos</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- FORMULARIO DE CONTACTO WEB3FORMS -->
-        <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto; text-align: left;">
-          <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
-          <input type="checkbox" name="botcheck" style="display: none;">
-          <input type="hidden" name="subject" value="Nuevo lead desde Florece Studio">
+      <section id="diferencia">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Por qué esto es distinto</div>
+            <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
+          </div>
+          <div class="diff-grid">
+            <div class="glass-card reveal" style="padding: 32px">
+              <p class="body-text">
+                Según el MIT, solo el 5% de las implementaciones de IA generan
+                un impacto real en el retorno de inversión. La razón, casi
+                siempre, es la misma: alguien vendió estrategia y nadie se hizo
+                cargo de la ingeniería real.
+              </p>
+              <p class="body-text" style="margin-bottom: 0">
+                Florece Studio lo construye una persona que programa — no un
+                equipo comercial con un mazo de slides. Vos hablás con quien
+                después escribe el código y lo pone a funcionar.
+              </p>
+            </div>
+            <div class="stat-block glass-card reveal">
+              <div class="big">5%</div>
+              <div class="cap">
+                de las implementaciones de IA logran ROI real — investigación
+                del MIT
+              </div>
+              <div class="founder-line">
+                Detrás de Florece Studio:
+                <strong>Juan Guillermo Flores Vargas</strong>, desarrollador. Un
+                solo interlocutor, del diagnóstico al código en producción.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <input type="text" name="name" required placeholder="Tu nombre" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;">
-          <input type="email" name="email" required placeholder="Tu email" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;">
-          <textarea name="message" rows="4" required placeholder="¿Cómo podemos ayudarte?" style="padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-soft); color: #fff; border-radius: 4px;"></textarea>
+      <section id="precios">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <div class="eyebrow">Precios</div>
+            <h2>Sin sorpresas.</h2>
+          </div>
+          <div class="price-list glass-card reveal">
+            <div class="price-row">
+              <div>
+                <div class="name">Diagnóstico Operativo</div>
+                <div class="desc">
+                  Mapeamos tu operación actual, detectamos cuellos de botella y
+                  diseñamos la arquitectura exacta de solución.
+                </div>
+              </div>
+              <div class="amount">Propuesta a medida</div>
+            </div>
+            <div class="price-row">
+              <div>
+                <div class="name">Implementación Llave en Mano</div>
+                <div class="desc">
+                  Desarrollo, integración total con tus sistemas, capacitación
+                  de tu equipo y 30 días de soporte garantizado.
+                </div>
+              </div>
+              <div class="amount">Cotización personalizada</div>
+            </div>
+          </div>
+          <p class="price-note reveal">
+            Proyectos con alcance y precio fijo acordados previamente. Sin
+            costos ocultos ni sorpresas.
+          </p>
+        </div>
+      </section>
 
-          <button type="submit" class="btn" style="cursor: pointer;">Enviar mensaje</button>
-        </form>
+      <section id="contacto">
+        <div class="wrap">
+          <div class="glass-card cta-final reveal">
+            <div class="eyebrow">EL SIGUIENTE PASO</div>
+            <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
+            <p class="lede">
+              Agendá una llamada de 20 minutos sin costo o envianos un mensaje
+              directo.
+            </p>
 
+            <div class="cta-row" style="margin-bottom: 2rem">
+              <a
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-l-0g_A40-lU1M8-f4C4U1o2x2M"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Agendar llamada estratégica →</a
+              >
+            </div>
+
+            <!-- FORMULARIO DE CONTACTO WEB3FORMS -->
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="TU_ACCESS_KEY_AQUI"
+              />
+              <input
+                type="checkbox"
+                name="botcheck"
+                id="botcheck"
+                style="display: none"
+                aria-label="Bot Check"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="Nuevo lead desde Florece Studio"
+              />
+
+              <div class="form-group">
+                <label for="user-name">Tu nombre</label>
+                <input
+                  type="text"
+                  id="user-name"
+                  name="name"
+                  required
+                  placeholder="Ej: Martin Perez"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="user-email">Tu email</label>
+                <input
+                  type="email"
+                  id="user-email"
+                  name="email"
+                  required
+                  placeholder="tu@email.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="user-message">Tu mensaje</label>
+                <textarea
+                  id="user-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="¿Cómo podemos ayudarte?"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-submit">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        class="foot-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding: 2rem 0;
+          border-top: 1px solid var(--line-soft);
+          font-size: 0.85rem;
+          color: var(--ink-dim);
+        "
+      >
+        <span>Florece Studio — 2026</span>
+        <div class="foot-links" style="display: flex; gap: 0.75rem">
+          <a
+            href="privacidad.html"
+            style="color: var(--ink-dim); text-decoration: none"
+            >Privacidad</a
+          >
+          <span>·</span>
+          <a
+            href="terminos.html"
+            style="color: var(--ink-dim); text-decoration: none"
+            >Términos</a
+          >
+        </div>
+        <span>Desarrollado por Juan Guillermo Flores Vargas</span>
+      </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner" style="display: none">
+      <p>
+        Utilizamos cookies técnicas necesarias para el correcto funcionamiento
+        del sitio. Para más detalle, revise nuestra
+        <a href="privacidad.html">Política de Privacidad</a>.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn-cookie" onclick="acceptCookies()">Entendido</button>
       </div>
     </div>
-  </section>
 
-</main>
-
-  <footer>
-    <div class="foot-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--line-soft); font-size: 0.85rem; color: var(--ink-dim);">
-      <span>Florece Studio — 2026</span>
-      <div class="foot-links" style="display: flex; gap: 0.75rem;">
-        <a href="privacidad.html" style="color: var(--ink-dim); text-decoration: none;">Privacidad</a>
-        <span>·</span>
-        <a href="terminos.html" style="color: var(--ink-dim); text-decoration: none;">Términos</a>
-      </div>
-      <span>Desarrollado por Juan Guillermo Flores Vargas</span>
-    </div>
-  </footer>
-
-  <div id="cookie-banner" class="cookie-banner" style="display: none;">
-    <p>Utilizamos cookies técnicas necesarias para el correcto funcionamiento del sitio. Para más detalle, revise nuestra <a href="privacidad.html">Política de Privacidad</a>.</p>
-    <div class="cookie-actions">
-      <button class="btn-cookie" onclick="acceptCookies()">Entendido</button>
-    </div>
-  </div>
-
-  <!-- Carga del archivo JavaScript separado -->
-  <script src="script.js" defer></script>
-</body>
+    <!-- Carga del archivo JavaScript separado -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
