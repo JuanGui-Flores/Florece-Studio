@@ -72,3 +72,35 @@ function acceptCookies() {
   const banner = document.getElementById('cookie-banner');
   if (banner) banner.style.display = 'none';
 }
+
+/* -----------------------------------------------------------
+     5. CURSOR PERSONALIZADO Y ELEGANTE (Solo Desktop)
+  ----------------------------------------------------------- */
+  if (window.innerWidth > 1024) {
+    const dot = document.createElement('div');
+    const ring = document.createElement('div');
+    
+    dot.className = 'cursor-dot';
+    ring.className = 'cursor-ring';
+    
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    });
+
+    const render = () => {
+      // Inercia/fricción para el seguimiento suave del aro
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      requestAnimationFrame(render);
+    };
+    render();
+  }
