@@ -1,44 +1,24 @@
-// Configuración de animación al hacer Scroll (IntersectionObserver)
-const observerOptions = {
-  threshold: 0.1
-};
+document.addEventListener('DOMContentLoaded', () => {
+  // Manejo de animaciones reveal al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Agrega la clase que tenés definida en el CSS
-      entry.target.classList.add('is-visible'); 
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-// Lógica de cookies y arranque
+  // Verificar estado del banner de cookies
+  if (!localStorage.getItem('cookiesAccepted')) {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) banner.style.display = 'flex';
+  }
+});
+
 function acceptCookies() {
   localStorage.setItem('cookiesAccepted', 'true');
-  const cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner) cookieBanner.style.display = 'none';
+  const banner = document.getElementById('cookie-banner');
+  if (banner) banner.style.display = 'none';
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
-    cookieBanner.style.display = 'flex';
-  }
-
-  const revealElements = document.querySelectorAll('.reveal');
-  revealElements.forEach(el => observer.observe(el));
-});
-
-// Inicialización de lógica al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mostrar banner de cookies si no fue aceptado
-  const cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
-    cookieBanner.style.display = 'flex';
-  }
-
-  // 2. Activar observación para las animaciones Reveal
-  const revealElements = document.querySelectorAll('.reveal');
-  revealElements.forEach(el => observer.observe(el));
-});
