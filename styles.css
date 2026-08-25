@@ -676,16 +676,6 @@ footer {
     overflow: hidden;
 }
 
-.bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -709,7 +699,7 @@ footer {
 .patio-wrapper {
     position: relative;
     width: 100%;
-    background-image: url('assets/patio-mate.jpg');
+    background-image: url('assets/patio-mate.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -718,7 +708,7 @@ footer {
 .oficina-wrapper {
     position: relative;
     width: 100%;
-    background-image: url('assets/setup-oficina.jpg');
+    background-image: url('assets/setup-oficina.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -743,4 +733,8 @@ footer {
     background: transparent !important;
     position: relative;
     z-index: 2;
+}
+
+.bg-image {
+    display: none;
 }
