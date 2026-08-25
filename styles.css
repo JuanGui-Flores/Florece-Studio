@@ -11,6 +11,7 @@
   --line-soft: rgba(242, 239, 233, 0.12);
   --line-strong: rgba(242, 239, 233, 0.25);
 
+
   /* Acento Azul Tech (Pétalos) */
   --accent-blue: #637CFA;
   --accent-blue-glow: rgba(99, 124, 250, 0.35);
@@ -699,4 +700,52 @@ footer {
 .engineering-section .wrap {
     position: relative !important;
     z-index: 3 !important;
+}
+
+/* ======================================================= */
+/* NUEVOS CONTENEDORES DE FONDO CONTINUO                   */
+/* ======================================================= */
+
+.patio-wrapper {
+    position: relative;
+    width: 100%;
+    background-image: url('assets/patio-mate.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.oficina-wrapper {
+    position: relative;
+    width: 100%;
+    background-image: url('assets/setup-oficina.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Capas oscuras (Overlay) generales para los contenedores */
+.patio-wrapper .overlay,
+.oficina-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 9, 11, 0.82); /* Usa el tono oscuro corporativo --bg-dark con opacidad */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hacer transparentes las secciones internas para que dejen ver el fondo del wrapper */
+.patio-wrapper section,
+.oficina-wrapper section {
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Limpieza de reglas antiguas que ya no se usan */
+.bg-image {
+    display: none;
 }
