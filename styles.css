@@ -709,6 +709,7 @@ footer {
 .oficina-wrapper {
     position: relative;
     width: 100%;
+    min-height: 500px;
     background-image: url('assets/setup-oficina.jpeg');
     background-size: cover;
     background-position: center;
