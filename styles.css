@@ -715,6 +715,7 @@ footer {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #09090b;
 }
 
 /* Capas oscuras (Overlay) generales para los contenedores */
