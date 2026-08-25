@@ -694,3 +694,9 @@ footer {
     background-color: rgba(0, 0, 0, 0.75); /* Filtro oscuro para legibilidad */
     z-index: 2;
 }
+
+.hero .wrap, 
+.engineering-section .wrap {
+    position: relative !important;
+    z-index: 3 !important;
+}
