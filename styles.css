@@ -700,6 +700,7 @@ footer {
 .patio-wrapper {
     position: relative;
     width: 100%;
+    min-height: 500px;
     background-image: url('assets/patio-mate.jpeg');
     background-size: cover;
     background-position: center;
@@ -710,7 +711,7 @@ footer {
     position: relative;
     width: 100%;
     min-height: 500px;
-    background-image: url('assets/setup-oficina.jpeg');
+    background-image: url('assets/oficina.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
