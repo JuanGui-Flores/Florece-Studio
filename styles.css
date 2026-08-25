@@ -744,8 +744,3 @@ footer {
     position: relative;
     z-index: 2;
 }
-
-/* Limpieza de reglas antiguas que ya no se usan */
-.bg-image {
-    display: none;
-}
