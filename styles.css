@@ -712,10 +712,9 @@ footer {
     width: 100%;
     min-height: 500px;
     background-image: url('assets/oficina.jpeg');
-    background-size: contain;
-    background-position: center;
+    background-size: cover;       /* Cambiado de contain a cover para que llene bien todo el ancho */
+    background-position: center;  /* Centra la imagen para que el enfoque principal se mantenga */
     background-repeat: no-repeat;
-    background-color: #09090b;
 }
 
 /* Capas oscuras (Overlay) generales para los contenedores */
@@ -726,7 +725,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(9, 9, 11, 0.82); /* Usa el tono oscuro corporativo --bg-dark con opacidad */
+    background-color: rgba(9, 9, 11, 0.65); /* Usa el tono oscuro corporativo --bg-dark con opacidad */
     z-index: 1;
     pointer-events: none;
 }
