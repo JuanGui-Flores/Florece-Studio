@@ -741,3 +741,26 @@ footer {
 .bg-image {
     display: none;
 }
+
+.terms-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    position: relative;
+    z-index: 3;
+}
+
+.terms-container h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink-primary);
+}
+
+.terms-container .update-date {
+    font-family: var(--mono, monospace);
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
