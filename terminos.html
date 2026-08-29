@@ -1,28 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos de Servicio — Florece Studio</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="legal-content">
-    <a href="index.html" style="color: var(--ink); text-decoration: none; font-size: 0.9rem;">← Volver al inicio</a>
-    <h1 style="margin-top: 2rem;">Términos de Servicio</h1>
-    <p>Última actualización: Agosto 2026</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Términos de Servicio — Florece Studio</title>
+    <meta name="description" content="Términos de Servicio de Florece Studio." />
 
-    <h2>1. Aceptación de los Términos</h2>
-    <p>Al acceder y utilizar el sitio web de Florece Studio, el usuario acepta estos Términos de Servicio. Si no está de acuerdo con alguno de los términos, le solicitamos abstenerse de utilizar nuestro sitio.</p>
+    <!-- Favicon e Hojas de Estilo -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-bg" aria-hidden="true"></div>
 
-    <h2>2. Propiedad Intelectual</h2>
-    <p>Todo el contenido, marcas, isotipos, código fuente, componentes y elementos visuales en este sitio son propiedad exclusiva de Florece Studio y están protegidos por las leyes internacionales de propiedad intelectual.</p>
+    <main class="terms-container">
+      <div style="margin-bottom: 2rem;">
+        <a href="index.html" class="btn-ghost">← Volver al inicio</a>
+      </div>
 
-    <h2>3. Alcance de la Información</h2>
-    <p>La información presentada en este sitio web tiene carácter puramente informativo. Los compromisos de desarrollo, tiempos de entrega y entregables contractuales se acuerdan formalmente mediante propuestas o contratos de prestación de servicios por escrito.</p>
+      <header class="section-head" style="text-align: left; margin-bottom: 2rem;">
+        <h1>Términos de Servicio</h1>
+        <p class="update-date" style="margin-top: 8px;">Última actualización: Agosto 2026</p>
+      </header>
 
-    <h2>4. Contacto</h2>
-    <p>Para cualquier duda respecto a estos términos, comuníquese a <strong>hola@jgv.ai</strong>.</p>
-  </div>
-</body>
+      <div class="glass-card" style="padding: 40px; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--ink-primary);">1. Aceptación de los Términos</h2>
+        <p class="body-text" style="margin-bottom: 2rem;">
+          Al acceder y utilizar el sitio web de Florece Studio, el usuario acepta estos Términos de Servicio. Si no está de acuerdo con alguno de los términos, le solicitamos abstenerse de utilizar nuestro sitio.
+        </p>
+
+        <h2 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--ink-primary);">2. Propiedad Intelectual</h2>
+        <p class="body-text" style="margin-bottom: 2rem;">
+          Todo el contenido, marcas, isotipos, código fuente, componentes y elementos visuales en este sitio son propiedad exclusiva de Florece Studio y están protegidos por las leyes internacionales de propiedad intelectual.
+        </p>
+
+        <h2 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--ink-primary);">3. Alcance de la Información</h2>
+        <p class="body-text" style="margin-bottom: 2rem;">
+          La información presentada en este sitio web tiene carácter puramente informativo. Los compromisos de desarrollo, tiempos de entrega y entregables contractuales se acuerdan formalmente mediante propuestas o contratos de prestación de servicios por escrito.
+        </p>
+
+        <h2 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--ink-primary);">4. Contacto</h2>
+        <p class="body-text" style="margin-bottom: 0;">
+          Para cualquier duda respecto a estos términos, comuníquese a <a href="mailto:florecestudio8@gmail.com" style="color: var(--ink-primary); text-decoration: underline;">hola@jgv.ai</a>.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div
+        class="foot-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding: 2rem 24px;
+          border-top: 1px solid var(--line-soft);
+          font-size: 0.85rem;
+          color: var(--ink-dim);
+          max-width: 900px;
+          margin: 0 auto;
+        "
+      >
+        <span>Florece Studio — 2026</span>
+        <div class="foot-links" style="display: flex; gap: 0.75rem">
+          <a href="privacidad.html" style="color: var(--ink-dim); text-decoration: none">Privacidad</a>
+          <span>·</span>
+          <a href="terminos.html" style="color: var(--ink-dim); text-decoration: none">Términos</a>
+        </div>
+        <span>Desarrollado por Juan Guillermo Flores Vargas</span>
+      </div>
+    </footer>
+  </body>
 </html>

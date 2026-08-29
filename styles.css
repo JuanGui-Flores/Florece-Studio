@@ -1,20 +1,19 @@
 :root {
   /* Fondos Oscuros */
-  --bg-dark: #09090b;
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --bg-dark: #060608; /* Negro ultra profundo estilo tech */
+  --glass-bg: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.07);
   --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 
   /* Textos Extraídos del Tallo/Flor */
-  --ink-primary: #F2EFE9;                     /* Crema cálido */
-  --ink-dim: rgba(242, 239, 233, 0.6);        /* Crema secundario */
+  --ink-primary: #F2EFE9;                    /* Crema cálido */
+  --ink-dim: rgba(242, 239, 233, 0.6);       /* Crema secundario */
   --line-soft: rgba(242, 239, 233, 0.12);
   --line-strong: rgba(242, 239, 233, 0.25);
 
-
   /* Acento Azul Tech (Pétalos) */
-  --accent-blue: #637CFA;
-  --accent-blue-glow: rgba(99, 124, 250, 0.35);
+  --accent-blue: #3b82f6;                    /* Azul tecnológico puro más moderno */
+  --accent-blue-glow: rgba(59, 130, 246, 0.25);
 
   /* Mapeo de compatibilidad con código antiguo */
   --bg: var(--bg-dark);
@@ -63,10 +62,10 @@ img, svg {
     linear-gradient(var(--line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
   background-size: 36px 36px;
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
-/* Forzar que el contenido principal se sobreponga a la rejilla */
+/* Contenido principal */
 main {
   position: relative;
   z-index: 2;
@@ -107,39 +106,25 @@ main {
   position: relative;
   overflow: hidden;
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-  border-radius: 12px;
+  border-radius: 8px; /* Bordes más rectos, estilo corporativo moderno */
   color: var(--ink-primary);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.06),
-    transparent 40%
-  );
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  z-index: 2;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  box-shadow: 0 12px 40px 0 rgba(99, 124, 250, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
 }
 
 .corner {
   position: absolute;
   width: 16px;
   height: 16px;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .corner::before,
@@ -225,7 +210,7 @@ h1 {
   font-weight: 700;
   font-size: clamp(2.3rem, 6.2vw, 4.6rem);
   line-height: 1.04;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
   margin: 0 0 28px;
   max-width: 14ch;
   color: var(--ink-primary);
@@ -237,10 +222,9 @@ h1 {
 
 .lede {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  color: var(--ink-primary);
+  color: var(--ink-dim);
   max-width: 46ch;
   margin: 0 0 40px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .cta-row {
@@ -257,18 +241,20 @@ h1 {
   justify-content: center;
   padding: 12px 24px;
   border-radius: 6px;
-  background-color: var(--accent-blue) !important;
-  color: #09090b !important;
+  background-color: var(--ink-primary) !important;
+  color: var(--bg-dark) !important;
   font-weight: 600;
   text-decoration: none;
   border: none !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.2s ease !important;
   cursor: pointer;
+  letter-spacing: -0.01em;
 }
 
 .btn:hover {
-  box-shadow: 0 10px 30px -5px var(--accent-blue-glow) !important;
-  transform: translateY(-2px);
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15) !important;
 }
 
 .btn-ghost {
@@ -305,6 +291,7 @@ h2 {
   font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.22;
+  letter-spacing: -0.03em;
   margin: 0;
   color: var(--ink-primary);
 }
@@ -500,7 +487,7 @@ p {
 .contact-form input[type="email"],
 .contact-form textarea {
   padding: 12px 16px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--line-soft);
   color: var(--ink-primary);
   border-radius: 6px;
@@ -565,7 +552,7 @@ footer {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 1.25rem 1.5rem;
   box-shadow: var(--glass-shadow);
   z-index: 9999;
@@ -645,122 +632,70 @@ footer {
   }
 }
 
-/* ---------- CURSOR ADAPTADO AL LOGO ---------- */
-@media (min-width: 1025px) {
-  .cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent-blue);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-  }
-
-  .cursor-ring {
-    position: fixed;
-    top: -12px;
-    left: -12px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(99, 124, 250, 0.4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-  }
-}
-
-.hero, .engineering-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Filtro oscuro para legibilidad */
-    z-index: 2;
-}
-
-.hero .wrap, 
-.engineering-section .wrap {
-    position: relative !important;
-    z-index: 3 !important;
-}
-
-/* ======================================================= */
-/* NUEVOS CONTENEDORES DE FONDO CONTINUO                   */
-/* ======================================================= */
-
+/* ---------- CONTENEDORES DE FONDO CONTINUO ---------- */
 .patio-wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 500px;
-    background-image: url('assets/patio-mate.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-image: url('assets/patio-mate.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .oficina-wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 500px;
-    background-image: url('assets/oficina.jpeg');
-    background-size: cover;       /* Cambiado de contain a cover para que llene bien todo el ancho */
-    background-position: center;  /* Centra la imagen para que el enfoque principal se mantenga */
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-image: url('assets/oficina.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Capas oscuras (Overlay) generales para los contenedores */
 .patio-wrapper .overlay,
 .oficina-wrapper .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(9, 9, 11, 0.65); /* Usa el tono oscuro corporativo --bg-dark con opacidad */
-    z-index: 1;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 6, 8, 0.7);
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* Hacer transparentes las secciones internas para que dejen ver el fondo del wrapper */
 .patio-wrapper section,
 .oficina-wrapper section {
-    background: transparent !important;
-    position: relative;
-    z-index: 2;
+  background: transparent !important;
+  position: relative;
+  z-index: 2;
 }
 
 .bg-image {
-    display: none;
+  display: none;
 }
 
+/* ---------- PÁGINA DE TÉRMINOS Y CONDICIONES ---------- */
 .terms-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 24px;
-    position: relative;
-    z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  position: relative;
+  z-index: 3;
 }
 
 .terms-container h1 {
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--ink-primary);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink-primary);
 }
 
 .terms-container .update-date {
-    font-family: var(--mono, monospace);
-    font-size: 0.85rem;
-    color: var(--ink-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-family: var(--mono, monospace);
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
