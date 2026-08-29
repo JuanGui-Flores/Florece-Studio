@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Verificación de Google Search Console -->
     <meta
       name="google-site-verification"
       content="YBkhU-K6qEjzQNCdAbGGwUABbAN-ANpzoI4kbwE2AZY"
@@ -16,7 +15,6 @@
       content="Desarrollamos e integramos agentes de IA en producción para PyMEs. Sin teoría, código funcionando desde la semana 1."
     />
 
-    <!-- Open Graph / Meta etiquetas para redes sociales -->
     <meta
       property="og:title"
       content="Florece Studio — Agentes de IA en producción para PyMEs"
@@ -32,18 +30,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://florece-studio.vercel.app/" />
 
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Florece Studio — Agentes de IA en producción">
     <meta name="twitter:description" content="Desarrollo e integración de agentes de IA a medida para PyMEs.">
     <meta name="twitter:image" content="https://florece-studio.vercel.app/assets/logo.png">
 
-    <!-- Favicons definitivos con rutas absolutas -->
     <link rel="icon" type="image/png" sizes="any" href="https://florece-studio.vercel.app/assets/logo.png">
     <link rel="apple-touch-icon" href="https://florece-studio.vercel.app/assets/logo.png">
     <link rel="shortcut icon" href="https://florece-studio.vercel.app/assets/logo.png" type="image/png">
 
-    <!-- Hojas de Estilo y Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,7 +47,17 @@
     />
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Schema.org - Datos Estructurados -->
+    <style>
+      .meta-row {
+          display: none;
+      }
+      @media(min-width: 768px) {
+          .meta-row {
+              display: flex;
+          }
+      }
+    </style>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -102,7 +107,6 @@
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
 
-    <!-- HEADER CON MENÚ DESPLEGABLE TIPO AXUS -->
     <header>
       <div class="titleblock glass-card">
         <a href="#" class="wordmark-container">
@@ -110,7 +114,7 @@
           <span class="wordmark-text">FLORECE<span>·</span>STUDIO</span>
         </a>
         <div style="display: flex; align-items: center; gap: 1rem;">
-          <div class="meta-row" style="display: none; @media(min-width: 768px){display: flex;}">
+          <div class="meta-row">
             <span>Agenda Abierta</span>
             <span class="dot">·</span>
             <span>GLOBAL</span>
@@ -125,7 +129,6 @@
       </div>
     </header>
 
-    <!-- OVERLAY DEL MENÚ DESPLEGABLE -->
     <div id="navOverlay" class="nav-overlay">
       <button id="closeMenuBtn" class="nav-close-btn" aria-label="Cerrar menú">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -141,7 +144,6 @@
     </div>
 
     <main>
-      <!-- BLOQUE 1: Fondo de PATIO -->
       <div class="patio-wrapper">
         <div class="overlay" aria-hidden="true"></div>
 
@@ -192,7 +194,6 @@
         </section>
       </div>
 
-      <!-- BLOQUE 2: Fondo de OFICINA -->
       <div class="oficina-wrapper">
         <div class="overlay" aria-hidden="true"></div>
 
@@ -238,7 +239,6 @@
           </div>
         </section>
 
-        <!-- FLORECE CORE -->
         <section id="florece-core">
           <div class="wrap" style="position: relative; z-index: 3;">
             <div class="section-head reveal">
@@ -354,7 +354,6 @@
           </div>
         </section>
 
-        <!-- SECCIÓN FAQ -->
         <section id="faq">
           <div class="wrap" style="position: relative; z-index: 3;">
             <div class="section-head reveal">
@@ -526,7 +525,6 @@
       </div>
     </div>
 
-    <!-- Script principal con la lógica del menú -->
     <script src="script.js" defer></script>
   </body>
 </html>
