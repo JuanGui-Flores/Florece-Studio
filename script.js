@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      // Envía las coordenadas del cursor como variables CSS
       card.style.setProperty("--mouse-x", `${x}px`);
       card.style.setProperty("--mouse-y", `${y}px`);
     });
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* -----------------------------------------------------------
-     6. MENÚ DESPLEGABLE TIPO OVERLAY (AXUS Style)
+     5. MENÚ DESPLEGABLE TIPO OVERLAY (AXUS Style)
      ----------------------------------------------------------- */
   const menuBtn = document.getElementById('menuBtn');
   const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -86,25 +85,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuBtn && navOverlay) {
     menuBtn.addEventListener('click', () => {
-      navOverlay.classList.add('active'); // Usamos add para abrir
-      document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
+      navOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
 
     const closeMenu = () => {
-      navOverlay.classList.remove('active'); // Corregido: removiendo 'active' en lugar de 'is-open'
-      document.body.style.overflow = ''; // Restaura el scroll
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
     };
 
     if (closeMenuBtn) {
       closeMenuBtn.addEventListener('click', closeMenu);
     }
 
-    // Cierra el menú al hacer clic en cualquier enlace del menú lateral
     sidebarLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Opcional recomendado: Cerrar si hacen clic fuera del recuadro o presionan Escape
     navOverlay.addEventListener('click', (e) => {
       if (e.target === navOverlay) {
         closeMenu();
@@ -117,6 +114,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* -----------------------------------------------------------
+     6. PALABRA ROTATIVA EN EL HERO
+     ----------------------------------------------------------- */
+  const words = ["business.", "enterprise.", "company.", "store.", "industries."];
+  const rotatingSpan = document.querySelector(".rotating-word");
+
+  if (rotatingSpan) {
+    let currentIndex = 0;
+
+    setInterval(() => {
+      rotatingSpan.classList.add("fade-out");
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % words.length;
+        rotatingSpan.textContent = words[currentIndex];
+        rotatingSpan.classList.remove("fade-out");
+      }, 300);
+    }, 2500);
+  }
 });
 
 function acceptCookies() {
@@ -126,7 +143,7 @@ function acceptCookies() {
 }
 
 /* -----------------------------------------------------------
-     5. CURSOR PERSONALIZADO Y ELEGANTE (Solo Desktop)
+     7. CURSOR PERSONALIZADO Y ELEGANTE (Solo Desktop)
      ----------------------------------------------------------- */
 if (window.innerWidth > 1024) {
   const dot = document.createElement("div");
@@ -150,7 +167,6 @@ if (window.innerWidth > 1024) {
   });
 
   const render = () => {
-    // Inercia/fricción para el seguimiento suave del aro
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
     ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
