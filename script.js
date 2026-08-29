@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* -----------------------------------------------------------
      1. OBSERVER / REVEAL ANIMATIONS (Soporte Móvil y Desktop)
-   ----------------------------------------------------------- */
+     ----------------------------------------------------------- */
   const observerOptions = {
     root: null,
     rootMargin: "0px 0px -50px 0px",
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* -----------------------------------------------------------
      2. PARALLAX SOBRIO EN EL HERO (Optimizado para Escritorio)
-   ----------------------------------------------------------- */
+     ----------------------------------------------------------- */
   const heroTitle = document.querySelector(".hero h1");
   const heroLede = document.querySelector(".hero .lede");
 
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* -----------------------------------------------------------
      3. SPOTLIGHT INTERACTIVO EN TARJETAS GLASS (MouseMove)
-   ----------------------------------------------------------- */
+     ----------------------------------------------------------- */
   const glassCards = document.querySelectorAll(".glass-card");
 
   glassCards.forEach((card) => {
@@ -70,10 +70,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* -----------------------------------------------------------
      4. BANNER DE COOKIES
-   ----------------------------------------------------------- */
+     ----------------------------------------------------------- */
   if (!localStorage.getItem("cookiesAccepted")) {
     const banner = document.getElementById("cookie-banner");
     if (banner) banner.style.display = "flex";
+  }
+
+  /* -----------------------------------------------------------
+     6. MENÚ DESPLEGABLE TIPO OVERLAY (AXUS Style)
+     ----------------------------------------------------------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  const navOverlay = document.getElementById('navOverlay');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link-item');
+
+  if (menuBtn && navOverlay) {
+    menuBtn.addEventListener('click', () => {
+      navOverlay.classList.add('active'); // Usamos add para abrir
+      document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
+    });
+
+    const closeMenu = () => {
+      navOverlay.classList.remove('active'); // Corregido: removiendo 'active' en lugar de 'is-open'
+      document.body.style.overflow = ''; // Restaura el scroll
+    };
+
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', closeMenu);
+    }
+
+    // Cierra el menú al hacer clic en cualquier enlace del menú lateral
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Opcional recomendado: Cerrar si hacen clic fuera del recuadro o presionan Escape
+    navOverlay.addEventListener('click', (e) => {
+      if (e.target === navOverlay) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
   }
 });
 
@@ -85,7 +127,7 @@ function acceptCookies() {
 
 /* -----------------------------------------------------------
      5. CURSOR PERSONALIZADO Y ELEGANTE (Solo Desktop)
-   ----------------------------------------------------------- */
+     ----------------------------------------------------------- */
 if (window.innerWidth > 1024) {
   const dot = document.createElement("div");
   const ring = document.createElement("div");
@@ -115,33 +157,4 @@ if (window.innerWidth > 1024) {
     requestAnimationFrame(render);
   };
   render();
-}
-
-/* -----------------------------------------------------------
-     6. MENÚ DESPLEGABLE TIPO OVERLAY (AXUS Style)
-   ----------------------------------------------------------- */
-const menuBtn = document.getElementById('menuBtn');
-const closeMenuBtn = document.getElementById('closeMenuBtn');
-const navOverlay = document.getElementById('navOverlay');
-const navLinks = document.querySelectorAll('.nav-link-item');
-
-if (menuBtn && navOverlay) {
-  menuBtn.addEventListener('click', () => {
-    navOverlay.classList.toggle('active');
-    document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
-  });
-
-  const closeMenu = () => {
-    navOverlay.classList.remove('is-open');
-    document.body.style.overflow = ''; // Restaura el scroll
-  };
-
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', closeMenu);
-  }
-
-  // Cierra el menú al hacer clic en cualquier enlace
-  navLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
 }
