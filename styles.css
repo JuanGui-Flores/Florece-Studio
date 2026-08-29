@@ -244,15 +244,25 @@ header {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: 85vh; /* Altura generosa pero manteniendo el contenido en primer plano */
+  min-height: 80vh;
   display: flex;
-  align-items: flex-end; /* Alinea los elementos hacia abajo/costado como en tu ejemplo */
-  padding: 80px 0 100px;
+  align-items: center; /* Mantiene el contenido a una altura óptima */
+  justify-content: flex-start; /* Fuerza la alineación horizontal hacia la izquierda */
+  padding: 60px 0;
 }
 
 .hero .wrap {
   width: 100%;
-  text-align: left; /* Asegura la alineación izquierda estricta */
+  max-width: 1080px;
+  margin: 0; /* Remueve el centrado automático (margin-inline: auto) */
+  padding-left: 24px; /* Respeta el margen lateral limpio */
+  text-align: left;
+}
+
+.hero h1,
+.hero .lede {
+  text-align: left;
+  margin-left: 0;
 }
 
 h1 {
