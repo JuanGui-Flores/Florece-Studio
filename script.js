@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
         currentIndex = (currentIndex + 1) % words.length;
         rotatingSpan.textContent = words[currentIndex];
         rotatingSpan.classList.remove("fade-out");
-      }, 300);
-    }, 2500);
+      }, 400);
+    }, 3500);
   }
 });
 
