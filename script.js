@@ -127,7 +127,7 @@ const navLinks = document.querySelectorAll('.nav-link-item');
 
 if (menuBtn && navOverlay) {
   menuBtn.addEventListener('click', () => {
-    navOverlay.classList.add('is-open');
+    navOverlay.classList.toggle('active');
     document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
   });
 

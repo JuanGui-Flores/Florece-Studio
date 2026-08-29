@@ -47,17 +47,6 @@
     />
     <link rel="stylesheet" href="styles.css" />
 
-    <style>
-      .meta-row {
-          display: none;
-      }
-      @media(min-width: 768px) {
-          .meta-row {
-              display: flex;
-          }
-      }
-    </style>
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -121,26 +110,32 @@
             <span class="dot">·</span>
             <span>2026</span>
           </div>
+          <!-- Botón de menú con icono exclusivo de 3 barras -->
           <button id="menuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
-            <span>Menú</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
         </div>
       </div>
     </header>
 
-    <div id="navOverlay" class="nav-overlay">
-      <button id="closeMenuBtn" class="nav-close-btn" aria-label="Cerrar menú">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-      <ul class="nav-links-list">
-        <li><a href="#proceso" class="nav-link-item">Cómo trabajamos</a></li>
-        <li><a href="#florece-core" class="nav-link-item" style="color: var(--ink);">Florece Core <span style="font-size: 0.8rem; font-family: var(--font-mono); background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; vertical-align: middle;">Motor</span></a></li>
-        <li><a href="#diferencia" class="nav-link-item">Por qué nosotros</a></li>
-        <li><a href="#precios" class="nav-link-item">Precios</a></li>
-        <li><a href="#faq" class="nav-link-item">Preguntas Frecuentes</a></li>
-        <li><a href="#contacto" class="nav-link-item">Contacto</a></li>
-      </ul>
+    <!-- Barra lateral (Sidebar) -->
+    <div id="navOverlay" class="sidebar-overlay">
+      <div class="sidebar-content-wrapper">
+        <div class="sidebar-header-top">
+          <span class="sidebar-indicator">Navegación</span>
+          <button id="closeMenuBtn" class="sidebar-close-btn" aria-label="Cerrar menú">
+            <span class="custom-close-x"></span>
+          </button>
+        </div>
+        <ul class="sidebar-links-list">
+          <li><a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a></li>
+          <li><a href="#florece-core" class="sidebar-link-item" style="color: var(--ink);">Florece Core <span style="font-size: 0.75rem; font-family: var(--font-mono); background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; vertical-align: middle;">Motor</span></a></li>
+          <li><a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a></li>
+          <li><a href="#precios" class="sidebar-link-item">Precios</a></li>
+          <li><a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a></li>
+          <li><a href="#contacto" class="sidebar-link-item">Contacto</a></li>
+        </ul>
+      </div>
     </div>
 
     <main>
