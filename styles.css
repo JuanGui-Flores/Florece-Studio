@@ -116,14 +116,7 @@ header {
   padding: 1rem 1.5rem;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
   transform: translateY(0);
-  background-image: 
-    linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
-    url('assets/patio.jpeg'); /* Reemplaza esto con la ruta real de tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
 
 header.header-hidden {
   transform: translateY(-100%);
@@ -260,11 +253,23 @@ header.header-hidden {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
+  z-index: 10; /* Esto fuerza a la foto a estar por encima de la grilla */
   min-height: 85vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
   text-align: left;
+  
+  /* Fondo base para que nada se transparente desde atrás */
+  background-color: var(--bg-dark); 
+  
+  /* Tu foto con el filtro oscuro */
+  background-image: 
+    linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
+    url('assets/patio.jpeg'); /* Acordate de chequear que esta ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero .wrap {
