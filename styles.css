@@ -21,12 +21,8 @@
   --accent: var(--accent-blue);
 
   /* Fuentes Base */
-  --sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-  --mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -188,9 +184,7 @@ header {
   justify-content: center;
   cursor: pointer;
   color: var(--ink);
-  transition:
-    background 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .menu-toggle-btn:hover {
@@ -209,10 +203,7 @@ header {
   box-shadow: var(--glass-shadow);
   border-radius: 8px;
   color: var(--ink-primary);
-  transition:
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
@@ -248,22 +239,10 @@ header {
   left: 50%;
 }
 
-.corner.tl {
-  top: 28px;
-  left: 24px;
-}
-.corner.tr {
-  top: 28px;
-  right: 24px;
-}
-.corner.bl {
-  bottom: 28px;
-  left: 24px;
-}
-.corner.br {
-  bottom: 28px;
-  right: 24px;
-}
+.corner.tl { top: 28px; left: 24px; }
+.corner.tr { top: 28px; right: 24px; }
+.corner.bl { bottom: 28px; left: 24px; }
+.corner.br { bottom: 28px; right: 24px; }
 
 /* ---------- HERO ---------- */
 .hero {
@@ -272,10 +251,9 @@ header {
   display: flex;
   align-items: center;
   padding: 80px 0;
-  text-align: left; /* Asegura contexto izquierdo base */
+  text-align: left;
 }
 
-/* Forzamos el flujo estrictamente a la izquierda sin márgenes automáticos cruzados */
 .hero .wrap {
   width: 100%;
   max-width: 900px;
@@ -320,12 +298,11 @@ h1 {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  justify-content: flex-start !important; /* Garantiza que los botones comiencen desde la izquierda */
+  justify-content: flex-start !important;
 }
 
-/* ---------- BOTÓN DE LLAMADA (ESTILO REFERENCIA) ---------- */
 .hero .btn {
-  background-color: #112265 !important; /* Azul oscuro corporativo de la referencia */
+  background-color: #112265 !important;
   color: #ffffff !important;
   border: 1px solid rgba(59, 130, 246, 0.4) !important;
 }
@@ -335,6 +312,7 @@ h1 {
   border-color: var(--accent-blue) !important;
   transform: translateY(-2px);
 }
+
 /* ---------- BOTONES ---------- */
 .btn {
   display: inline-flex;
@@ -632,9 +610,7 @@ footer {
   opacity: 0;
   transform: translateY(30px);
   will-change: opacity, transform;
-  transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -698,29 +674,19 @@ footer {
   opacity: 0.9;
 }
 
-
 .oficina-wrapper {
   position: relative;
   width: 100%;
   min-height: 500px;
   background-color: var(--bg-dark);
   background-image:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(59, 130, 246, 0.08) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(59, 130, 246, 0.04) 0%,
-      transparent 50%
-    ),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
     linear-gradient(180deg, rgba(6, 6, 8, 0) 0%, rgba(59, 130, 246, 0.02) 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 
 .oficina-wrapper .overlay {
   background-color: rgba(6, 6, 8, 0.4);
@@ -761,53 +727,60 @@ footer {
 }
 
 /* ======================================================= */
-/* BARRA LATERAL (SIDEBAR OVERLAY)                         */
+/* BARRA LATERAL (SIDEBAR OVERLAY / TARJETA FLOTANTE)      */
 /* ======================================================= */
 .sidebar-overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 400px;
-  height: 100vh;
-  background-color: rgba(15, 15, 15, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  visibility: hidden;
-  transform: translateX(100%);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.6);
-  overflow-y: auto;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .sidebar-overlay.active {
   opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .sidebar-content-wrapper {
-  padding: 2.5rem 2rem;
+  background-color: #0f0f12;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 520px;
+  padding: 36px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 1.5rem;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar-overlay.active .sidebar-content-wrapper {
+  transform: scale(1);
 }
 
 .sidebar-header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .sidebar-indicator {
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--ink-dim);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -815,27 +788,28 @@ footer {
 
 .sidebar-close-btn {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--ink-primary);
+  transition: all 0.2s ease;
 }
 
 .sidebar-close-btn:hover {
   background: rgba(255, 255, 255, 0.15);
-  border-color: var(--ink);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
 
 .custom-close-x {
   position: relative;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 
 .custom-close-x::before,
@@ -846,8 +820,8 @@ footer {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--ink);
-  transition: transform 0.3s ease;
+  background-color: var(--ink-primary);
+  transition: transform 0.2s ease;
 }
 
 .custom-close-x::before {
@@ -858,39 +832,49 @@ footer {
   transform: rotate(-45deg);
 }
 
-.sidebar-close-btn:hover .custom-close-x::before {
-  transform: rotate(135deg);
-}
-
-.sidebar-close-btn:hover .custom-close-x::after {
-  transform: rotate(45deg);
-}
-
 .sidebar-links-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .sidebar-link-item {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--ink-primary);
   text-decoration: none;
   display: block;
-  padding: 0.5rem 0;
-  transition:
-    color 0.2s,
-    transform 0.2s;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .sidebar-link-item:hover {
   color: var(--accent-blue);
   transform: translateX(6px);
+}
+
+/* Botón inferior tipo píldora dentro del menú */
+.sidebar-cta-btn {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  color: #0b0b0e;
+  text-align: center;
+  padding: 15px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-cta-btn:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* ---------- RESPONSIVOS & REDUCED MOTION ---------- */
@@ -943,8 +927,8 @@ footer {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #075e54; /* Verde sutil que combina con la interfaz */
-  color: #ffffff; /* stylelint-disable-line color-no-invalid-hex */
+  background-color: #075e54;
+  color: #ffffff;
   width: 56px;
   height: 56px;
   border-radius: 50%;
