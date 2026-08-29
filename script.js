@@ -203,3 +203,43 @@ if (window.innerWidth > 1024) {
   };
   render();
 }
+
+/* -----------------------------------------------------------
+     8. SMART HEADER (Hide on Scroll Down)
+     ----------------------------------------------------------- */
+  const header = document.querySelector('header');
+  
+  if (header) {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Si el menú (overlay) está abierto, no ocultamos el header
+          const navOverlay = document.getElementById('navOverlay');
+          if (navOverlay && navOverlay.classList.contains('active')) {
+             lastScrollY = currentScrollY;
+             ticking = false;
+             return;
+          }
+
+          // Lógica principal:
+          if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // Haciendo scroll hacia ABAJO: ocultamos el header
+            header.classList.add('header-hidden');
+          } else {
+            // Haciendo scroll hacia ARRIBA o hasta el tope: mostramos el header
+            header.classList.remove('header-hidden');
+          }
+
+          // Evitamos valores negativos (bounce effect en móviles)
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
