@@ -948,3 +948,22 @@ footer {
     padding: 28px;
   }
 }
+
+/* ---------- REINICIO FORZADO DE ALINEACIÓN PARA EL HERO ---------- */
+body main .patio-wrapper .hero,
+body main .patio-wrapper .hero .wrap,
+body main .patio-wrapper .hero h1,
+body main .patio-wrapper .hero .lede,
+body main .patio-wrapper .hero .cta-row {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+body main .patio-wrapper .hero .wrap {
+  width: 100% !important;
+  max-width: 900px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
