@@ -698,16 +698,6 @@ footer {
   opacity: 0.9;
 }
 
-/* ---------- CONTENEDORES DE FONDO CONTINUO ---------- */
-.patio-wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  background-image: url("assets/patio-mate.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 .oficina-wrapper {
   position: relative;
@@ -731,26 +721,11 @@ footer {
   background-repeat: no-repeat;
 }
 
-.patio-wrapper .overlay,
-.oficina-wrapper .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.patio-wrapper .overlay {
-  background-color: rgba(6, 6, 8, 0.7);
-}
 
 .oficina-wrapper .overlay {
   background-color: rgba(6, 6, 8, 0.4);
 }
 
-.patio-wrapper section,
 .oficina-wrapper section {
   background: transparent !important;
   position: relative;
@@ -947,23 +922,4 @@ footer {
   .cta-final {
     padding: 28px;
   }
-}
-
-/* ---------- REINICIO FORZADO DE ALINEACIÓN PARA EL HERO ---------- */
-body main .patio-wrapper .hero,
-body main .patio-wrapper .hero .wrap,
-body main .patio-wrapper .hero h1,
-body main .patio-wrapper .hero .lede,
-body main .patio-wrapper .hero .cta-row {
-  text-align: left !important;
-  justify-content: flex-start !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-body main .patio-wrapper .hero .wrap {
-  width: 100% !important;
-  max-width: 900px !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
 }
