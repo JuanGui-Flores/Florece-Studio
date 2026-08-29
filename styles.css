@@ -118,7 +118,7 @@ header {
   transform: translateY(0);
   background-image: 
     linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
-    url('assets/patio-mate.jpeg'); /* Reemplaza esto con la ruta real de tu imagen */
+    url('assets/patio.jpeg'); /* Reemplaza esto con la ruta real de tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
