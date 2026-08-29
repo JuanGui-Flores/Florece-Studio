@@ -244,25 +244,27 @@ header {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: calc(100vh - 74vh); /* Ocupa exactamente el espacio restante debajo del header sticky */
+  min-height: 85vh; /* Altura generosa pero manteniendo el contenido en primer plano */
   display: flex;
-  align-items: center; /* Centra verticalmente el contenido en la pantalla */
-  padding: 60px 0;
+  align-items: flex-end; /* Alinea los elementos hacia abajo/costado como en tu ejemplo */
+  padding: 80px 0 100px;
 }
 
 .hero .wrap {
   width: 100%;
+  text-align: left; /* Asegura la alineación izquierda estricta */
 }
 
 h1 {
   font-family: var(--mono);
   font-weight: 700;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin: 0 0 24px;
-  max-width: 18ch;
+  max-width: 15ch;
   color: var(--ink-primary);
+  text-align: left;
 }
 
 .accent-word {
@@ -270,10 +272,11 @@ h1 {
 }
 
 .lede {
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: var(--ink-dim);
-  max-width: 46ch;
-  margin: 0 0 40px;
+  max-width: 48ch;
+  margin: 0 0 32px;
+  text-align: left;
 }
 
 .cta-row {
@@ -283,6 +286,19 @@ h1 {
   align-items: center;
 }
 
+
+/* ---------- BOTÓN DE LLAMADA (ESTILO REFERENCIA) ---------- */
+.hero .btn {
+  background-color: #112265 !important; /* Azul oscuro corporativo de la referencia */
+  color: #ffffff !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+}
+
+.hero .btn:hover {
+  background-color: #1d348a !important;
+  border-color: var(--accent-blue) !important;
+  transform: translateY(-2px);
+}
 /* ---------- BOTONES ---------- */
 .btn {
   display: inline-flex;
