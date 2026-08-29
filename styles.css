@@ -923,3 +923,17 @@ footer {
     padding: 28px;
   }
 }
+
+/* ---------- PALABRA ROTATIVA ---------- */
+.rotating-word {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+.rotating-word.fade-out {
+  opacity: 0;
+  transform: translateY(-16px);
+  filter: blur(6px);
+}
