@@ -76,22 +76,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* -----------------------------------------------------------
-     5. MENÚ DESPLEGABLE TIPO OVERLAY (AXUS Style)
+     5. MENÚ DESPLEGABLE TIPO OVERLAY
      ----------------------------------------------------------- */
   const menuBtn = document.getElementById('menuBtn');
   const closeMenuBtn = document.getElementById('closeMenuBtn');
   const navOverlay = document.getElementById('navOverlay');
   const sidebarLinks = document.querySelectorAll('.sidebar-link-item');
+  const sidebarWrapper = document.querySelector('.sidebar-content-wrapper');
 
   if (menuBtn && navOverlay) {
+    let lastScrollTop = 0;
+    let scrollTicking = false;
+
     menuBtn.addEventListener('click', () => {
       navOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (sidebarWrapper) sidebarWrapper.classList.remove('sidebar-hidden');
     });
 
     const closeMenu = () => {
       navOverlay.classList.remove('active');
       document.body.style.overflow = '';
+      if (sidebarWrapper) sidebarWrapper.classList.remove('sidebar-hidden');
     };
 
     if (closeMenuBtn) {
@@ -113,6 +119,29 @@ document.addEventListener("DOMContentLoaded", () => {
         closeMenu();
       }
     });
+
+    // Lógica para ocultar/mostrar al hacer scroll dentro del overlay
+    window.addEventListener('scroll', () => {
+      if (!navOverlay.classList.contains('active') || !sidebarWrapper) return;
+
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+          if (currentScroll > lastScrollTop && currentScroll > 20) {
+            // Scroll hacia ABAJO -> Ocultar
+            sidebarWrapper.classList.add('sidebar-hidden');
+          } else {
+            // Scroll hacia ARRIBA -> Mostrar
+            sidebarWrapper.classList.remove('sidebar-hidden');
+          }
+
+          lastScrollTop = Math.max(0, currentScroll);
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
   }
 
   /* -----------------------------------------------------------

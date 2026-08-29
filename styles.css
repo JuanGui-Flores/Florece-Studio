@@ -878,6 +878,12 @@ footer {
   box-shadow: 0 6px 20px rgba(255, 255, 255,0.15);
 }
 
+/* Clase para ocultar la tarjeta al hacer scroll hacia abajo */
+.sidebar-content-wrapper.sidebar-hidden {
+  transform: translateY(-120%) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* ---------- RESPONSIVOS & REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
