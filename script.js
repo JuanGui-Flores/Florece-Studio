@@ -19,26 +19,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
   /* -----------------------------------------------------------
-     2. PARALLAX SOBRIO EN EL HERO (Estilo Rolls-Royce)
+     2. PARALLAX SOBRIO EN EL HERO (Optimizado para Escritorio)
    ----------------------------------------------------------- */
   const heroTitle = document.querySelector(".hero h1");
   const heroLede = document.querySelector(".hero .lede");
 
-  if (heroTitle || heroLede) {
+  if ((heroTitle || heroLede) && window.innerWidth > 768) {
+    let ticking = false;
     window.addEventListener(
       "scroll",
       () => {
-        const scrolled = window.scrollY;
-        // Solo anima dentro del primer fold para no impactar rendimiento
-        if (scrolled < 700) {
-          if (heroTitle) {
-            heroTitle.style.transform = `translateY(${scrolled * 0.12}px)`;
-            heroTitle.style.opacity = 1 - scrolled / 600;
-          }
-          if (heroLede) {
-            heroLede.style.transform = `translateY(${scrolled * 0.08}px)`;
-            heroLede.style.opacity = 1 - scrolled / 500;
-          }
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrolled = window.scrollY;
+            if (scrolled < 700) {
+              if (heroTitle) {
+                heroTitle.style.transform = `translateY(${scrolled * 0.1}px)`;
+                heroTitle.style.opacity = 1 - scrolled / 600;
+              }
+              if (heroLede) {
+                heroLede.style.transform = `translateY(${scrolled * 0.05}px)`;
+                heroLede.style.opacity = 1 - scrolled / 500;
+              }
+            }
+            ticking = false;
+          });
+          ticking = true;
         }
       },
       { passive: true },

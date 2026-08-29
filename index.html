@@ -1,4 +1,6 @@
-<head>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -8,7 +10,7 @@
       content="YBkhU-K6qEjzQNCdAbGGwUABbAN-ANpzoI4kbwE2AZY"
     />
 
-    <title>Florece Studio — Presencia digital que exige excelencia.</title>
+    <title>Florece Studio — Agentes de IA en producción para PyMEs.</title>
     <meta
       name="description"
       content="Desarrollamos e integramos agentes de IA en producción para PyMEs. Sin teoría, código funcionando desde la semana 1."
@@ -17,11 +19,11 @@
     <!-- Open Graph / Meta etiquetas para redes sociales -->
     <meta
       property="og:title"
-      content="Florece Studio — Agentes de IA en producción para pymes"
+      content="Florece Studio — Agentes de IA en producción para PyMEs"
     />
     <meta
       property="og:description"
-      content="Menos diagnóstico. Más producción. Agentes de IA a medida para la operación real de tu empresa."
+      content="Menos diagnóstico. Más producción. Agentes de IA a medida integrados a la operación real de tu empresa por Juan Guillermo Flores Vargas."
     />
     <meta
       property="og:image"
@@ -29,6 +31,12 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://florece-studio.vercel.app/" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Florece Studio — Agentes de IA en producción">
+    <meta name="twitter:description" content="Desarrollo e integración de agentes de IA a medida para PyMEs.">
+    <meta name="twitter:image" content="https://florece-studio.vercel.app/assets/logo.png">
 
     <!-- Favicons definitivos con rutas absolutas -->
     <link rel="icon" type="image/png" sizes="any" href="https://florece-studio.vercel.app/assets/logo.png">
@@ -94,26 +102,46 @@
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
 
+    <!-- HEADER CON MENÚ DESPLEGABLE TIPO AXUS -->
     <header>
       <div class="titleblock glass-card">
         <a href="#" class="wordmark-container">
           <img src="assets/logo.png" alt="Florece Studio Logo" class="nav-logo" />
           <span class="wordmark-text">FLORECE<span>·</span>STUDIO</span>
         </a>
-        <div class="meta-row">
-          <span>Agenda Abierta</span>
-          <span class="dot">·</span>
-          <span>GLOBAL</span>
-          <span class="dot">·</span>
-          <span>2026</span>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="meta-row" style="display: none; @media(min-width: 768px){display: flex;}">
+            <span>Agenda Abierta</span>
+            <span class="dot">·</span>
+            <span>GLOBAL</span>
+            <span class="dot">·</span>
+            <span>2026</span>
+          </div>
+          <button id="menuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
+            <span>Menú</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
         </div>
       </div>
     </header>
 
+    <!-- OVERLAY DEL MENÚ DESPLEGABLE -->
+    <div id="navOverlay" class="nav-overlay">
+      <button id="closeMenuBtn" class="nav-close-btn" aria-label="Cerrar menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <ul class="nav-links-list">
+        <li><a href="#proceso" class="nav-link-item">Cómo trabajamos</a></li>
+        <li><a href="#florece-core" class="nav-link-item" style="color: var(--ink);">Florece Core <span style="font-size: 0.8rem; font-family: var(--font-mono); background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; vertical-align: middle;">Motor</span></a></li>
+        <li><a href="#diferencia" class="nav-link-item">Por qué nosotros</a></li>
+        <li><a href="#precios" class="nav-link-item">Precios</a></li>
+        <li><a href="#faq" class="nav-link-item">Preguntas Frecuentes</a></li>
+        <li><a href="#contacto" class="nav-link-item">Contacto</a></li>
+      </ul>
+    </div>
+
     <main>
-      <!-- ======================================================= -->
-      <!-- BLOQUE 1: Fondo de PATIO (Hero + Sección Problema)      -->
-      <!-- ======================================================= -->
+      <!-- BLOQUE 1: Fondo de PATIO -->
       <div class="patio-wrapper">
         <div class="overlay" aria-hidden="true"></div>
 
@@ -125,8 +153,8 @@
             <span class="corner br" aria-hidden="true"></span>
 
             <h1 class="reveal">
-              Liberá tu negocio.<br /><span class="accent-word"
-                >Escalá sin límites.</span
+              La IA que tu PyME necesita.<br /><span class="accent-word"
+                >Sin teoría, en producción desde la semana 1.</span
               >
             </h1>
             <p class="lede reveal">
@@ -139,7 +167,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn"
-                >Reservar una llamada →</a
+                >Agendar auditoría técnica (20 min) →</a
               >
               <a href="#proceso" class="btn-ghost">Ver cómo trabajamos</a>
             </div>
@@ -162,12 +190,9 @@
             </div>
           </div>
         </section>
-      </div> <!-- Fin del bloque patio -->
+      </div>
 
-
-      <!-- ======================================================= -->
-      <!-- BLOQUE 2: Fondo de OFICINA (Desde Proceso hasta Contacto) -->
-      <!-- ======================================================= -->
+      <!-- BLOQUE 2: Fondo de OFICINA -->
       <div class="oficina-wrapper">
         <div class="overlay" aria-hidden="true"></div>
 
@@ -213,7 +238,7 @@
           </div>
         </section>
 
-        <!-- SECCIÓN FLORECE CORE INTEGRADA -->
+        <!-- FLORECE CORE -->
         <section id="florece-core">
           <div class="wrap" style="position: relative; z-index: 3;">
             <div class="section-head reveal">
@@ -225,6 +250,7 @@
               <p class="body-text" style="margin-top: 0;">
                 No armamos cada solución desde cero. Desarrollamos sobre un framework modular probado en producción que encapsula la lógica pesada: gestión de memoria de agentes, llamadas seguras a LLMs, manejo de errores y pasarelas de integración con sistemas legacy.
               </p>
+              <p class="body-text" style="font-size: 0.9rem; margin-top: 12px; margin-bottom: 0; color: var(--ink);">⚡ Despliegue inicial en entornos reales en menos de 14 días.</p>
             </div>
 
             <div class="core-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
@@ -328,7 +354,7 @@
           </div>
         </section>
 
-        <!-- SECCIÓN FAQ INTEGRADA -->
+        <!-- SECCIÓN FAQ -->
         <section id="faq">
           <div class="wrap" style="position: relative; z-index: 3;">
             <div class="section-head reveal">
@@ -390,7 +416,6 @@
                 >
               </div>
 
-              <!-- FORMULARIO DE CONTACTO WEB3FORMS -->
               <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
@@ -448,13 +473,13 @@
                 </div>
 
                 <button type="submit" class="btn btn-submit">
-                  Enviar mensaje
+                  Solicitar propuesta operativa →
                 </button>
               </form>
             </div>
           </div>
         </section>
-      </div> <!-- Fin del bloque oficina -->
+      </div>
     </main>
 
     <footer>
@@ -501,7 +526,7 @@
       </div>
     </div>
 
-    <!-- Carga del archivo JavaScript separado -->
+    <!-- Script principal con la lógica del menú -->
     <script src="script.js" defer></script>
   </body>
 </html>
