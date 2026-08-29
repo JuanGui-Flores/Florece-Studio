@@ -643,24 +643,40 @@ footer {
   background-repeat: no-repeat;
 }
 
+/* Textura tech ambiental en lugar de imagen de oficina con baja calidad */
 .oficina-wrapper {
   position: relative;
   width: 100%;
   min-height: 500px;
-  background-image: url('assets/oficina.jpeg');
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(6, 6, 8, 0) 0%, rgba(59, 130, 246, 0.02) 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.patio-wrapper .overlay,
-.oficina-wrapper .overlay {
+.patio-wrapper .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(6, 6, 8, 0.7);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlay sutil opcional para la oficina si se requiere profundidad uniforme */
+.oficina-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 6, 8, 0.4);
   z-index: 1;
   pointer-events: none;
 }
@@ -711,6 +727,7 @@ footer {
 .nav-logo {
   height: 32px;
   width: 32px;
+  object-import: contain;
   object-fit: contain;
   border-radius: 4px;
 }
@@ -721,6 +738,7 @@ footer {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
   color: var(--ink-primary);
+  white-space: nowrap;
 }
 
 .wordmark-text span {
