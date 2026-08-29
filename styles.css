@@ -6,7 +6,7 @@
   --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 
   /* Textos Extraídos del Tallo/Flor */
-  --ink-primary: #F2EFE9;
+  --ink-primary: #f2efe9;
   --ink-dim: rgba(242, 239, 233, 0.6);
   --line-soft: rgba(242, 239, 233, 0.12);
   --line-strong: rgba(242, 239, 233, 0.25);
@@ -21,11 +21,17 @@
   --accent: var(--accent-blue);
 
   /* Fuentes Base */
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -47,7 +53,8 @@ a {
   color: inherit;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -95,7 +102,7 @@ main {
 }
 
 .eyebrow::before {
-  content: '';
+  content: "";
   width: 18px;
   height: 1px;
   background: var(--accent-blue);
@@ -163,7 +170,7 @@ header {
   color: var(--accent-blue);
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .meta-row {
     display: flex;
   }
@@ -181,7 +188,9 @@ header {
   justify-content: center;
   cursor: pointer;
   color: var(--ink);
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .menu-toggle-btn:hover {
@@ -200,7 +209,10 @@ header {
   box-shadow: var(--glass-shadow);
   border-radius: 8px;
   color: var(--ink-primary);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
@@ -217,7 +229,7 @@ header {
 
 .corner::before,
 .corner::after {
-  content: '';
+  content: "";
   position: absolute;
   background: var(--line-strong);
 }
@@ -236,10 +248,22 @@ header {
   left: 50%;
 }
 
-.corner.tl { top: 28px; left: 24px; }
-.corner.tr { top: 28px; right: 24px; }
-.corner.bl { bottom: 28px; left: 24px; }
-.corner.br { bottom: 28px; right: 24px; }
+.corner.tl {
+  top: 28px;
+  left: 24px;
+}
+.corner.tr {
+  top: 28px;
+  right: 24px;
+}
+.corner.bl {
+  bottom: 28px;
+  left: 24px;
+}
+.corner.br {
+  bottom: 28px;
+  right: 24px;
+}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -248,14 +272,15 @@ header {
   display: flex;
   align-items: center;
   padding: 80px 0;
+  text-align: left; /* Asegura contexto izquierdo base */
 }
 
-/* Rompe el centrado automático global solo en el inicio */
+/* Forzamos el flujo estrictamente a la izquierda sin márgenes automáticos cruzados */
 .hero .wrap {
   width: 100%;
   max-width: 900px;
-  margin-left: max(24px, 6vw) !important;
-  margin-right: auto !important;
+  margin-left: 24px !important;
+  margin-right: 0 !important;
   text-align: left !important;
 }
 
@@ -263,6 +288,7 @@ header {
 .hero .lede {
   text-align: left !important;
   margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 h1 {
@@ -294,8 +320,8 @@ h1 {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+  justify-content: flex-start !important; /* Garantiza que los botones comiencen desde la izquierda */
 }
-
 
 /* ---------- BOTÓN DE LLAMADA (ESTILO REFERENCIA) ---------- */
 .hero .btn {
@@ -606,8 +632,9 @@ footer {
   opacity: 0;
   transform: translateY(30px);
   will-change: opacity, transform;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -676,7 +703,7 @@ footer {
   position: relative;
   width: 100%;
   min-height: 500px;
-  background-image: url('assets/patio-mate.jpeg');
+  background-image: url("assets/patio-mate.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -687,9 +714,17 @@ footer {
   width: 100%;
   min-height: 500px;
   background-color: var(--bg-dark);
-  background-image: 
-    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+  background-image:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(59, 130, 246, 0.04) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, rgba(6, 6, 8, 0) 0%, rgba(59, 130, 246, 0.02) 100%);
   background-size: cover;
   background-position: center;
@@ -830,7 +865,7 @@ footer {
 
 .custom-close-x::before,
 .custom-close-x::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -872,7 +907,9 @@ footer {
   text-decoration: none;
   display: block;
   padding: 0.5rem 0;
-  transition: color 0.2s, transform 0.2s;
+  transition:
+    color 0.2s,
+    transform 0.2s;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
