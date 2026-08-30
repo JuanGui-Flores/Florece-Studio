@@ -172,63 +172,46 @@ function acceptCookies() {
 }
 
 /* -----------------------------------------------------------
-   7. CURSOR PERSONALIZADO Y ELEGANTE (Solo Desktop)
+   7. CURSOR PERSONALIZADO Y ELEGANTE
    ----------------------------------------------------------- */
-if (window.innerWidth > 1024) {
-  const dot = document.createElement("div");
-  const ring = document.createElement("div");
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
 
-  dot.className = "cursor-dot";
-  ring.className = "cursor-ring";
-
-  // Se ocultan al inicio para que no asomen en la esquina (0,0)
-  dot.style.opacity = "0";
-  ring.style.opacity = "0";
-
-  document.body.appendChild(dot);
-  document.body.appendChild(ring);
-
+if (dot && ring && window.innerWidth > 768) {
   let mouseX = 0, mouseY = 0;
   let ringX = 0, ringY = 0;
-  let hasMoved = false;
+  let isVisible = false;
 
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Al primer movimiento, los hacemos visibles
-    if (!hasMoved) {
-      hasMoved = true;
+    if (!isVisible) {
+      isVisible = true;
       ringX = mouseX;
       ringY = mouseY;
       dot.style.opacity = "1";
       ring.style.opacity = "1";
     }
 
-    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    // Centra el punto (-3px) y el anillo (-18px) exactamente en el puntero
+    dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
   });
 
   const render = () => {
-    if (hasMoved) {
+    if (isVisible) {
       ringX += (mouseX - ringX) * 0.15;
       ringY += (mouseY - ringY) * 0.15;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      ring.style.transform = `translate3d(${ringX - 18}px, ${ringY - 18}px, 0)`;
     }
     requestAnimationFrame(render);
   };
   render();
 
-  // Ocultar si el mouse sale de la ventana del navegador
   document.addEventListener("mouseleave", () => {
     dot.style.opacity = "0";
     ring.style.opacity = "0";
-  });
-
-  document.addEventListener("mouseenter", () => {
-    if (hasMoved) {
-      dot.style.opacity = "1";
-      ring.style.opacity = "1";
-    }
+    isVisible = false;
   });
 }
 
