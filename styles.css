@@ -968,6 +968,15 @@ footer {
   transition: all 0.3s ease;
 }
 
+/* Forzar renderizado correcto del icono */
+.chat-float svg {
+  width: 24px;
+  height: 24px;
+  stroke: #ffffff !important;
+  fill: none !important;
+  display: block;
+}
+
 .chat-float:hover {
   background-color: #1d348a;
   border-color: var(--accent-blue);
