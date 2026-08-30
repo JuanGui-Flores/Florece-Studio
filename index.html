@@ -1,6 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XEC072YVEM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-XEC072YVEM");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -30,14 +43,35 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://florece-studio.vercel.app/" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Florece Studio — Agentes de IA en producción">
-    <meta name="twitter:description" content="Desarrollo e integración de agentes de IA a medida para PyMEs.">
-    <meta name="twitter:image" content="https://florece-studio.vercel.app/assets/logo.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Florece Studio — Agentes de IA en producción"
+    />
+    <meta
+      name="twitter:description"
+      content="Desarrollo e integración de agentes de IA a medida para PyMEs."
+    />
+    <meta
+      name="twitter:image"
+      content="https://florece-studio.vercel.app/assets/logo.png"
+    />
 
-    <link rel="icon" type="image/png" sizes="any" href="https://florece-studio.vercel.app/assets/logo.png">
-    <link rel="apple-touch-icon" href="https://florece-studio.vercel.app/assets/logo.png">
-    <link rel="shortcut icon" href="https://florece-studio.vercel.app/assets/logo.png" type="image/png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="any"
+      href="https://florece-studio.vercel.app/assets/logo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://florece-studio.vercel.app/assets/logo.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://florece-studio.vercel.app/assets/logo.png"
+      type="image/png"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -99,10 +133,14 @@
     <header>
       <div class="titleblock glass-card">
         <a href="#" class="wordmark-container">
-          <img src="assets/logo.png" alt="Florece Studio Logo" class="nav-logo" />
+          <img
+            src="assets/logo.png"
+            alt="Florece Studio Logo"
+            class="nav-logo"
+          />
           <span class="wordmark-text">FLORECE<span>·</span>STUDIO</span>
         </a>
-        <div style="display: flex; align-items: center; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 1rem">
           <div class="meta-row">
             <span>Agenda Abierta</span>
             <span class="dot">·</span>
@@ -111,7 +149,20 @@
             <span>2026</span>
           </div>
           <button id="menuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
           </button>
         </div>
       </div>
@@ -121,54 +172,90 @@
       <div class="sidebar-content-wrapper">
         <div class="sidebar-header-top">
           <span class="sidebar-indicator">Navegación</span>
-          <button id="closeMenuBtn" class="sidebar-close-btn" aria-label="Cerrar menú">
+          <button
+            id="closeMenuBtn"
+            class="sidebar-close-btn"
+            aria-label="Cerrar menú"
+          >
             <span class="custom-close-x"></span>
           </button>
         </div>
         <ul class="sidebar-links-list">
-          <li><a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a></li>
-          <li><a href="#florece-core" class="sidebar-link-item" style="color: var(--ink);">Florece Core <span style="font-size: 0.75rem; font-family: var(--font-mono); background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; vertical-align: middle;">Motor</span></a></li>
-          <li><a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a></li>
+          <li>
+            <a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a>
+          </li>
+          <li>
+            <a
+              href="#florece-core"
+              class="sidebar-link-item"
+              style="color: var(--ink)"
+              >Florece Core
+              <span
+                style="
+                  font-size: 0.75rem;
+                  font-family: var(--font-mono);
+                  background: rgba(255, 255, 255, 0.1);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  vertical-align: middle;
+                "
+                >Motor</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a>
+          </li>
           <li><a href="#precios" class="sidebar-link-item">Precios</a></li>
-          <li><a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a></li>
+          <li>
+            <a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a>
+          </li>
           <li><a href="#contacto" class="sidebar-link-item">Contacto</a></li>
         </ul>
       </div>
     </div>
 
     <main>
-  <section class="hero" style="position: relative;">
-    <div class="wrap" style="position: relative; z-index: 3;">
-      <span class="corner tl" aria-hidden="true"></span>
-      <span class="corner tr" aria-hidden="true"></span>
-      <span class="corner bl" aria-hidden="true"></span>
-      <span class="corner br" aria-hidden="true"></span>
+      <section class="hero" style="position: relative">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
 
-      <h1 class="reveal">
-        Technology that <span style="font-family: var(--font-mono); font-style: italic; font-weight: 400;">grows</span><br />
-        <span class="accent-word rotating-word">your business.</span>
-      </h1>
-      <p class="lede reveal">
-        Diseñamos el motor operativo que tu empresa necesita para crecer sin
-        multiplicar las horas de trabajo ni el estrés de tu equipo.
-      </p>
-      <div class="cta-row reveal">
-        <a
-          href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          >Reserva una llamada →</a
-        >
-      </div>
-    </div>
-  </section>
+          <h1 class="reveal">
+            Technology that
+            <span
+              style="
+                font-family: var(--font-mono);
+                font-style: italic;
+                font-weight: 400;
+              "
+              >grows</span
+            ><br />
+            <span class="accent-word rotating-word">your business.</span>
+          </h1>
+          <p class="lede reveal">
+            Diseñamos el motor operativo que tu empresa necesita para crecer sin
+            multiplicar las horas de trabajo ni el estrés de tu equipo.
+          </p>
+          <div class="cta-row reveal">
+            <a
+              href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              >Reserva una llamada →</a
+            >
+          </div>
+        </div>
+      </section>
 
       <div class="oficina-wrapper">
         <div class="overlay" aria-hidden="true"></div>
 
         <section id="proceso" class="engineering-section">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="section-head reveal">
               <div class="eyebrow">Cómo trabajamos</div>
               <h2>Tres etapas. Sin vueltas.</h2>
@@ -189,9 +276,9 @@
                 <span class="step-num">02 / IMPLEMENTACIÓN</span>
                 <h3>El agente, sobre tus herramientas</h3>
                 <p>
-                  Se integra a lo que ya usás — correo, WhatsApp, planillas y más.
-                  Nada de plataformas genéricas que después tenés que aprender a
-                  operar solo.
+                  Se integra a lo que ya usás — correo, WhatsApp, planillas y
+                  más. Nada de plataformas genéricas que después tenés que
+                  aprender a operar solo.
                 </p>
                 <span class="dur">Duración: 2–4 semanas</span>
               </div>
@@ -210,51 +297,139 @@
         </section>
 
         <section id="florece-core">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="section-head reveal">
               <div class="eyebrow">Arquitectura Propietaria</div>
               <h2>Florece Core. El motor detrás de cada producto.</h2>
             </div>
-            
-            <div class="glass-card reveal" style="padding: 40px; margin-bottom: 2rem;">
-              <p class="body-text" style="margin-top: 0;">
-                No armamos cada solución desde cero. Desarrollamos sobre una base firme probada en entornos reales que encapsula la lógica pesada: gestión de memoria de agentes, llamadas seguras a LLMs, manejo de errores y pasarelas de integración con sistemas legacy.
+
+            <div
+              class="glass-card reveal"
+              style="padding: 40px; margin-bottom: 2rem"
+            >
+              <p class="body-text" style="margin-top: 0">
+                No armamos cada solución desde cero. Desarrollamos sobre una
+                base firme probada en entornos reales que encapsula la lógica
+                pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
+                manejo de errores y pasarelas de integración con sistemas
+                legacy.
               </p>
-              <p class="body-text" style="font-size: 0.9rem; margin-top: 12px; margin-bottom: 0; color: var(--ink);">⚡ Despliegue inicial en entornos reales en menos de 14 días.</p>
+              <p
+                class="body-text"
+                style="
+                  font-size: 0.9rem;
+                  margin-top: 12px;
+                  margin-bottom: 0;
+                  color: var(--ink);
+                "
+              >
+                ⚡ Despliegue inicial en entornos reales en menos de 14 días.
+              </p>
             </div>
 
-            <div class="core-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-              
+            <div
+              class="core-grid"
+              style="
+                display: grid;
+                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              "
+            >
               <div class="glass-card reveal" style="padding: 32px">
-                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">01 / MODULAR</span>
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Bloques de construcción listos</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Conectores pre-escritos para bases de datos relacionales, APIs de mensajería y ERPs, permitiendo ensamblar flujos complejos en días y no en meses.
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.85rem;
+                    color: var(--ink-dim);
+                    display: block;
+                    margin-bottom: 8px;
+                  "
+                  >01 / MODULAR</span
+                >
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  Bloques de construcción listos
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Conectores pre-escritos para bases de datos relacionales, APIs
+                  de mensajería y ERPs, permitiendo ensamblar flujos complejos
+                  en días y no en meses.
                 </p>
               </div>
 
               <div class="glass-card reveal" style="padding: 32px">
-                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">02 / RESILIENTE</span>
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Control de alucinaciones y errores</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Capas de validación determinista que aseguran que el agente no invente datos ni ejecute acciones críticas sin la debida confirmación de un humano.
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.85rem;
+                    color: var(--ink-dim);
+                    display: block;
+                    margin-bottom: 8px;
+                  "
+                  >02 / RESILIENTE</span
+                >
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  Control de alucinaciones y errores
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Capas de validación determinista que aseguran que el agente no
+                  invente datos ni ejecute acciones críticas sin la debida
+                  confirmación de un humano.
                 </p>
               </div>
 
               <div class="glass-card reveal" style="padding: 32px">
-                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">03 / AGNÓSTICO</span>
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Independencia de modelos</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Diseñado para alternar entre Claude, OpenAI o modelos open-source locales según el costo, la latencia y la privacidad que exija tu negocio.
+                <span
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.85rem;
+                    color: var(--ink-dim);
+                    display: block;
+                    margin-bottom: 8px;
+                  "
+                  >03 / AGNÓSTICO</span
+                >
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  Independencia de modelos
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Diseñado para alternar entre Claude, OpenAI o modelos
+                  open-source locales según el costo, la latencia y la
+                  privacidad que exija tu negocio.
                 </p>
               </div>
-
             </div>
           </div>
         </section>
 
         <section id="diferencia">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="section-head reveal">
               <div class="eyebrow">Por qué esto es distinto</div>
               <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
@@ -264,8 +439,8 @@
                 <p class="body-text">
                   Según el MIT, solo el 5% de las implementaciones de IA generan
                   un impacto real en el retorno de inversión. La razón, casi
-                  siempre, es la misma: alguien vendió estrategia y nadie se hizo
-                  cargo de la ingeniería real.
+                  siempre, es la misma: alguien vendió estrategia y nadie se
+                  hizo cargo de la ingeniería real.
                 </p>
                 <p class="body-text" style="margin-bottom: 0">
                   Florece Studio lo construye una persona que programa — no un
@@ -281,8 +456,8 @@
                 </div>
                 <div class="founder-line">
                   Detrás de Florece Studio:
-                  <strong>Juan Guillermo Flores Vargas</strong>, desarrollador. Un
-                  solo interlocutor, del diagnóstico al código en producción.
+                  <strong>Juan Guillermo Flores Vargas</strong>, desarrollador.
+                  Un solo interlocutor, del diagnóstico al código en producción.
                 </div>
               </div>
             </div>
@@ -290,7 +465,7 @@
         </section>
 
         <section id="precios">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="section-head reveal">
               <div class="eyebrow">Precios</div>
               <h2>Sin sorpresas.</h2>
@@ -300,8 +475,8 @@
                 <div>
                   <div class="name">Diagnóstico Operativo</div>
                   <div class="desc">
-                    Mapeamos tu operación actual, detectamos cuellos de botella y
-                    diseñamos la arquitectura exacta de solución.
+                    Mapeamos tu operación actual, detectamos cuellos de botella
+                    y diseñamos la arquitectura exacta de solución.
                   </div>
                 </div>
                 <div class="amount">Propuesta a medida</div>
@@ -325,48 +500,109 @@
         </section>
 
         <section id="faq">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="section-head reveal">
               <div class="eyebrow">Preguntas Frecuentes</div>
               <h2>Dudas reales. Respuestas sin filtro.</h2>
             </div>
-            
-            <div class="faq-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-              
+
+            <div
+              class="faq-grid"
+              style="
+                display: grid;
+                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              "
+            >
               <div class="glass-card reveal" style="padding: 32px">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Por qué contratar un estudio y no usar herramientas genéricas?</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Una suscripción a ChatGPT o Claude no se conecta a tu base de datos ni procesa tus facturas solo. Nosotros construimos el puente de código a medida para integrar la IA directamente en la operación real de tu empresa.
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  ¿Por qué contratar un estudio y no usar herramientas
+                  genéricas?
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Una suscripción a ChatGPT o Claude no se conecta a tu base de
+                  datos ni procesa tus facturas solo. Nosotros construimos el
+                  puente de código a medida para integrar la IA directamente en
+                  la operación real de tu empresa.
                 </p>
               </div>
 
               <div class="glass-card reveal" style="padding: 32px">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Cuánto tiempo toma ver el agente funcionando?</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Desde la semana 1 tenemos el primer entorno de pruebas corriendo. No vendemos consultoría teórica de meses; entregamos software funcional que opera desde el primer sprint.
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  ¿Cuánto tiempo toma ver el agente funcionando?
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Desde la semana 1 tenemos el primer entorno de pruebas
+                  corriendo. No vendemos consultoría teórica de meses;
+                  entregamos software funcional que opera desde el primer
+                  sprint.
                 </p>
               </div>
 
               <div class="glass-card reveal" style="padding: 32px">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Qué pasa si mi equipo no sabe programar ni usar IA?</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Cero fricción. El agente se integra en los canales que tu equipo ya usa (WhatsApp, correo, planillas de Google) sin que tengan que aprender una interfaz nueva ni cambiar sus hábitos operativos.
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  ¿Qué pasa si mi equipo no sabe programar ni usar IA?
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Cero fricción. El agente se integra en los canales que tu
+                  equipo ya usa (WhatsApp, correo, planillas de Google) sin que
+                  tengan que aprender una interfaz nueva ni cambiar sus hábitos
+                  operativos.
                 </p>
               </div>
 
               <div class="glass-card reveal" style="padding: 32px">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Cómo se maneja la confidencialidad de los datos?</h3>
-                <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">
-                  Los datos operativos de tu empresa y tus clientes no se utilizan para entrenar modelos públicos. Configuramos entornos aislados, seguros y bajo estrictas normas de privacidad.
+                <h3
+                  style="
+                    font-size: 1.1rem;
+                    margin-bottom: 12px;
+                    color: var(--ink);
+                  "
+                >
+                  ¿Cómo se maneja la confidencialidad de los datos?
+                </h3>
+                <p
+                  class="body-text"
+                  style="font-size: 0.95rem; margin-bottom: 0"
+                >
+                  Los datos operativos de tu empresa y tus clientes no se
+                  utilizan para entrenar modelos públicos. Configuramos entornos
+                  aislados, seguros y bajo estrictas normas de privacidad.
                 </p>
               </div>
-
             </div>
           </div>
         </section>
 
         <section id="contacto">
-          <div class="wrap" style="position: relative; z-index: 3;">
+          <div class="wrap" style="position: relative; z-index: 3">
             <div class="glass-card cta-final reveal">
               <div class="eyebrow">EL SIGUIENTE PASO</div>
               <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
@@ -500,12 +736,25 @@
 </html>
 
 <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/5492646224354?text=Hola,%20Florece!%20Estoy interesado%20en%20los%20servicios%20de%20tu estudio." 
-       class="whatsapp-float" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Hablar por WhatsApp">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-      </svg>
-    </a>
+<a
+  href="https://wa.me/5492646224354?text=Hola,%20Florece!%20Estoy interesado%20en%20los%20servicios%20de%20tu estudio."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Hablar por WhatsApp"
+>
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+    ></path>
+  </svg>
+</a>
