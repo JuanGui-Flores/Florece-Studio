@@ -1,0 +1,24 @@
+{
+  "name": "florece---studio",
+  "version": "1.0.0",
+  "description": "Empresa Software IA",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanGui-Flores/Florece-Studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JuanGui-Flores/Florece-Studio/issues"
+  },
+  "homepage": "https://github.com/JuanGui-Flores/Florece-Studio#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
