@@ -983,3 +983,39 @@ footer {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3);
 }
+
+/* Ocultar cursor predeterminado en desktop */
+@media (min-width: 1025px) {
+  html, body, a, button {
+    cursor: none !important;
+  }
+}
+
+/* Punto central (Posicionamiento base en 0,0 para usar translate3d en JS) */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  top: -3px;  /* Centra el punto exacto */
+  left: -3px;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+/* Anillo exterior (Posicionamiento base en 0,0) */
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  top: -18px; /* Centra el anillo exacto */
+  left: -18px;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
