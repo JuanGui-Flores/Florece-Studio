@@ -260,7 +260,13 @@ header.header-hidden {
   padding: 80px 0;
   text-align: left;
   
-  /* Fondo base para que nada se transparente desde atrás */
+  .hero-bg {
+  /* Degradado oscuro desde la izquierda para darle contraste al texto */
+  background: linear-gradient(135deg, rgba(10, 10, 15, 0.85) 0%, rgba(10, 10, 15, 0.4) 100%), url('tu-foto.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
   background-color: var(--bg-dark); 
   
   /* Tu foto con el filtro oscuro */
