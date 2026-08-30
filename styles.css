@@ -253,18 +253,20 @@ header.header-hidden {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Esto fuerza a la foto a estar por encima de la grilla */
   min-height: 85vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
   text-align: left;
+  
+  /* Fondo base para que nada se transparente desde atrás */
   background-color: var(--bg-dark); 
   
-  /* Gradiente cinemático + Imagen de fondo */
+  /* Tu foto con el filtro oscuro */
   background-image: 
-    linear-gradient(135deg, rgba(6, 6, 8, 0.90) 0%, rgba(6, 6, 8, 0.60) 100%),
-    url('assets/patio.jpeg');
+    linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
+    url('assets/patio.jpeg'); /* Acordate de chequear que esta ruta sea correcta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -321,7 +323,6 @@ h1 {
   background-color: #112265 !important;
   color: #ffffff !important;
   border: 1px solid rgba(59, 130, 246, 0.4) !important;
-  transition: all 0.3s ease;
 }
 
 .hero .btn:hover {
