@@ -21,8 +21,8 @@
   --accent: var(--accent-blue);
 
   /* Fuentes Base */
-  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -109,11 +109,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 6, 8, 0.85);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line-soft);
-  padding: 0.85rem 1.5rem;
+  padding: 1rem 1.5rem;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
   transform: translateY(0);
 }
@@ -129,9 +129,6 @@ header.header-hidden {
   justify-content: space-between;
   align-items: center;
   padding: 0;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
 }
 
 .wordmark-container {
@@ -161,31 +158,6 @@ header.header-hidden {
   color: var(--accent-blue);
 }
 
-/* Navegación Desktop */
-.desktop-nav {
-  display: none;
-  gap: 1.75rem;
-  align-items: center;
-}
-
-.desktop-nav a {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--ink-dim);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.desktop-nav a:hover {
-  color: var(--ink-primary);
-}
-
-@media (min-width: 850px) {
-  .desktop-nav {
-    display: flex;
-  }
-}
-
 .meta-row {
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -200,7 +172,7 @@ header.header-hidden {
   color: var(--accent-blue);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .meta-row {
     display: flex;
   }
@@ -281,16 +253,20 @@ header.header-hidden {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Esto fuerza a la foto a estar por encima de la grilla */
   min-height: 85vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
   text-align: left;
+  
+  /* Fondo base para que nada se transparente desde atrás */
   background-color: var(--bg-dark); 
+  
+  /* Tu foto con el filtro oscuro */
   background-image: 
     linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
-    url('assets/patio.jpeg');
+    url('assets/patio.jpeg'); /* Acordate de chequear que esta ruta sea correcta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -299,14 +275,16 @@ header.header-hidden {
 .hero .wrap {
   width: 100%;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
+  margin-left: 24px !important;
+  margin-right: 0 !important;
+  text-align: left !important;
 }
 
 .hero h1,
 .hero .lede {
-  text-align: left;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 h1 {
@@ -318,6 +296,7 @@ h1 {
   margin: 0 0 24px;
   max-width: 15ch;
   color: var(--ink-primary);
+  text-align: left;
 }
 
 .accent-word {
@@ -327,8 +306,9 @@ h1 {
 .lede {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: var(--ink-dim);
-  max-width: 52ch;
+  max-width: 48ch;
   margin: 0 0 32px;
+  text-align: left;
 }
 
 .cta-row {
@@ -336,59 +316,42 @@ h1 {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
-/* ---------- BOTONES Y VARIACIONES ---------- */
+.hero .btn {
+  background-color: #112265 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+}
+
+.hero .btn:hover {
+  background-color: #1d348a !important;
+  border-color: var(--accent-blue) !important;
+  transform: translateY(-2px);
+}
+
+/* ---------- BOTONES ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
   border-radius: 6px;
-  font-family: var(--mono);
-  font-size: 0.9rem;
+  background-color: var(--ink-primary) !important;
+  color: var(--bg-dark) !important;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  border: none !important;
+  transition: all 0.2s ease !important;
   cursor: pointer;
   letter-spacing: -0.01em;
 }
 
-.btn-primary {
-  background-color: #112265 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(59, 130, 246, 0.4) !important;
-}
-
-.btn-primary:hover {
-  background-color: #1d348a !important;
-  border-color: var(--accent-blue) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3) !important;
-}
-
-.btn-secondary {
-  background-color: var(--glass-bg) !important;
-  color: var(--ink-primary) !important;
-  border: 1px solid var(--glass-border) !important;
-  backdrop-filter: blur(8px);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background-color: transparent !important;
-  color: var(--ink-dim) !important;
-  border: 1px solid transparent !important;
-}
-
-.btn-outline:hover {
-  color: var(--ink-primary) !important;
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15) !important;
 }
 
 .btn-ghost {
@@ -411,13 +374,13 @@ h1 {
 section {
   position: relative;
   z-index: 2;
-  padding: 60px 0;
+  padding: 40px 0;
   display: block;
 }
 
 .section-head {
-  max-width: 42ch;
-  margin-bottom: 32px;
+  max-width: 38ch;
+  margin-bottom: 28px;
 }
 
 h2 {
@@ -601,7 +564,7 @@ p {
   flex-direction: column;
   gap: 1.25rem;
   max-width: 500px;
-  margin: 0;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -637,8 +600,6 @@ p {
 .btn-submit {
   cursor: pointer;
   margin-top: 0.5rem;
-  background-color: var(--accent-blue) !important;
-  color: #000000 !important;
 }
 
 /* ---------- FOOTER ---------- */
@@ -784,6 +745,7 @@ footer {
 }
 
 /* ======================================================= */
+/* ======================================================= */
 /* BARRA LATERAL (SIDEBAR OVERLAY / TARJETA FLOTANTE)      */
 /* ======================================================= */
 .sidebar-overlay {
@@ -899,7 +861,7 @@ footer {
 }
 
 .sidebar-link-item {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Aumentado ligeramente para mayor presencia visual */
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
@@ -913,6 +875,29 @@ footer {
   transform: translateX(6px);
 }
 
+/* Botón inferior tipo píldora dentro del menú */
+.sidebar-cta-btn {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  color: #0b0b0e;
+  text-align: center;
+  padding: 16px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-cta-btn:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255,0.15);
+}
+
+/* Clase para ocultar la tarjeta al hacer scroll hacia abajo */
 .sidebar-content-wrapper.sidebar-hidden {
   transform: translateY(-120%) scale(0.95);
   opacity: 0;
@@ -943,7 +928,7 @@ footer {
     padding: 48px 0 40px;
   }
   section {
-    padding: 36px 0;
+    padding: 24px 0;
   }
   .cta-final {
     padding: 28px;
@@ -983,6 +968,7 @@ footer {
   transition: all 0.3s ease;
 }
 
+/* Forzar renderizado correcto del icono */
 .chat-float svg {
   width: 24px;
   height: 24px;
@@ -998,7 +984,7 @@ footer {
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3);
 }
 
-/* ---------- PUNTERO PERSONALIZADO ---------- */
+/* Ocultar el puntero por defecto */
 @media (min-width: 769px) {
   html, body, a, button {
     cursor: none !important;
