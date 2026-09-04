@@ -499,6 +499,10 @@ p {
   padding: 12px 28px;
 }
 
+.price-period, .card-subtitle {
+  color: #a1a1aa; /* Gris claro con alto contraste para fondos oscuros */
+}
+
 .price-row {
   display: flex;
   justify-content: space-between;
@@ -1023,3 +1027,4 @@ footer {
 .cursor-ring {
   transition: opacity 0.3s ease, transform 0.15s ease-out;
 }
+
