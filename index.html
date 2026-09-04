@@ -4,7 +4,16 @@
     <!-- Preconnect para optimizar Analytics -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <link rel="preload" as="image" href="img/hero.webp" type="image/webp" />
+    <!-- Preload de la imagen principal correcta -->
+    <link rel="preload" as="image" href="assets/logo.png" type="image/png" />
+    <img
+      src="img/hero.webp"
+      alt="Florece Studio"
+      fetchpriority="high"
+      decoding="sync"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Google Analytics -->
     <script
@@ -150,6 +159,7 @@
             class="nav-logo"
             width="32"
             height="32"
+            fetchpriority="high"
           />
           <span class="wordmark-text">FLORECE<span>·</span>STUDIO</span>
         </a>
