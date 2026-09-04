@@ -266,7 +266,7 @@ header.header-hidden {
   /* Tu foto con el filtro oscuro */
   background-image: 
     linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
-    url('assets/patio.jpeg'); /* Acordate de chequear que esta ruta sea correcta */
+    url('assets/patio.webp'); /* Acordate de chequear que esta ruta sea correcta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
