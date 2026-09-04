@@ -231,7 +231,7 @@ if (dot && ring && window.innerWidth > 768) {
 
           // Si el menú (overlay) está abierto, no ocultamos el header
           const navOverlay = document.getElementById('navOverlay');
-          if (navOverlay && navOverlay.classList.contains('active')) {
+          if (navOverlay?.classList.contains('active')) {
              lastScrollY = currentScrollY;
              ticking = false;
              return;
@@ -247,7 +247,7 @@ if (dot && ring && window.innerWidth > 768) {
           }
 
           // Evitamos valores negativos (bounce effect en móviles)
-          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          lastScrollY = Math.max(currentScrollY, 0);
           ticking = false;
         });
         ticking = true;
