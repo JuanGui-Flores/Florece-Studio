@@ -1,35 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Preconnect para optimizar Analytics -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-    <!-- Preload de la imagen principal correcta -->
-    <link rel="preload" as="image" href="assets/patio.webp" type="image/webp" />
-    <img
-      src="img/hero.webp"
-      alt="Florece Studio"
-      fetchpriority="high"
-      decoding="sync"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XEC072YVEM"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XEC072YVEM");
-    </script>
-
-    <!-- Meta Configuración -->
+    <!-- Configuración Meta Básica (Siempre al inicio) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -45,6 +17,26 @@
       name="description"
       content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
     />
+
+    <!-- Preconexiones y Preloads -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assets/logo.png" type="image/png" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XEC072YVEM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XEC072YVEM");
+    </script>
 
     <!-- Open Graph / Redes Sociales & WhatsApp -->
     <meta property="og:type" content="website" />
@@ -91,8 +83,6 @@
     />
 
     <!-- Tipografías & Estilos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -617,7 +607,7 @@
                 >
                   Los datos operativos de tu empresa y tus clientes no se
                   utilizan para entrenar modelos públicos. Configuramos entornos
-                  aislados, seguros y bajo estrictas normas de privacidad.
+                  aislados, seguros y bajo strictly normas de privacidad.
                 </p>
               </div>
             </div>
@@ -654,7 +644,7 @@
                   name="access_key"
                   value="7704586e-56f7-461e-a6f7-a25dbe4c482c"
                 />
-                <!-- Honeypot optimizado con tabindex y aria-hidden para accesibilidad -->
+                <!-- Honeypot optimizado -->
                 <input
                   type="checkbox"
                   name="botcheck"
