@@ -1011,21 +1011,3 @@ footer {
 .cursor-ring {
   transition: opacity 0.3s ease, transform 0.15s ease-out;
 }
-
-.scroll-reveal-container {
-  position: relative;
-  height: 250vh; /* Espacio para hacer scroll mientras se expande el círculo */
-}
-
-.reveal-circle-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  /* El clip-path inicial del círculo (empieza pequeño al 5%) */
-  clip-path: circle(0% at 50% 50%);
-  background: var(--bg, #0b0f19); /* Asegurate de usar el color de fondo de tu web */
-  pointer-events: none;
-}
