@@ -1029,13 +1029,3 @@ footer {
   background: var(--bg, #0b0f19); /* Asegurate de usar el color de fondo de tu web */
   pointer-events: none;
 }
-
-.hero-content {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1;
-}
