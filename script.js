@@ -251,11 +251,9 @@ document.addEventListener("DOMContentLoaded", () => {
             formStatus.className = "form-status-message success";
           }
           contactForm.reset();
-        } else {
-          if (formStatus) {
-            formStatus.textContent = result.message || "Ocurrió un error al enviar el formulario.";
-            formStatus.className = "form-status-message error";
-          }
+        } else if (formStatus) {
+          formStatus.textContent = result.message || "Ocurrió un error al enviar el formulario.";
+          formStatus.className = "form-status-message error";
         }
       } catch (error) {
         console.error("Error al enviar el formulario:", error);

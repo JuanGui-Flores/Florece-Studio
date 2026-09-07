@@ -309,53 +309,195 @@
       </section>
 
       <!-- CONTENEDOR CON EFECTO DE CÍRCULO EXPANSIVO -->
-      <div class="scroll-reveal-container" id="revealContainer">
-        <div class="reveal-circle-overlay" id="revealOverlay"></div>
+      <div class="scroll-reveal-container" id="revealContainer" style="position: relative; height: 300vh;">
+        
+        <!-- Contenedor fijo que se queda en pantalla mientras haces scroll en los 300vh -->
+        <div style="position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden;">
+          
+          <!-- La capa que cubre (overlay) y hace el efecto de clip-path -->
+          <div class="reveal-circle-overlay" id="revealOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; clip-path: circle(5% at 50% 50%);"></div>
 
-        <div class="oficina-wrapper" style="position: relative; z-index: 6;">
-          <div class="overlay" aria-hidden="true"></div>
+          <!-- Contenido oculto/revelado -->
+          <div class="oficina-wrapper" style="position: relative; z-index: 2; height: 100%; overflow-y: auto;">
+            <div class="overlay" aria-hidden="true"></div>
 
-          <section id="proceso" class="engineering-section">
-            <div class="wrap" style="position: relative; z-index: 3">
-              <div class="section-head reveal">
-                <div class="eyebrow">Cómo trabajamos</div>
-                <h2>Tres etapas. Sin vueltas.</h2>
+            <section id="proceso" class="engineering-section">
+              <div class="wrap" style="position: relative; z-index: 3">
+                <div class="section-head reveal">
+                  <div class="eyebrow">Cómo trabajamos</div>
+                  <h2>Tres etapas. Sin vueltas.</h2>
+                </div>
+                <div class="process reveal">
+                  <div class="step glass-card">
+                    <span class="step-num">01 / DIAGNÓSTICO</span>
+                    <h3>Miramos tu operación real</h3>
+                    <p>
+                      Identificamos una tarea puntual que se repite todos los días y
+                      que tiene impacto medible si se automatiza — no una lista
+                      genérica de "casos de uso de IA".
+                    </p>
+                    <span class="dur">Duración: 1 semana</span>
+                  </div>
+
+                  <div class="step glass-card">
+                    <span class="step-num">02 / IMPLEMENTACIÓN</span>
+                    <h3>El agente, sobre tus herramientas</h3>
+                    <p>
+                      Se integra a lo que ya usás — correo, WhatsApp, planillas y
+                      más. Nada de plataformas genéricas que después tenés que
+                      aprender a operar solo.
+                    </p>
+                    <span class="dur">Duración: 2–4 semanas</span>
+                  </div>
+
+                  <div class="step glass-card">
+                    <span class="step-num">03 / PUESTA EN MARCHA</span>
+                    <h3>Sale a correr, con vos en control</h3>
+                    <p>
+                      Vos aprobás lo que importa. Se mide, se ajusta durante las
+                      primeras semanas, y queda corriendo solo en lo rutinario.
+                    </p>
+                    <span class="dur">Soporte: 30 días incluidos</span>
+                  </div>
+                </div>
               </div>
-              <div class="process reveal">
-                <div class="step glass-card">
-                  <span class="step-num">01 / DIAGNÓSTICO</span>
-                  <h3>Miramos tu operación real</h3>
-                  <p>
-                    Identificamos una tarea puntual que se repite todos los días y
-                    que tiene impacto medible si se automatiza — no una lista
-                    genérica de "casos de uso de IA".
-                  </p>
-                  <span class="dur">Duración: 1 semana</span>
+            </section>
+
+            <section id="florece-core">
+              <div class="wrap" style="position: relative; z-index: 3">
+                <div class="section-head reveal">
+                  <div class="eyebrow">Arquitectura Propietaria</div>
+                  <h2>Florece Core. El motor detrás de cada producto.</h2>
                 </div>
 
-                <div class="step glass-card">
-                  <span class="step-num">02 / IMPLEMENTACIÓN</span>
-                  <h3>El agente, sobre tus herramientas</h3>
-                  <p>
-                    Se integra a lo que ya usás — correo, WhatsApp, planillas y
-                    más. Nada de plataformas genéricas que después tenés que
-                    aprender a operar solo.
+                <div
+                  class="glass-card reveal"
+                  style="padding: 40px; margin-bottom: 2rem"
+                >
+                  <p class="body-text" style="margin-top: 0">
+                    No armamos cada solución desde cero. Desarrollamos sobre una
+                    base firme probada en entornos reales que encapsula la lógica
+                    pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
+                    manejo de errores y pasarelas de integración con sistemas
+                    legacy.
                   </p>
-                  <span class="dur">Duración: 2–4 semanas</span>
+                  <p
+                    class="body-text"
+                    style="
+                      font-size: 0.9rem;
+                      margin-top: 12px;
+                      margin-bottom: 0;
+                      color: var(--ink);
+                    "
+                  >
+                    ⚡ Despliegue inicial en entornos reales en menos de 14 días.
+                  </p>
                 </div>
 
-                <div class="step glass-card">
-                  <span class="step-num">03 / PUESTA EN MARCHA</span>
-                  <h3>Sale a correr, con vos en control</h3>
-                  <p>
-                    Vos aprobás lo que importa. Se mide, se ajusta durante las
-                    primeras semanas, y queda corriendo solo en lo rutinario.
-                  </p>
-                  <span class="dur">Soporte: 30 días incluidos</span>
+                <div
+                  class="core-grid"
+                  style="
+                    display: grid;
+                    gap: 1.5rem;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                  "
+                >
+                  <div class="glass-card reveal" style="padding: 32px">
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.85rem;
+                        color: var(--ink-dim);
+                        display: block;
+                        margin-bottom: 8px;
+                      "
+                      >01 / MODULAR</span
+                    >
+                    <h3
+                      style="
+                        font-size: 1.1rem;
+                        margin-bottom: 12px;
+                        color: var(--ink);
+                      "
+                    >
+                      Bloques de construcción listos
+                    </h3>
+                    <p
+                      class="body-text"
+                      style="font-size: 0.95rem; margin-bottom: 0"
+                    >
+                      Conectores pre-escritos para bases de datos relacionales, APIs
+                      de mensajería y ERPs, permitiendo ensamblar flujos complejos
+                      en días y no en meses.
+                    </p>
+                  </div>
+
+                  <div class="glass-card reveal" style="padding: 32px">
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.85rem;
+                        color: var(--ink-dim);
+                        display: block;
+                        margin-bottom: 8px;
+                      "
+                      >02 / RESILIENTE</span
+                    >
+                    <h3
+                      style="
+                        font-size: 1.1rem;
+                        margin-bottom: 12px;
+                        color: var(--ink);
+                      "
+                    >
+                      Control de alucinaciones y errores
+                    </h3>
+                    <p
+                      class="body-text"
+                      style="font-size: 0.95rem; margin-bottom: 0"
+                    >
+                      Capas de validación determinista que aseguran que el agente no
+                      invente datos ni ejecute acciones críticas sin la debida
+                      confirmación de un humano.
+                    </p>
+                  </div>
+
+                  <div class="glass-card reveal" style="padding: 32px">
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.85rem;
+                        color: var(--ink-dim);
+                        display: block;
+                        margin-bottom: 8px;
+                      "
+                      >03 / AGNÓSTICO</span
+                    >
+                    <h3
+                      style="
+                        font-size: 1.1rem;
+                        margin-bottom: 12px;
+                        color: var(--ink);
+                      "
+                    >
+                      Independencia de modelos
+                    </h3>
+                    <p
+                      class="body-text"
+                      style="font-size: 0.95rem; margin-bottom: 0"
+                    >
+                      Diseñado para alternar entre Claude, OpenAI o modelos
+                      open-source locales según el costo, la latencia y la
+                      privacidad que exija tu negocio.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+
+          </div> <!-- Cierra .oficina-wrapper -->
+        </div> <!-- Cierra wrapper sticky interno -->
+      </div> <!-- Cierra .scroll-reveal-container -->
 
           <section id="florece-core">
             <div class="wrap" style="position: relative; z-index: 3">
