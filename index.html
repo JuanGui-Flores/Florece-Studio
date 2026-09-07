@@ -149,7 +149,7 @@
         if (f.fbq) return;
         n = f.fbq = function () {
           n.callMethod
-            ? n.callMethod.apply(n, arguments)
+            ? n.callMethod(...arguments)
             : n.queue.push(arguments);
         };
         if (!f._fbq) f._fbq = n;
@@ -157,11 +157,11 @@
         n.loaded = !0;
         n.version = "2.0";
         n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
+        const scriptElement = b.createElement(e);
+        scriptElement.async = !0;
+        scriptElement.src = v;
+        const firstScript = b.getElementsByTagName(e)[0];
+        firstScript.parentNode.insertBefore(scriptElement, firstScript);
       })(
         window,
         document,
@@ -308,444 +308,449 @@
         </div>
       </section>
 
-      <div class="oficina-wrapper">
-        <div class="overlay" aria-hidden="true"></div>
+      <!-- CONTENEDOR CON EFECTO DE CÍRCULO EXPANSIVO -->
+      <div class="scroll-reveal-container" id="revealContainer">
+        <div class="reveal-circle-overlay" id="revealOverlay"></div>
 
-        <section id="proceso" class="engineering-section">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="section-head reveal">
-              <div class="eyebrow">Cómo trabajamos</div>
-              <h2>Tres etapas. Sin vueltas.</h2>
+        <div class="oficina-wrapper" style="position: relative; z-index: 6;">
+          <div class="overlay" aria-hidden="true"></div>
+
+          <section id="proceso" class="engineering-section">
+            <div class="wrap" style="position: relative; z-index: 3">
+              <div class="section-head reveal">
+                <div class="eyebrow">Cómo trabajamos</div>
+                <h2>Tres etapas. Sin vueltas.</h2>
+              </div>
+              <div class="process reveal">
+                <div class="step glass-card">
+                  <span class="step-num">01 / DIAGNÓSTICO</span>
+                  <h3>Miramos tu operación real</h3>
+                  <p>
+                    Identificamos una tarea puntual que se repite todos los días y
+                    que tiene impacto medible si se automatiza — no una lista
+                    genérica de "casos de uso de IA".
+                  </p>
+                  <span class="dur">Duración: 1 semana</span>
+                </div>
+
+                <div class="step glass-card">
+                  <span class="step-num">02 / IMPLEMENTACIÓN</span>
+                  <h3>El agente, sobre tus herramientas</h3>
+                  <p>
+                    Se integra a lo que ya usás — correo, WhatsApp, planillas y
+                    más. Nada de plataformas genéricas que después tenés que
+                    aprender a operar solo.
+                  </p>
+                  <span class="dur">Duración: 2–4 semanas</span>
+                </div>
+
+                <div class="step glass-card">
+                  <span class="step-num">03 / PUESTA EN MARCHA</span>
+                  <h3>Sale a correr, con vos en control</h3>
+                  <p>
+                    Vos aprobás lo que importa. Se mide, se ajusta durante las
+                    primeras semanas, y queda corriendo solo en lo rutinario.
+                  </p>
+                  <span class="dur">Soporte: 30 días incluidos</span>
+                </div>
+              </div>
             </div>
-            <div class="process reveal">
-              <div class="step glass-card">
-                <span class="step-num">01 / DIAGNÓSTICO</span>
-                <h3>Miramos tu operación real</h3>
-                <p>
-                  Identificamos una tarea puntual que se repite todos los días y
-                  que tiene impacto medible si se automatiza — no una lista
-                  genérica de "casos de uso de IA".
-                </p>
-                <span class="dur">Duración: 1 semana</span>
+          </section>
+
+          <section id="florece-core">
+            <div class="wrap" style="position: relative; z-index: 3">
+              <div class="section-head reveal">
+                <div class="eyebrow">Arquitectura Propietaria</div>
+                <h2>Florece Core. El motor detrás de cada producto.</h2>
               </div>
 
-              <div class="step glass-card">
-                <span class="step-num">02 / IMPLEMENTACIÓN</span>
-                <h3>El agente, sobre tus herramientas</h3>
-                <p>
-                  Se integra a lo que ya usás — correo, WhatsApp, planillas y
-                  más. Nada de plataformas genéricas que después tenés que
-                  aprender a operar solo.
+              <div
+                class="glass-card reveal"
+                style="padding: 40px; margin-bottom: 2rem"
+              >
+                <p class="body-text" style="margin-top: 0">
+                  No armamos cada solución desde cero. Desarrollamos sobre una
+                  base firme probada en entornos reales que encapsula la lógica
+                  pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
+                  manejo de errores y pasarelas de integración con sistemas
+                  legacy.
                 </p>
-                <span class="dur">Duración: 2–4 semanas</span>
+                <p
+                  class="body-text"
+                  style="
+                    font-size: 0.9rem;
+                    margin-top: 12px;
+                    margin-bottom: 0;
+                    color: var(--ink);
+                  "
+                >
+                  ⚡ Despliegue inicial en entornos reales en menos de 14 días.
+                </p>
               </div>
 
-              <div class="step glass-card">
-                <span class="step-num">03 / PUESTA EN MARCHA</span>
-                <h3>Sale a correr, con vos en control</h3>
-                <p>
-                  Vos aprobás lo que importa. Se mide, se ajusta durante las
-                  primeras semanas, y queda corriendo solo en lo rutinario.
-                </p>
-                <span class="dur">Soporte: 30 días incluidos</span>
+              <div
+                class="core-grid"
+                style="
+                  display: grid;
+                  gap: 1.5rem;
+                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                "
+              >
+                <div class="glass-card reveal" style="padding: 32px">
+                  <span
+                    style="
+                      font-family: var(--font-mono);
+                      font-size: 0.85rem;
+                      color: var(--ink-dim);
+                      display: block;
+                      margin-bottom: 8px;
+                    "
+                    >01 / MODULAR</span
+                  >
+                  <h3
+                    style="
+                      font-size: 1.1rem;
+                      margin-bottom: 12px;
+                      color: var(--ink);
+                    "
+                  >
+                    Bloques de construcción listos
+                  </h3>
+                  <p
+                    class="body-text"
+                    style="font-size: 0.95rem; margin-bottom: 0"
+                  >
+                    Conectores pre-escritos para bases de datos relacionales, APIs
+                    de mensajería y ERPs, permitiendo ensamblar flujos complejos
+                    en días y no en meses.
+                  </p>
+                </div>
+
+                <div class="glass-card reveal" style="padding: 32px">
+                  <span
+                    style="
+                      font-family: var(--font-mono);
+                      font-size: 0.85rem;
+                      color: var(--ink-dim);
+                      display: block;
+                      margin-bottom: 8px;
+                    "
+                    >02 / RESILIENTE</span
+                  >
+                  <h3
+                    style="
+                      font-size: 1.1rem;
+                      margin-bottom: 12px;
+                      color: var(--ink);
+                    "
+                  >
+                    Control de alucinaciones y errores
+                  </h3>
+                  <p
+                    class="body-text"
+                    style="font-size: 0.95rem; margin-bottom: 0"
+                  >
+                    Capas de validación determinista que aseguran que el agente no
+                    invente datos ni ejecute acciones críticas sin la debida
+                    confirmación de un humano.
+                  </p>
+                </div>
+
+                <div class="glass-card reveal" style="padding: 32px">
+                  <span
+                    style="
+                      font-family: var(--font-mono);
+                      font-size: 0.85rem;
+                      color: var(--ink-dim);
+                      display: block;
+                      margin-bottom: 8px;
+                    "
+                    >03 / AGNÓSTICO</span
+                  >
+                  <h3
+                    style="
+                      font-size: 1.1rem;
+                      margin-bottom: 12px;
+                      color: var(--ink);
+                    "
+                  >
+                    Independencia de modelos
+                  </h3>
+                  <p
+                    class="body-text"
+                    style="font-size: 0.95rem; margin-bottom: 0"
+                  >
+                    Diseñado para alternar entre Claude, OpenAI o modelos
+                    open-source locales según el costo, la latencia y la
+                    privacidad que exija tu negocio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Cierra .oficina-wrapper -->
+      </div> <!-- Cierra .scroll-reveal-container -->
+
+      <section id="diferencia">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Por qué esto es distinto</div>
+            <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
+          </div>
+          <div class="diff-grid">
+            <div class="glass-card reveal" style="padding: 32px">
+              <p class="body-text">
+                Según el MIT, solo el 5% de las implementaciones de IA generan
+                un impacto real en el retorno de inversión. La razón, casi
+                siempre, es la misma: alguien vendió estrategia y nadie se
+                hizo cargo de la ingeniería real.
+              </p>
+              <p class="body-text" style="margin-bottom: 0">
+                Florece Studio lo construye una persona que programa — no un
+                equipo comercial con un mazo de slides. Vos hablás con quien
+                después escribe el código y lo pone a funcionar.
+              </p>
+            </div>
+            <div class="stat-block glass-card reveal">
+              <div class="big">5%</div>
+              <div class="cap">
+                de las implementaciones de IA logran ROI real — investigación
+                del MIT
+              </div>
+              <div class="founder-line">
+                Detrás de Florece Studio:
+                <strong>Juan Guillermo Flores Vargas</strong>, desarrollador.
+                Un solo interlocutor, del diagnóstico al código en producción.
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="florece-core">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="section-head reveal">
-              <div class="eyebrow">Arquitectura Propietaria</div>
-              <h2>Florece Core. El motor detrás de cada producto.</h2>
+      <section id="precios">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Precios</div>
+            <h2>Sin sorpresas.</h2>
+          </div>
+          <div class="price-list glass-card reveal">
+            <div class="price-row">
+              <div>
+                <div class="name">Diagnóstico Operativo</div>
+                <div class="desc">
+                  Mapeamos tu operación actual, detectamos cuellos de botella
+                  y diseñamos la arquitectura exacta de solución.
+                </div>
+              </div>
+              <div class="amount">Propuesta a medida</div>
             </div>
+            <div class="price-row">
+              <div>
+                <div class="name">Implementación Llave en Mano</div>
+                <div class="desc">
+                  Desarrollo, integración total con tus sistemas, capacitación
+                  de tu equipo y 30 días de soporte garantizado.
+                </div>
+              </div>
+              <div class="amount">Cotización personalizada</div>
+            </div>
+          </div>
+          <p class="price-note reveal">
+            Proyectos con alcance y precio fijo acordados previamente. Sin
+            costos ocultos ni sorpresas.
+          </p>
+        </div>
+      </section>
 
-            <div
-              class="glass-card reveal"
-              style="padding: 40px; margin-bottom: 2rem"
-            >
-              <p class="body-text" style="margin-top: 0">
-                No armamos cada solución desde cero. Desarrollamos sobre una
-                base firme probada en entornos reales que encapsula la lógica
-                pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
-                manejo de errores y pasarelas de integración con sistemas
-                legacy.
-              </p>
-              <p
-                class="body-text"
+      <section id="faq">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Preguntas Frecuentes</div>
+            <h2>Dudas reales. Respuestas sin filtro.</h2>
+          </div>
+
+          <div
+            class="faq-grid"
+            style="
+              display: grid;
+              gap: 1.5rem;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            "
+          >
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
                 style="
-                  font-size: 0.9rem;
-                  margin-top: 12px;
-                  margin-bottom: 0;
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
                   color: var(--ink);
                 "
               >
-                ⚡ Despliegue inicial en entornos reales en menos de 14 días.
-              </p>
-            </div>
-
-            <div
-              class="core-grid"
-              style="
-                display: grid;
-                gap: 1.5rem;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              "
-            >
-              <div class="glass-card reveal" style="padding: 32px">
-                <span
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85rem;
-                    color: var(--ink-dim);
-                    display: block;
-                    margin-bottom: 8px;
-                  "
-                  >01 / MODULAR</span
-                >
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  Bloques de construcción listos
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Conectores pre-escritos para bases de datos relacionales, APIs
-                  de mensajería y ERPs, permitiendo ensamblar flujos complejos
-                  en días y no en meses.
-                </p>
-              </div>
-
-              <div class="glass-card reveal" style="padding: 32px">
-                <span
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85rem;
-                    color: var(--ink-dim);
-                    display: block;
-                    margin-bottom: 8px;
-                  "
-                  >02 / RESILIENTE</span
-                >
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  Control de alucinaciones y errores
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Capas de validación determinista que aseguran que el agente no
-                  invente datos ni ejecute acciones críticas sin la debida
-                  confirmación de un humano.
-                </p>
-              </div>
-
-              <div class="glass-card reveal" style="padding: 32px">
-                <span
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85rem;
-                    color: var(--ink-dim);
-                    display: block;
-                    margin-bottom: 8px;
-                  "
-                  >03 / AGNÓSTICO</span
-                >
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  Independencia de modelos
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Diseñado para alternar entre Claude, OpenAI o modelos
-                  open-source locales según el costo, la latencia y la
-                  privacidad que exija tu negocio.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="diferencia">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="section-head reveal">
-              <div class="eyebrow">Por qué esto es distinto</div>
-              <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
-            </div>
-            <div class="diff-grid">
-              <div class="glass-card reveal" style="padding: 32px">
-                <p class="body-text">
-                  Según el MIT, solo el 5% de las implementaciones de IA generan
-                  un impacto real en el retorno de inversión. La razón, casi
-                  siempre, es la misma: alguien vendió estrategia y nadie se
-                  hizo cargo de la ingeniería real.
-                </p>
-                <p class="body-text" style="margin-bottom: 0">
-                  Florece Studio lo construye una persona que programa — no un
-                  equipo comercial con un mazo de slides. Vos hablás con quien
-                  después escribe el código y lo pone a funcionar.
-                </p>
-              </div>
-              <div class="stat-block glass-card reveal">
-                <div class="big">5%</div>
-                <div class="cap">
-                  de las implementaciones de IA logran ROI real — investigación
-                  del MIT
-                </div>
-                <div class="founder-line">
-                  Detrás de Florece Studio:
-                  <strong>Juan Guillermo Flores Vargas</strong>, desarrollador.
-                  Un solo interlocutor, del diagnóstico al código en producción.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="precios">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="section-head reveal">
-              <div class="eyebrow">Precios</div>
-              <h2>Sin sorpresas.</h2>
-            </div>
-            <div class="price-list glass-card reveal">
-              <div class="price-row">
-                <div>
-                  <div class="name">Diagnóstico Operativo</div>
-                  <div class="desc">
-                    Mapeamos tu operación actual, detectamos cuellos de botella
-                    y diseñamos la arquitectura exacta de solución.
-                  </div>
-                </div>
-                <div class="amount">Propuesta a medida</div>
-              </div>
-              <div class="price-row">
-                <div>
-                  <div class="name">Implementación Llave en Mano</div>
-                  <div class="desc">
-                    Desarrollo, integración total con tus sistemas, capacitación
-                    de tu equipo y 30 días de soporte garantizado.
-                  </div>
-                </div>
-                <div class="amount">Cotización personalizada</div>
-              </div>
-            </div>
-            <p class="price-note reveal">
-              Proyectos con alcance y precio fijo acordados previamente. Sin
-              costos ocultos ni sorpresas.
-            </p>
-          </div>
-        </section>
-
-        <section id="faq">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="section-head reveal">
-              <div class="eyebrow">Preguntas Frecuentes</div>
-              <h2>Dudas reales. Respuestas sin filtro.</h2>
-            </div>
-
-            <div
-              class="faq-grid"
-              style="
-                display: grid;
-                gap: 1.5rem;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              "
-            >
-              <div class="glass-card reveal" style="padding: 32px">
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  ¿Por qué contratar un estudio y no usar herramientas
-                  genéricas?
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Una suscripción a ChatGPT o Claude no se conecta a tu base de
-                  datos ni procesa tus facturas solo. Nosotros construimos el
-                  puente de código a medida para integrar la IA directamente en
-                  la operación real de tu empresa.
-                </p>
-              </div>
-
-              <div class="glass-card reveal" style="padding: 32px">
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  ¿Cuánto tiempo toma ver el agente funcionando?
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Desde la semana 1 tenemos el primer entorno de pruebas
-                  corriendo. No vendemos consultoría teórica de meses;
-                  entregamos software funcional que opera desde el primer
-                  sprint.
-                </p>
-              </div>
-
-              <div class="glass-card reveal" style="padding: 32px">
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  ¿Qué pasa si mi equipo no sabe programar ni usar IA?
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Cero fricción. El agente se integra en los canales que tu
-                  equipo ya usa (WhatsApp, correo, planillas de Google) sin que
-                  tengan que aprender una interfaz nueva ni cambiar sus hábitos
-                  operativos.
-                </p>
-              </div>
-
-              <div class="glass-card reveal" style="padding: 32px">
-                <h3
-                  style="
-                    font-size: 1.1rem;
-                    margin-bottom: 12px;
-                    color: var(--ink);
-                  "
-                >
-                  ¿Cómo se maneja la confidencialidad de los datos?
-                </h3>
-                <p
-                  class="body-text"
-                  style="font-size: 0.95rem; margin-bottom: 0"
-                >
-                  Los datos operativos de tu empresa y tus clientes no se
-                  utilizan para entrenar modelos públicos. Configuramos entornos
-                  aislados, seguros y bajo strictly normas de privacidad.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contacto">
-          <div class="wrap" style="position: relative; z-index: 3">
-            <div class="glass-card cta-final reveal">
-              <div class="eyebrow">EL SIGUIENTE PASO</div>
-              <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
-              <p class="lede">
-                Agendá una llamada de 20 minutos sin costo o envianos un mensaje
-                directo.
-              </p>
-
-              <div class="cta-row" style="margin-bottom: 2rem">
-                <a
-                  href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn"
-                  >Hablemos! →</a
-                >
-              </div>
-
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                class="contact-form"
+                ¿Por qué contratar un estudio y no usar herramientas
+                genéricas?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
               >
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="7704586e-56f7-461e-a6f7-a25dbe4c482c"
-                />
-                <!-- Honeypot optimizado -->
-                <input
-                  type="checkbox"
-                  name="botcheck"
-                  id="botcheck"
-                  aria-label="Bot Check"
-                  style="display: none"
-                  tabindex="-1"
-                  aria-hidden="true"
-                  autocomplete="off"
-                />
-                <input
-                  type="hidden"
-                  name="subject"
-                  value="Nuevo lead desde Florece Studio"
-                />
+                Una suscripción a ChatGPT o Claude no se conecta a tu base de
+                datos ni procesa tus facturas solo. Nosotros construimos el
+                puente de código a medida para integrar la IA directamente en
+                la operación real de tu empresa.
+              </p>
+            </div>
 
-                <div class="form-group">
-                  <label for="user-name">Tu nombre</label>
-                  <input
-                    type="text"
-                    id="user-name"
-                    name="name"
-                    required
-                    placeholder="Ej: Martin Perez"
-                  />
-                </div>
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Cuánto tiempo toma ver el agente funcionando?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Desde la semana 1 tenemos el primer entorno de pruebas
+                corriendo. No vendemos consultoría teórica de meses;
+                entregamos software funcional que opera desde el primer
+                sprint.
+              </p>
+            </div>
 
-                <div class="form-group">
-                  <label for="user-email">Tu email</label>
-                  <input
-                    type="email"
-                    id="user-email"
-                    name="email"
-                    required
-                    placeholder="tu@email.com"
-                  />
-                </div>
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Qué pasa si mi equipo no sabe programar ni usar IA?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Cero fricción. El agente se integra en los canales que tu
+                equipo ya usa (WhatsApp, correo, planillas de Google) sin que
+                tengan que aprender una interfaz nueva ni cambiar sus hábitos
+                operativos.
+              </p>
+            </div>
 
-                <div class="form-group">
-                  <label for="user-message">Tu mensaje</label>
-                  <textarea
-                    id="user-message"
-                    name="message"
-                    rows="4"
-                    required
-                    placeholder="¿Cómo podemos ayudarte?"
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-submit">
-                  Solicitar propuesta operativa →
-                </button>
-              </form>
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Cómo se maneja la confidencialidad de los datos?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Los datos operativos de tu empresa y tus clientes no se
+                utilizan para entrenar modelos públicos. Configuramos entornos
+                aislados, seguros y bajo strictly normas de privacidad.
+              </p>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="glass-card cta-final reveal">
+            <div class="eyebrow">EL SIGUIENTE PASO</div>
+            <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
+            <p class="lede">
+              Agendá una llamada de 20 minutos sin costo o envianos un mensaje
+              directo.
+            </p>
+
+            <div class="cta-row" style="margin-bottom: 2rem">
+              <a
+                href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Hablemos! →</a
+              >
+            </div>
+
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="7704586e-56f7-461e-a6f7-a25dbe4c482c"
+              />
+              <!-- Honeypot optimizado -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                id="botcheck"
+                aria-label="Bot Check"
+                style="display: none"
+                tabindex="-1"
+                aria-hidden="true"
+                autocomplete="off"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="Nuevo lead desde Florece Studio"
+              />
+
+              <div class="form-group">
+                <label for="user-name">Tu nombre</label>
+                <input
+                  type="text"
+                  id="user-name"
+                  name="name"
+                  required
+                  placeholder="Ej: Martin Perez"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="user-email">Tu email</label>
+                <input
+                  type="email"
+                  id="user-email"
+                  name="email"
+                  required
+                  placeholder="tu@email.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="user-message">Tu mensaje</label>
+                <textarea
+                  id="user-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="¿Cómo podemos ayudarte?"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-submit">
+                Solicitar propuesta operativa →
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -777,7 +782,7 @@
             >Términos</a
           >
         </div>
-        <span>Desarrollado por Juan Guillermo Flores Vargas</span>
+        <span>Desarrollado by Juan Guillermo Flores Vargas</span>
       </div>
     </footer>
 
