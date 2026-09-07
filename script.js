@@ -342,11 +342,11 @@ window.addEventListener('scroll', () => {
   const maxScroll = container.offsetHeight - window.innerHeight;
 
   if (scrollProgress >= 0 && scrollProgress <= maxScroll) {
-    const percentage = 5 + (scrollProgress / maxScroll) * 145;
+    const percentage = (scrollProgress / maxScroll) * 150;
     overlay.style.clipPath = `circle(${percentage}% at 50% 50%)`;
   } else if (scrollProgress > maxScroll) {
     overlay.style.clipPath = `circle(150% at 50% 50%)`;
   } else {
-    overlay.style.clipPath = `circle(5% at 50% 50%)`;
+    overlay.style.clipPath = `circle(0% at 50% 50%)`;
   }
 });

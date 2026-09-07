@@ -1025,7 +1025,7 @@ footer {
   height: 100%;
   z-index: 5;
   /* El clip-path inicial del círculo (empieza pequeño al 5%) */
-  clip-path: circle(5% at 50% 50%);
+  clip-path: circle(0% at 50% 50%);
   background: var(--bg, #0b0f19); /* Asegurate de usar el color de fondo de tu web */
   pointer-events: none;
 }
