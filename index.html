@@ -315,7 +315,7 @@
         <div style="position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden;">
           
           <!-- La capa que cubre (overlay) y hace el efecto de clip-path -->
-          <div class="reveal-circle-overlay" id="revealOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; clip-path: circle(5% at 50% 50%);"></div>
+          <div class="reveal-circle-overlay" id="revealOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; clip-path: circle(0% at 50% 50%);"></div>
 
           <!-- Contenido oculto/revelado -->
           <div class="oficina-wrapper" style="position: relative; z-index: 2; height: 100%; overflow-y: auto;">
@@ -499,140 +499,6 @@
         </div> <!-- Cierra wrapper sticky interno -->
       </div> <!-- Cierra .scroll-reveal-container -->
 
-          <section id="florece-core">
-            <div class="wrap" style="position: relative; z-index: 3">
-              <div class="section-head reveal">
-                <div class="eyebrow">Arquitectura Propietaria</div>
-                <h2>Florece Core. El motor detrás de cada producto.</h2>
-              </div>
-
-              <div
-                class="glass-card reveal"
-                style="padding: 40px; margin-bottom: 2rem"
-              >
-                <p class="body-text" style="margin-top: 0">
-                  No armamos cada solución desde cero. Desarrollamos sobre una
-                  base firme probada en entornos reales que encapsula la lógica
-                  pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
-                  manejo de errores y pasarelas de integración con sistemas
-                  legacy.
-                </p>
-                <p
-                  class="body-text"
-                  style="
-                    font-size: 0.9rem;
-                    margin-top: 12px;
-                    margin-bottom: 0;
-                    color: var(--ink);
-                  "
-                >
-                  ⚡ Despliegue inicial en entornos reales en menos de 14 días.
-                </p>
-              </div>
-
-              <div
-                class="core-grid"
-                style="
-                  display: grid;
-                  gap: 1.5rem;
-                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                "
-              >
-                <div class="glass-card reveal" style="padding: 32px">
-                  <span
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: 0.85rem;
-                      color: var(--ink-dim);
-                      display: block;
-                      margin-bottom: 8px;
-                    "
-                    >01 / MODULAR</span
-                  >
-                  <h3
-                    style="
-                      font-size: 1.1rem;
-                      margin-bottom: 12px;
-                      color: var(--ink);
-                    "
-                  >
-                    Bloques de construcción listos
-                  </h3>
-                  <p
-                    class="body-text"
-                    style="font-size: 0.95rem; margin-bottom: 0"
-                  >
-                    Conectores pre-escritos para bases de datos relacionales, APIs
-                    de mensajería y ERPs, permitiendo ensamblar flujos complejos
-                    en días y no en meses.
-                  </p>
-                </div>
-
-                <div class="glass-card reveal" style="padding: 32px">
-                  <span
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: 0.85rem;
-                      color: var(--ink-dim);
-                      display: block;
-                      margin-bottom: 8px;
-                    "
-                    >02 / RESILIENTE</span
-                  >
-                  <h3
-                    style="
-                      font-size: 1.1rem;
-                      margin-bottom: 12px;
-                      color: var(--ink);
-                    "
-                  >
-                    Control de alucinaciones y errores
-                  </h3>
-                  <p
-                    class="body-text"
-                    style="font-size: 0.95rem; margin-bottom: 0"
-                  >
-                    Capas de validación determinista que aseguran que el agente no
-                    invente datos ni ejecute acciones críticas sin la debida
-                    confirmación de un humano.
-                  </p>
-                </div>
-
-                <div class="glass-card reveal" style="padding: 32px">
-                  <span
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: 0.85rem;
-                      color: var(--ink-dim);
-                      display: block;
-                      margin-bottom: 8px;
-                    "
-                    >03 / AGNÓSTICO</span
-                  >
-                  <h3
-                    style="
-                      font-size: 1.1rem;
-                      margin-bottom: 12px;
-                      color: var(--ink);
-                    "
-                  >
-                    Independencia de modelos
-                  </h3>
-                  <p
-                    class="body-text"
-                    style="font-size: 0.95rem; margin-bottom: 0"
-                  >
-                    Diseñado para alternar entre Claude, OpenAI o modelos
-                    open-source locales según el costo, la latencia y la
-                    privacidad que exija tu negocio.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div> <!-- Cierra .oficina-wrapper -->
-      </div> <!-- Cierra .scroll-reveal-container -->
-
       <section id="diferencia">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="section-head reveal">
@@ -799,7 +665,7 @@
               >
                 Los datos operativos de tu empresa y tus clientes no se
                 utilizan para entrenar modelos públicos. Configuramos entornos
-                aislados, seguros y bajo strictly normas de privacidad.
+                aislados, seguros y bajo estrictas normas de privacidad.
               </p>
             </div>
           </div>
@@ -865,30 +731,28 @@
               </div>
 
               <div class="form-group">
-                <label for="user-email">Tu email</label>
+                <label for="user-email">Tu correo</label>
                 <input
                   type="email"
                   id="user-email"
                   name="email"
                   required
-                  placeholder="tu@email.com"
+                  placeholder="Ej: martin@empresa.com"
                 />
               </div>
 
               <div class="form-group">
-                <label for="user-message">Tu mensaje</label>
+                <label for="user-message">¿Qué te gustaría automatizar?</label>
                 <textarea
                   id="user-message"
                   name="message"
                   rows="4"
                   required
-                  placeholder="¿Cómo podemos ayudarte?"
+                  placeholder="Contanos brevemente sobre tu operación..."
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn btn-submit">
-                Solicitar propuesta operativa →
-              </button>
+              <button type="submit" class="btn">Enviar mensaje →</button>
             </form>
           </div>
         </div>
@@ -896,77 +760,7 @@
     </main>
 
     <footer>
-      <div
-        class="foot-row"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 1rem;
-          padding: 2rem 0;
-          border-top: 1px solid var(--line-soft);
-          font-size: 0.85rem;
-          color: var(--ink-dim);
-        "
-      >
-        <span>Florece Studio — 2026</span>
-        <div class="foot-links" style="display: flex; gap: 0.75rem">
-          <a
-            href="privacidad.html"
-            style="color: var(--ink-dim); text-decoration: none"
-            >Privacidad</a
-          >
-          <span>·</span>
-          <a
-            href="terminos.html"
-            style="color: var(--ink-dim); text-decoration: none"
-            >Términos</a
-          >
-        </div>
-        <span>Desarrollado by Juan Guillermo Flores Vargas</span>
-      </div>
+      <!-- Footer o cierre de página -->
     </footer>
-
-    <div id="cookie-banner" class="cookie-banner" style="display: none">
-      <p>
-        Utilizamos cookies técnicas necesarias para el correcto funcionamiento
-        del sitio. Para más detalle, revise nuestra
-        <a href="privacidad.html">Política de Privacidad</a>.
-      </p>
-      <div class="cookie-actions">
-        <button class="btn-cookie" onclick="acceptCookies()">Entendido</button>
-      </div>
-    </div>
-
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
-    <!-- Botón Flotante de WhatsApp -->
-    <a
-      href="https://wa.me/2646224354"
-      class="chat-float"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        stroke="#ffffff"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path
-          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"
-        />
-      </svg>
-    </a>
-
-    <script src="script.js" defer></script>
   </body>
 </html>

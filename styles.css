@@ -1014,7 +1014,7 @@ footer {
 
 .scroll-reveal-container {
   position: relative;
-  height: 300vh; /* Espacio para hacer scroll mientras se expande el círculo */
+  height: 250vh; /* Espacio para hacer scroll mientras se expande el círculo */
 }
 
 .reveal-circle-overlay {
@@ -1028,4 +1028,14 @@ footer {
   clip-path: circle(0% at 50% 50%);
   background: var(--bg, #0b0f19); /* Asegurate de usar el color de fondo de tu web */
   pointer-events: none;
+}
+
+.hero-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
 }
