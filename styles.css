@@ -55,19 +55,6 @@ svg {
   max-width: 100%;
 }
 
-/* ---------- FONDO DE REJILLA ---------- */
-.grid-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(var(--line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.1;
-}
-
 /* ---------- CONTENIDO PRINCIPAL ---------- */
 main {
   position: relative;
@@ -251,23 +238,19 @@ header.header-hidden {
 .corner.bl { bottom: 28px; left: 24px; }
 .corner.br { bottom: 28px; right: 24px; }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO (Estilo Minimalista e Impactante) ---------- */
 .hero {
   position: relative;
-  z-index: 10; /* Esto fuerza a la foto a estar por encima de la grilla */
+  z-index: 10;
   min-height: 85vh;
   display: flex;
   align-items: center;
   padding: 80px 0;
   text-align: left;
-  
-  /* Fondo base para que nada se transparente desde atrás */
   background-color: var(--bg-dark); 
-  
-  /* Tu foto con el filtro oscuro */
   background-image: 
     linear-gradient(rgba(6, 6, 8, 0.85), rgba(6, 6, 8, 0.95)),
-    url('assets/patio.webp'); /* Acordate de chequear que esta ruta sea correcta */
+    url('assets/patio.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -291,11 +274,11 @@ header.header-hidden {
 h1 {
   font-family: var(--mono);
   font-weight: 700;
-  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem); /* Título aún más gigante y moderno */
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin: 0 0 24px;
-  max-width: 15ch;
+  max-width: 16ch;
   color: var(--ink-primary);
   text-align: left;
 }
@@ -404,14 +387,15 @@ p {
   font-size: 1.05rem;
 }
 
-/* ---------- PROCESO ---------- */
+/* ---------- PROCESO (Flexible sin Grillas forzadas) ---------- */
 .process {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .step {
+  flex: 1 1 280px;
   padding: 28px;
 }
 
@@ -453,10 +437,14 @@ p {
 
 /* ---------- DIFERENCIACIÓN ---------- */
 .diff-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   align-items: stretch;
+}
+
+.diff-grid > * {
+  flex: 1 1 300px;
 }
 
 .stat-block {
@@ -501,7 +489,7 @@ p {
 }
 
 .price-period, .card-subtitle {
-  color: #a1a1aa; /* Gris claro con alto contraste para fondos oscuros */
+  color: #a1a1aa;
 }
 
 .price-row {
@@ -632,7 +620,6 @@ footer {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  will-change: opacity, transform;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -750,7 +737,6 @@ footer {
 }
 
 /* ======================================================= */
-/* ======================================================= */
 /* BARRA LATERAL (SIDEBAR OVERLAY / TARJETA FLOTANTE)      */
 /* ======================================================= */
 .sidebar-overlay {
@@ -866,7 +852,7 @@ footer {
 }
 
 .sidebar-link-item {
-  font-size: 1.5rem; /* Aumentado ligeramente para mayor presencia visual */
+  font-size: 1.5rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
@@ -880,7 +866,6 @@ footer {
   transform: translateX(6px);
 }
 
-/* Botón inferior tipo píldora dentro del menú */
 .sidebar-cta-btn {
   display: block;
   width: 100%;
@@ -899,10 +884,9 @@ footer {
 .sidebar-cta-btn:hover {
   background-color: #e5e7eb;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255,0.15);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
 }
 
-/* Clase para ocultar la tarjeta al hacer scroll hacia abajo */
 .sidebar-content-wrapper.sidebar-hidden {
   transform: translateY(-120%) scale(0.95);
   opacity: 0;
@@ -918,13 +902,6 @@ footer {
   }
   html {
     scroll-behavior: auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .process,
-  .diff-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -973,7 +950,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-/* Forzar renderizado correcto del icono */
 .chat-float svg {
   width: 24px;
   height: 24px;
@@ -989,7 +965,7 @@ footer {
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3);
 }
 
-/* Ocultar el puntero por defecto */
+/* Puntero Personalizado */
 @media (min-width: 769px) {
   html, body, a, button {
     cursor: none !important;
@@ -1028,4 +1004,3 @@ footer {
 .cursor-ring {
   transition: opacity 0.3s ease, transform 0.15s ease-out;
 }
-
