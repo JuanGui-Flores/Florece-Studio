@@ -331,3 +331,24 @@ if (dot && ring) {
     isVisible = false;
   });
 }
+
+// ---------- LÓGICA DE EFECTO DE CÍRCULO EXPANSIVO AL HACER SCROLL ----------
+window.addEventListener('scroll', () => {
+  const container = document.getElementById('revealContainer');
+  const overlay = document.getElementById('revealOverlay');
+  
+  if (!container || !overlay) return;
+
+  const rect = container.getBoundingClientRect();
+  const scrollProgress = -rect.top; 
+  const maxScroll = container.offsetHeight - window.innerHeight;
+
+  if (scrollProgress >= 0 && scrollProgress <= maxScroll) {
+    const percentage = 5 + (scrollProgress / maxScroll) * 145;
+    overlay.style.clipPath = `circle(${percentage}% at 50% 50%)`;
+  } else if (scrollProgress > maxScroll) {
+    overlay.style.clipPath = `circle(150% at 50% 50%)`;
+  } else {
+    overlay.style.clipPath = `circle(5% at 50% 50%)`;
+  }
+});

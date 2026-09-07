@@ -1004,3 +1004,21 @@ footer {
 .cursor-ring {
   transition: opacity 0.3s ease, transform 0.15s ease-out;
 }
+
+/* ---------- EFECTO DE CÍRCULO EXPANSIVO AL HACER SCROLL ---------- */
+.scroll-reveal-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.reveal-circle-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-dark, #0a0a0a); /* Usa tu color de fondo oscuro */
+  z-index: 5;
+  clip-path: circle(5% at 50% 50%);
+  transition: clip-path 0.05s ease-out;
+  pointer-events: none;
+}
