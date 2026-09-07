@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     threshold: 0.01,
   };
 
- document.addEventListener("DOMContentLoaded", function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
   });
-});
 
   /* -----------------------------------------------------------
      2. PARALLAX SOBRIO EN EL HERO (Optimizado para Escritorio)
@@ -124,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Escuchar el scroll directamente sobre el contenedor del overlay
     navOverlay.addEventListener(
       "scroll",
       () => {
@@ -279,57 +276,57 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* -----------------------------------------------------------
+     9. CURSOR PERSONALIZADO Y ELEGANTE
+     ----------------------------------------------------------- */
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
+
+  if (dot && ring) {
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let isVisible = false;
+
+    const isDesktop = () => window.innerWidth > 768;
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDesktop()) return;
+
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isVisible) {
+        isVisible = true;
+        ringX = mouseX;
+        ringY = mouseY;
+        dot.style.opacity = "1";
+        ring.style.opacity = "1";
+      }
+
+      dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+    });
+
+    const render = () => {
+      if (isVisible && isDesktop()) {
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+        ring.style.transform = `translate3d(${ringX - 18}px, ${ringY - 18}px, 0)`;
+      }
+      requestAnimationFrame(render);
+    };
+    render();
+
+    document.addEventListener("mouseleave", () => {
+      dot.style.opacity = "0";
+      ring.style.opacity = "0";
+      isVisible = false;
+    });
+  }
 });
 
 function acceptCookies() {
   localStorage.setItem("cookiesAccepted", "true");
   const banner = document.getElementById("cookie-banner");
   if (banner) banner.style.display = "none";
-}
-
-/* -----------------------------------------------------------
-   9. CURSOR PERSONALIZADO Y ELEGANTE
-   ----------------------------------------------------------- */
-const dot = document.querySelector(".cursor-dot");
-const ring = document.querySelector(".cursor-ring");
-
-if (dot && ring) {
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
-  let isVisible = false;
-
-  const isDesktop = () => window.innerWidth > 768;
-
-  window.addEventListener("mousemove", (e) => {
-    if (!isDesktop()) return;
-
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    if (!isVisible) {
-      isVisible = true;
-      ringX = mouseX;
-      ringY = mouseY;
-      dot.style.opacity = "1";
-      ring.style.opacity = "1";
-    }
-
-    dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
-  });
-
-  const render = () => {
-    if (isVisible && isDesktop()) {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      ring.style.transform = `translate3d(${ringX - 18}px, ${ringY - 18}px, 0)`;
-    }
-    requestAnimationFrame(render);
-  };
-  render();
-
-  document.addEventListener("mouseleave", () => {
-    dot.style.opacity = "0";
-    ring.style.opacity = "0";
-    isVisible = false;
-  });
 }
