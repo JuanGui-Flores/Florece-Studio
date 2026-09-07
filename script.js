@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entry.target.classList.add('is-visible');
       }
     });
-  }, { threshold: 0.1 });
+  }, observerOptions);
 
   document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
