@@ -696,6 +696,13 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+/* Ocultar barra de scroll en Chrome, Safari y Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Ocultar barra de scroll en IE, Edge y Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .oficina-wrapper .overlay {
