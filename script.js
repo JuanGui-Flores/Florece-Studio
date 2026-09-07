@@ -8,15 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
     threshold: 0.01,
   };
 
+ document.addEventListener("DOMContentLoaded", function() {
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
+        entry.target.classList.add('is-visible');
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
+  });
+});
 
   /* -----------------------------------------------------------
      2. PARALLAX SOBRIO EN EL HERO (Optimizado para Escritorio)
