@@ -967,12 +967,6 @@ footer {
   box-shadow: 0 6px 24px rgba(59, 130, 246, 0.3);
 }
 
-/* Puntero Personalizado */
-@media (min-width: 769px) {
-  html, body, a, button {
-    cursor: none !important;
-  }
-}
 
 .cursor-dot {
   width: 6px;
