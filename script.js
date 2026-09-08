@@ -287,33 +287,52 @@ document.addEventListener("DOMContentLoaded", () => {
      9. CURSOR PERSONALIZADO Y ELEGANTE
      ----------------------------------------------------------- */
   const cursorDot = document.querySelector(".cursor-dot");
-  const cursorRing = document.querySelector(".cursor-ring");
+const cursorRing = document.querySelector(".cursor-ring");
 
-  if (cursorDot && cursorRing) {
-    let mouseMoved = false;
+if (cursorDot && cursorRing) {
+  let mouseMoved = false;
 
-    window.addEventListener("mousemove", (e) => {
-      if (!mouseMoved) {
-        cursorDot.style.opacity = "1";
-        cursorRing.style.opacity = "1";
-        mouseMoved = true;
-      }
+  let mouseX = 0;
+  let mouseY = 0;
 
-      const posX = e.clientX;
-      const posY = e.clientY;
+  let ringX = 0;
+  let ringY = 0;
 
-      cursorDot.style.transform = `translate3d(${posX - 3}px, ${posY - 3}px, 0)`;
-      cursorRing.style.transform = `translate3d(${posX - 18}px, ${posY - 18}px, 0)`;
-    });
+  window.addEventListener("mousemove", (e) => {
+    if (!mouseMoved) {
+      cursorDot.style.opacity = "1";
+      cursorRing.style.opacity = "1";
+      mouseMoved = true;
+    }
 
-    const interactives = document.querySelectorAll("a, button, .glass-card");
-    interactives.forEach(el => {
-      el.addEventListener("mouseenter", () => {
-        cursorRing.style.borderColor = "var(--accent-blue)";
-      });
-      el.addEventListener("mouseleave", () => {
-        cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
-      });
-    });
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // El punto se mueve de forma instantánea y exacta al mouse (con su offset de centrado de 3px)
+    cursorDot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+  });
+
+  // Bucle de animación para que el anillo persiga al mouse con retraso (inercia)
+  function render() {
+    // El valor '0.15' controla la velocidad: más alto = más rápido, más bajo = más flotante/lento
+    ringX += (mouseX - ringX - 18) * 0.15;
+    ringY += (mouseY - ringY - 18) * 0.15;
+
+    cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+
+    requestAnimationFrame(render);
   }
+
+  render();
+
+  const interactives = document.querySelectorAll("a, button, .glass-card");
+  interactives.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      cursorRing.style.borderColor = "var(--accent-blue)";
+    });
+    el.addEventListener("mouseleave", () => {
+      cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
+    });
+  });
+}
 });
