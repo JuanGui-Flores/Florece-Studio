@@ -287,53 +287,42 @@ document.addEventListener("DOMContentLoaded", () => {
   /* -----------------------------------------------------------
      9. CURSOR PERSONALIZADO Y ELEGANTE
      ----------------------------------------------------------- */
-  const dot = document.querySelector(".cursor-dot");
-  const ring = document.querySelector(".cursor-ring");
+    document.addEventListener("DOMContentLoaded", () => {
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorRing = document.querySelector(".cursor-ring");
 
-  if (dot && ring) {
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-    let isVisible = false;
+  if (!cursorDot || !cursorRing) return;
 
-    const isDesktop = () => window.innerWidth > 768;
+  // Activar visibilidad al mover el mouse por primera vez
+  let mouseMoved = false;
 
-    window.addEventListener("mousemove", (e) => {
-      if (!isDesktop()) return;
+  window.addEventListener("mousemove", (e) => {
+    if (!mouseMoved) {
+      cursorDot.style.opacity = "1";
+      cursorRing.style.opacity = "1";
+      mouseMoved = true;
+    }
 
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-      if (!isVisible) {
-        isVisible = true;
-        ringX = mouseX;
-        ringY = mouseY;
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-      }
+    // Posición inmediata para el punto central
+    cursorDot.style.transform = `translate3d(${posX - 3}px, ${posY - 3}px, 0)`;
+    
+    // Posición con leve retraso o fluidez para el anillo (opcional, o directo)
+    cursorRing.style.transform = `translate3d(${posX - 18}px, ${posY - 18}px, 0)`;
+  });
 
-      dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+  // Efecto hover opcional en enlaces y botones
+  const interactives = document.querySelectorAll("a, button, .glass-card");
+  interactives.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      cursorRing.style.transform += " scale(1.5)";
+      cursorRing.style.borderColor = "var(--accent-blue)";
     });
-
-    const render = () => {
-      if (isVisible && isDesktop()) {
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
-        ring.style.transform = `translate3d(${ringX - 18}px, ${ringY - 18}px, 0)`;
-      }
-      requestAnimationFrame(render);
-    };
-    render();
-
-    document.addEventListener("mouseleave", () => {
-      dot.style.opacity = "0";
-      ring.style.opacity = "0";
-      isVisible = false;
+    el.addEventListener("mouseleave", () => {
+      cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
     });
-  }
+  });
 });
-
-function acceptCookies() {
-  localStorage.setItem("cookiesAccepted", "true");
-  const banner = document.getElementById("cookie-banner");
-  if (banner) banner.style.display = "none";
-}
+});
