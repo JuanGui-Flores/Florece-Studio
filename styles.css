@@ -620,7 +620,7 @@ footer {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  visibility: visible
+  visibility: visible;
 }
 
 .reveal.is-visible {
