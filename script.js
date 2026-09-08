@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenu = () => {
       navOverlay.classList.remove("active");
       document.body.style.overflow = "";
+      // CORRECCIÓN: Al cerrar el menú, nos aseguramos de remover el hidden
       if (sidebarWrapper) sidebarWrapper.classList.remove("sidebar-hidden");
     };
 
