@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* -----------------------------------------------------------
-     1. OBSERVER / REVEAL ANIMATIONS (Soporte Móvil y Desktop)
+     1. OBSERVER / REVEAL ANIMATIONS (Con soporte de carga inicial)
      ----------------------------------------------------------- */
   const observerOptions = {
     root: null,
@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
+    
+    // Seguridad: Si el elemento ya está a la vista al cargar la página, lo mostramos de una
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('is-visible');
+    }
   });
 
   /* -----------------------------------------------------------
