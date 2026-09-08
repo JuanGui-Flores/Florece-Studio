@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const interactives = document.querySelectorAll("a, button, .glass-card");
   interactives.forEach((el) => {
     el.addEventListener("mouseenter", () => {
-      cursorRing.style.transform += " scale(1.5)";
+      cursorRing.style.transform = cursorRing.style.transform + " scale(1.5)";
       cursorRing.style.borderColor = "var(--accent-blue)";
     });
     el.addEventListener("mouseleave", () => {
