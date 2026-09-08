@@ -274,7 +274,7 @@ header.header-hidden {
 h1 {
   font-family: var(--mono);
   font-weight: 700;
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem); /* Título aún más gigante y moderno */
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin: 0 0 24px;
@@ -387,7 +387,7 @@ p {
   font-size: 1.05rem;
 }
 
-/* ---------- PROCESO (Flexible sin Grillas forzadas) ---------- */
+/* ---------- PROCESO ---------- */
 .process {
   display: flex;
   flex-wrap: wrap;
@@ -616,22 +616,16 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* Forzar visibilidad absoluta de todo el contenido */
+/* ---------- ANIMACIONES REVEAL (Corregidas) ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  visibility: visible;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Asegurar que la pantalla de la laptop o contenedores oscuros no tengan capas negras extra */
-.hero, .hero-content, section {
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 /* ---------- COOKIE BANNER ---------- */
@@ -702,13 +696,12 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-/* Ocultar barra de scroll en Chrome, Safari y Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  /* Ocultar barra de scroll en IE, Edge y Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.oficina-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .oficina-wrapper .overlay {
@@ -787,10 +780,6 @@ footer {
   gap: 2rem;
   transform: scale(1);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.sidebar-overlay.active .sidebar-content-wrapper {
-  transform: scale(1);
 }
 
 .sidebar-header-top {
