@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenu = () => {
       navOverlay.classList.remove("active");
       document.body.style.overflow = "";
-      // CORRECCIÓN: Al cerrar el menú, nos aseguramos de remover el hidden
       if (sidebarWrapper) sidebarWrapper.classList.remove("sidebar-hidden");
     };
 
@@ -287,42 +286,34 @@ document.addEventListener("DOMContentLoaded", () => {
   /* -----------------------------------------------------------
      9. CURSOR PERSONALIZADO Y ELEGANTE
      ----------------------------------------------------------- */
-    document.addEventListener("DOMContentLoaded", () => {
   const cursorDot = document.querySelector(".cursor-dot");
   const cursorRing = document.querySelector(".cursor-ring");
 
-  if (!cursorDot || !cursorRing) return;
+  if (cursorDot && cursorRing) {
+    let mouseMoved = false;
 
-  // Activar visibilidad al mover el mouse por primera vez
-  let mouseMoved = false;
+    window.addEventListener("mousemove", (e) => {
+      if (!mouseMoved) {
+        cursorDot.style.opacity = "1";
+        cursorRing.style.opacity = "1";
+        mouseMoved = true;
+      }
 
-  window.addEventListener("mousemove", (e) => {
-    if (!mouseMoved) {
-      cursorDot.style.opacity = "1";
-      cursorRing.style.opacity = "1";
-      mouseMoved = true;
-    }
+      const posX = e.clientX;
+      const posY = e.clientY;
 
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    // Posición inmediata para el punto central
-    cursorDot.style.transform = `translate3d(${posX - 3}px, ${posY - 3}px, 0)`;
-    
-    // Posición con leve retraso o fluidez para el anillo (opcional, o directo)
-    cursorRing.style.transform = `translate3d(${posX - 18}px, ${posY - 18}px, 0)`;
-  });
-
-  // Efecto hover opcional en enlaces y botones
-  const interactives = document.querySelectorAll("a, button, .glass-card");
-  interactives.forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-      cursorRing.style.transform = cursorRing.style.transform + " scale(1.5)";
-      cursorRing.style.borderColor = "var(--accent-blue)";
+      cursorDot.style.transform = `translate3d(${posX - 3}px, ${posY - 3}px, 0)`;
+      cursorRing.style.transform = `translate3d(${posX - 18}px, ${posY - 18}px, 0)`;
     });
-    el.addEventListener("mouseleave", () => {
-      cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
+
+    const interactives = document.querySelectorAll("a, button, .glass-card");
+    interactives.forEach(el => {
+      el.addEventListener("mouseenter", () => {
+        cursorRing.style.borderColor = "var(--accent-blue)";
+      });
+      el.addEventListener("mouseleave", () => {
+        cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
+      });
     });
-  });
-});
+  }
 });
