@@ -710,6 +710,7 @@ p {
 
 /* ---------- FOOTER ---------- */
 /* --- PIE DE PÁGINA Y ENLACES LEGALES --- */
+/* --- PIE DE PÁGINA Y ENLACES LEGALES --- */
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background-color: transparent;
@@ -752,6 +753,65 @@ p {
 
 .legal-links a:hover {
   color: var(--ink, #ffffff);
+}
+
+
+/* --- ESTRUCTURA DE PÁGINAS LEGALES (Privacidad, Términos, Cookies) --- */
+.legal-page {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  max-width: 800px; /* Evita que el texto ocupe toda la pantalla y ajusta el tamaño */
+  margin: 0 auto;
+}
+
+.legal-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.legal-header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.legal-date {
+  color: var(--ink-dim, #a1a1aa);
+  font-size: 0.9rem;
+}
+
+.legal-content section {
+  margin-bottom: 2rem;
+}
+
+.legal-content h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink, #ffffff);
+}
+
+.legal-content p, 
+.legal-content li {
+  color: var(--ink-dim, #a1a1aa);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.legal-content ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-back-action {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* ---------- ANIMACIONES REVEAL (Corregidas) ---------- */
 .reveal {
