@@ -969,44 +969,38 @@ footer {
 }
 
 
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-}
-
+.cursor-dot,
 .cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0 !important;
+  visibility: hidden;
+  /* Lo posicionamos fuera de la pantalla por defecto */
+  transform: translate3d(-100px, -100px, 0) !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cursor-ring {
   width: 36px;
   height: 36px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  pointer-events: none;
   z-index: 99998;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Transición y estado inicial oculto */
-.cursor-dot,
-.cursor-ring {
-  opacity: 0; /* Oculto por defecto para evitar que se vea en la esquina */
-  transition: opacity 0.3s ease, transform 0.15s ease-out;
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
-/* Clase para mostrarlo solo cuando el mouse se mueve */
+/* Solo cuando la clase .visible está activa, permitimos que se muestre y transforme */
 .cursor-dot.visible,
 .cursor-ring.visible {
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible;
 }

@@ -292,38 +292,35 @@ const cursorRing = document.querySelector(".cursor-ring");
 if (cursorDot && cursorRing) {
   let mouseMoved = false;
 
-  let mouseX = 0;
-  let mouseY = 0;
-
-  let ringX = 0;
-  let ringY = 0;
+  // Inicializamos fuera de la pantalla
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
 
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
     if (!mouseMoved) {
-      // Ajusta la posición del anillo al instante en el primer movimiento para que no 'sople' desde (0,0)
       ringX = mouseX - 18;
       ringY = mouseY - 18;
       mouseMoved = true;
     }
 
-    // Muestra el cursor sólo cuando hay interacción activa
+    // Activamos visibilidad solo cuando hay movimiento
     cursorDot.classList.add("visible");
     cursorRing.classList.add("visible");
 
-    // El punto se mueve de forma instantánea al centro del puntero
-    cursorDot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+    // Sobrescribimos el transform fuera de pantalla con la posición real
+    cursorDot.style.setProperty("transform", `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`, "important");
   });
 
-  // Oculta los elementos si el mouse sale de la ventana del navegador
   document.addEventListener("mouseleave", () => {
     cursorDot.classList.remove("visible");
     cursorRing.classList.remove("visible");
   });
 
-  // Vuelve a mostrarlos al reingresar (si ya hubo movimiento previo)
   document.addEventListener("mouseenter", () => {
     if (mouseMoved) {
       cursorDot.classList.add("visible");
@@ -331,21 +328,18 @@ if (cursorDot && cursorRing) {
     }
   });
 
-  // Bucle de animación para la inercia del anillo
   function render() {
     if (mouseMoved) {
       ringX += (mouseX - ringX - 18) * 0.15;
       ringY += (mouseY - ringY - 18) * 0.15;
 
-      cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      cursorRing.style.setProperty("transform", `translate3d(${ringX}px, ${ringY}px, 0)`, "important");
     }
-
     requestAnimationFrame(render);
   }
 
   render();
 
-  // Hover en elementos interactivos
   const interactives = document.querySelectorAll("a, button, .glass-card");
   interactives.forEach((el) => {
     el.addEventListener("mouseenter", () => {
