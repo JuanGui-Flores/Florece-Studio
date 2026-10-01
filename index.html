@@ -1,52 +1,98 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Configuración Meta Básica -->
+    <!-- Configuración Meta Básica (Siempre al inicio) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="YBkhU-K6qEjzQNCdAbGGwUABbAN-ANpzoI4kbwE2AZY" />
+    <meta
+      name="google-site-verification"
+      content="YBkhU-K6qEjzQNCdAbGGwUABbAN-ANpzoI4kbwE2AZY"
+    />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://florece-studio.vercel.app/" />
 
     <!-- SEO Principal -->
     <title>Florece Studio — Presencia digital que exige excelencia!</title>
-    <meta name="description" content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa." />
+    <meta
+      name="description"
+      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+    />
 
     <!-- Preconexiones y Preloads -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="assets/patio.webp" type="image/webp" fetchpriority="high" />
-    <link rel="preload" href="styles.css" as="style" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/patio.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XEC072YVEM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XEC072YVEM");
+    </script>
 
     <!-- Open Graph / Redes Sociales & WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://florece-studio.vercel.app/" />
     <meta property="og:site_name" content="Florece Studio" />
-    <meta property="og:title" content="Florece Studio — Presencia digital que exige excelencia!" />
-    <meta property="og:description" content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa." />
-    <!-- NOTA: Se mantiene .png para no romper la web, pero se sugiere reemplazar por .svg cuando lo tengas -->
-    <meta property="og:image" content="https://florece-studio.vercel.app/assets/logo.png" />
+    <meta
+      property="og:title"
+      content="Florece Studio — Presencia digital que exige excelencia!"
+    />
+    <meta
+      property="og:description"
+      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+    />
+    <meta
+      property="og:image"
+      content="https://florece-studio.vercel.app/assets/logo.png"
+    />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://florece-studio.vercel.app/" />
-    <meta name="twitter:title" content="Florece Studio — Presencia digital que exige excelencia!" />
-    <meta name="twitter:description" content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa." />
-    <meta name="twitter:image" content="https://florece-studio.vercel.app/assets/logo.png" />
+    <meta
+      name="twitter:title"
+      content="Florece Studio — Presencia digital que exige excelencia!"
+    />
+    <meta
+      name="twitter:description"
+      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+    />
+    <meta
+      name="twitter:image"
+      content="https://florece-studio.vercel.app/assets/logo.png"
+    />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="https://florece-studio.vercel.app/assets/logo.png" />
-    <link rel="apple-touch-icon" href="https://florece-studio.vercel.app/assets/logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://florece-studio.vercel.app/assets/logo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://florece-studio.vercel.app/assets/logo.png"
+    />
 
     <!-- Tipografías & Estilos -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    
-    <!-- CSS Crítico (Evita estilos en línea en el HTML) -->
-    <style>
-      .hidden-botcheck {
-        display: none !important;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
 
     <!-- Datos Estructurados JSON-LD -->
@@ -96,6 +142,46 @@
         ]
       }
     </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod(...arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        const scriptElement = b.createElement(e);
+        scriptElement.async = !0;
+        scriptElement.src = v;
+        const firstScript = b.getElementsByTagName(e)[0];
+        firstScript.parentNode.insertBefore(scriptElement, firstScript);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "3512314555595910");
+      fbq("track", "PageView");
+    </script>
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=3512314555595910&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -145,21 +231,44 @@
       <div class="sidebar-content-wrapper">
         <div class="sidebar-header-top">
           <span class="sidebar-indicator">Navegación</span>
-          <button id="closeMenuBtn" class="sidebar-close-btn" aria-label="Cerrar menú">
+          <button
+            id="closeMenuBtn"
+            class="sidebar-close-btn"
+            aria-label="Cerrar menú"
+          >
             <span class="custom-close-x"></span>
           </button>
         </div>
         <ul class="sidebar-links-list">
-          <li><a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a></li>
           <li>
-            <a href="#florece-core" class="sidebar-link-item" style="color: var(--ink)">
-              Florece Core
-              <span style="font-size: 0.75rem; font-family: var(--font-mono); background: rgba(255, 255, 255, 0.1); padding: 2px 6px; border-radius: 4px; vertical-align: middle;">Motor</span>
-            </a>
+            <a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a>
           </li>
-          <li><a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a></li>
+          <li>
+            <a
+              href="#florece-core"
+              class="sidebar-link-item"
+              style="color: var(--ink)"
+              >Florece Core
+              <span
+                style="
+                  font-size: 0.75rem;
+                  font-family: var(--font-mono);
+                  background: rgba(255, 255, 255, 0.1);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  vertical-align: middle;
+                "
+                >Motor</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a>
+          </li>
           <li><a href="#precios" class="sidebar-link-item">Precios</a></li>
-          <li><a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a></li>
+          <li>
+            <a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a>
+          </li>
           <li><a href="#contacto" class="sidebar-link-item">Contacto</a></li>
         </ul>
       </div>
@@ -175,14 +284,28 @@
 
           <h1 class="reveal">
             Engineering that
-            <span style="font-family: var(--font-mono); font-style: italic; font-weight: 400;">grows</span><br />
+            <span
+              style="
+                font-family: var(--font-mono);
+                font-style: italic;
+                font-weight: 400;
+              "
+              >grows</span
+            ><br />
             <span class="accent-word rotating-word">your business.</span>
           </h1>
           <p class="lede reveal">
-            Diseñamos el motor operativo que tu empresa necesita para crecer sin multiplicar las horas de trabajo ni el estrés de tu equipo.
+            Diseñamos el motor operativo que tu empresa necesita para crecer sin
+            multiplicar las horas de trabajo ni el estrés de tu equipo.
           </p>
           <div class="cta-row reveal">
-            <a href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8" target="_blank" rel="noopener noreferrer" class="btn">Reserva una llamada →</a>
+            <a
+              href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              >Reserva una llamada →</a
+            >
           </div>
         </div>
       </section>
@@ -197,21 +320,32 @@
             <div class="step glass-card">
               <span class="step-num">01 / DIAGNÓSTICO</span>
               <h3>Miramos tu operación real</h3>
-              <p>Identificamos una tarea puntual que se repite todos los días y que tiene impacto medible si se automatiza — no una lista genérica de "casos de uso de IA".</p>
+              <p>
+                Identificamos una tarea puntual que se repite todos los días y
+                que tiene impacto medible si se automatiza — no una lista
+                genérica de "casos de uso de IA".
+              </p>
               <span class="dur">Duración: 1 semana</span>
             </div>
 
             <div class="step glass-card">
               <span class="step-num">02 / IMPLEMENTACIÓN</span>
               <h3>El agente, sobre tus herramientas</h3>
-              <p>Se integra a lo que ya usás — correo, WhatsApp, planillas y más. Nada de plataformas genéricas que después tenés que aprender a operar solo.</p>
+              <p>
+                Se integra a lo que ya usás — correo, WhatsApp, planillas y
+                más. Nada de plataformas genéricas que después tenés que
+                aprender a operar solo.
+              </p>
               <span class="dur">Duración: 2–4 semanas</span>
             </div>
 
             <div class="step glass-card">
               <span class="step-num">03 / PUESTA EN MARCHA</span>
               <h3>Sale a correr, con vos en control</h3>
-              <p>Vos aprobás lo que importa. Se mide, se ajusta durante las primeras semanas, y queda corriendo solo en lo rutinario.</p>
+              <p>
+                Vos aprobás lo que importa. Se mide, se ajusta durante las
+                primeras semanas, y queda corriendo solo en lo rutinario.
+              </p>
               <span class="dur">Soporte: 30 días incluidos</span>
             </div>
           </div>
@@ -225,37 +359,125 @@
             <h2>Florece Core. El motor detrás de cada producto.</h2>
           </div>
 
-          <div class="glass-card reveal" style="padding: 40px; margin-bottom: 2rem">
+          <div
+            class="glass-card reveal"
+            style="padding: 40px; margin-bottom: 2rem"
+          >
             <p class="body-text" style="margin-top: 0">
-              No armamos cada solución desde cero. Desarrollamos sobre una base firme probada en entornos reales que encapsula la lógica pesada: gestión de memoria de agentes, llamadas seguras a LLMs, manejo de errores y pasarelas de integración con sistemas legacy.
+              No armamos cada solución desde cero. Desarrollamos sobre una
+              base firme probada en entornos reales que encapsula la lógica
+              pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
+              manejo de errores y pasarelas de integración con sistemas
+              legacy.
             </p>
-            <p class="body-text" style="font-size: 0.9rem; margin-top: 12px; margin-bottom: 0; color: var(--ink);">
+            <p
+              class="body-text"
+              style="
+                font-size: 0.9rem;
+                margin-top: 12px;
+                margin-bottom: 0;
+                color: var(--ink);
+              "
+            >
               ⚡ Despliegue inicial en entornos reales en menos de 14 días.
             </p>
           </div>
 
-          <div class="core-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div
+            class="core-grid"
+            style="
+              display: grid;
+              gap: 1.5rem;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            "
+          >
             <div class="glass-card reveal" style="padding: 32px">
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">01 / MODULAR</span>
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Bloques de construcción listos</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Conectores pre-escritos para bases de datos relacionales, APIs de mensajería y ERPs, permitiendo ensamblar flujos complejos en días y no en meses.
+              <span
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.85rem;
+                  color: var(--ink-dim);
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >01 / MODULAR</span
+              >
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                Bloques de construcción listos
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Conectores pre-escritos para bases de datos relacionales, APIs
+                de mensajería y ERPs, permitiendo ensamblar flujos complejos
+                en días y no en meses.
               </p>
             </div>
 
             <div class="glass-card reveal" style="padding: 32px">
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">02 / RESILIENTE</span>
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Control de alucinaciones y errores</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Capas de validación determinista que aseguran que el agente no invente datos ni ejecute acciones críticas sin la debida confirmación de un humano.
+              <span
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.85rem;
+                  color: var(--ink-dim);
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >02 / RESILIENTE</span
+              >
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                Control de alucinaciones y errores
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Capas de validación determinista que aseguran que el agente no
+                invente datos ni ejecute acciones críticas sin la debida
+                confirmación de un humano.
               </p>
             </div>
 
             <div class="glass-card reveal" style="padding: 32px">
-              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); display: block; margin-bottom: 8px;">03 / AGNÓSTICO</span>
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">Independencia de modelos</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Diseñado para alternar entre Claude, OpenAI o modelos open-source locales según el costo, la latencia y la privacidad que exija tu negocio.
+              <span
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.85rem;
+                  color: var(--ink-dim);
+                  display: block;
+                  margin-bottom: 8px;
+                "
+                >03 / AGNÓSTICO</span
+              >
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                Independencia de modelos
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Diseñado para alternar entre Claude, OpenAI o modelos
+                open-source locales según el costo, la latencia y la
+                privacidad que exija tu negocio.
               </p>
             </div>
           </div>
@@ -271,17 +493,27 @@
           <div class="diff-grid">
             <div class="glass-card reveal" style="padding: 32px">
               <p class="body-text">
-                Según el MIT, solo el 5% de las implementaciones de IA generan un impacto real en el retorno de inversión. La razón, casi siempre, es la misma: alguien vendió estrategia y nadie se hizo cargo de la ingeniería real.
+                Según el MIT, solo el 5% de las implementaciones de IA generan
+                un impacto real en el retorno de inversión. La razón, casi
+                siempre, es la misma: alguien vendió estrategia y nadie se
+                hizo cargo de la ingeniería real.
               </p>
               <p class="body-text" style="margin-bottom: 0">
-                Florece Studio lo construye una persona que programa — no un equipo comercial con un mazo de slides. Vos hablás con quien después escribe el código y lo pone a funcionar.
+                Florece Studio lo construye una persona que programa — no un
+                equipo comercial con un mazo de slides. Vos hablás con quien
+                después escribe el código y lo pone a funcionar.
               </p>
             </div>
             <div class="stat-block glass-card reveal">
               <div class="big">5%</div>
-              <div class="cap">de las implementaciones de IA logran ROI real — investigación del MIT</div>
+              <div class="cap">
+                de las implementaciones de IA logran ROI real — investigación
+                del MIT
+              </div>
               <div class="founder-line">
-                Detrás de Florece Studio: <strong>Juan Guillermo Flores Vargas</strong>, desarrollador. Un solo interlocutor, del diagnóstico al código en producción.
+                Detrás de Florece Studio:
+                <strong>Juan Guillermo Flores Vargas</strong>, desarrollador.
+                Un solo interlocutor, del diagnóstico al código en producción.
               </div>
             </div>
           </div>
@@ -298,20 +530,27 @@
             <div class="price-row">
               <div>
                 <div class="name">Diagnóstico Operativo</div>
-                <div class="desc">Mapeamos tu operación actual, detectamos cuellos de botella y diseñamos la arquitectura exacta de solución.</div>
+                <div class="desc">
+                  Mapeamos tu operación actual, detectamos cuellos de botella
+                  y diseñamos la arquitectura exacta de solución.
+                </div>
               </div>
               <div class="amount">Propuesta a medida</div>
             </div>
             <div class="price-row">
               <div>
                 <div class="name">Implementación Llave en Mano</div>
-                <div class="desc">Desarrollo, integración total con tus sistemas, capacitación de tu equipo y 30 días de soporte garantizado.</div>
+                <div class="desc">
+                  Desarrollo, integración total con tus sistemas, capacitación
+                  de tu equipo y 30 días de soporte garantizado.
+                </div>
               </div>
               <div class="amount">Cotización personalizada</div>
             </div>
           </div>
           <p class="price-note reveal">
-            Proyectos con alcance y precio fijo acordados previamente. Sin costos ocultos ni sorpresas.
+            Proyectos con alcance y precio fijo acordados previamente. Sin
+            costos ocultos ni sorpresas.
           </p>
         </div>
       </section>
@@ -323,32 +562,95 @@
             <h2>Dudas reales. Respuestas sin filtro.</h2>
           </div>
 
-          <div class="faq-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div
+            class="faq-grid"
+            style="
+              display: grid;
+              gap: 1.5rem;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            "
+          >
             <div class="glass-card reveal" style="padding: 32px">
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Por qué contratar un estudio y no usar herramientas genéricas?</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Una suscripción a ChatGPT o Claude no se conecta a tu base de datos ni procesa tus facturas solo. Nosotros construimos el puente de código a medida para integrar la IA directamente en la operación real de tu empresa.
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Por qué contratar un estudio y no usar herramientas
+                genéricas?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Una suscripción a ChatGPT o Claude no se conecta a tu base de
+                datos ni procesa tus facturas solo. Nosotros construimos el
+                puente de código a medida para integrar la IA directamente en
+                la operación real de tu empresa.
               </p>
             </div>
 
             <div class="glass-card reveal" style="padding: 32px">
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Cuánto tiempo toma ver el agente funcionando?</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Desde la semana 1 tenemos el primer entorno de pruebas corriendo. No vendemos consultoría teórica de meses; entregamos software funcional que opera desde el primer sprint.
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Cuánto tiempo toma ver el agente funcionando?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Desde la semana 1 tenemos el primer entorno de pruebas
+                corriendo. No vendemos consultoría teórica de meses;
+                entregamos software funcional que opera desde el primer
+                sprint.
               </p>
             </div>
 
             <div class="glass-card reveal" style="padding: 32px">
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Qué pasa si mi equipo no sabe programar ni usar IA?</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Cero fricción. El agente se integra en los canales que tu equipo ya usa (WhatsApp, correo, planillas de Google) sin que tengan que aprender una interfaz nueva ni cambiar sus hábitos operativos.
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Qué pasa si mi equipo no sabe programar ni usar IA?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Cero fricción. El agente se integra en los canales que tu
+                equipo ya usa (WhatsApp, correo, planillas de Google) sin que
+                tengan que aprender una interfaz nueva ni cambiar sus hábitos
+                operativos.
               </p>
             </div>
 
             <div class="glass-card reveal" style="padding: 32px">
-              <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--ink);">¿Cómo se maneja la confidencialidad de los datos?</h3>
-              <p class="body-text" style="font-size: 0.95rem; margin-bottom: 0">
-                Los datos operativos de tu empresa y tus clientes no se utilizan para entrenar modelos públicos. Configuramos entornos aislados, seguros y bajo estrictas normas de privacidad.
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >
+                ¿Cómo se maneja la confidencialidad de los datos?
+              </h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Los datos operativos de tu empresa y tus clientes no se
+                utilizan para entrenar modelos públicos. Configuramos entornos
+                aislados, seguros y bajo estrictas normas de privacidad.
               </p>
             </div>
           </div>
@@ -361,41 +663,78 @@
             <div class="eyebrow">EL SIGUIENTE PASO</div>
             <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
             <p class="lede">
-              Agendá una llamada de 20 minutos sin costo o envianos un mensaje directo.
+              Agendá una llamada de 20 minutos sin costo o envianos un mensaje
+              directo.
             </p>
 
             <div class="cta-row" style="margin-bottom: 2rem">
-              <a href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8" target="_blank" rel="noopener noreferrer" class="btn">Hablemos! →</a>
+              <a
+                href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                >Hablemos! →</a
+              >
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-              <input type="hidden" name="access_key" value="7704586e-56f7-461e-a6f7-a25dbe4c482c" />
-              <!-- Honeypot optimizado (clase CSS en lugar de inline) -->
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="7704586e-56f7-461e-a6f7-a25dbe4c482c"
+              />
+              <!-- Honeypot optimizado -->
               <input
                 type="checkbox"
                 name="botcheck"
                 id="botcheck"
-                class="hidden-botcheck"
                 aria-label="Bot Check"
+                style="display: none"
                 tabindex="-1"
                 aria-hidden="true"
                 autocomplete="off"
               />
-              <input type="hidden" name="subject" value="Nuevo lead desde Florece Studio" />
+              <input
+                type="hidden"
+                name="subject"
+                value="Nuevo lead desde Florece Studio"
+              />
 
               <div class="form-group">
                 <label for="user-name">Tu nombre</label>
-                <input type="text" id="user-name" name="name" required placeholder="Ej: Martin Perez" />
+                <input
+                  type="text"
+                  id="user-name"
+                  name="name"
+                  required
+                  placeholder="Ej: Martin Perez"
+                />
               </div>
 
               <div class="form-group">
                 <label for="user-email">Tu correo</label>
-                <input type="email" id="user-email" name="email" required placeholder="Ej: martin@empresa.com" />
+                <input
+                  type="email"
+                  id="user-email"
+                  name="email"
+                  required
+                  placeholder="Ej: martin@empresa.com"
+                />
               </div>
 
               <div class="form-group">
                 <label for="user-message">¿Qué te gustaría automatizar?</label>
-                <textarea id="user-message" name="message" rows="4" required placeholder="Contanos brevemente sobre tu operación..."></textarea>
+                <textarea
+                  id="user-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Contanos brevemente sobre tu operación..."
+                ></textarea>
               </div>
 
               <button type="submit" class="btn">Enviar mensaje →</button>
@@ -405,6 +744,8 @@
       </section>
     </main>
 
+<script src="script.js" defer></script>
+
     <footer>
       <div class="wrap" style="text-align: center; padding: 2rem 0; font-size: 0.85rem; color: var(--ink-dim);">
         © 2026 Florece Studio. Todos los derechos reservados.
@@ -412,43 +753,5 @@
     </footer>
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
-
-    <!-- SCRIPT PRINCIPAL -->
-    <script src="script.js" defer></script>
-
-    <!-- SCRIPTS DE TERCEROS (Movidos al final del body para no bloquear el renderizado inicial) -->
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEC072YVEM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XEC072YVEM");
-    </script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod ? n.callMethod(...arguments) : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        const scriptElement = b.createElement(e);
-        scriptElement.async = !0;
-        scriptElement.src = v;
-        const firstScript = b.getElementsByTagName(e)[0];
-        firstScript.parentNode.insertBefore(scriptElement, firstScript);
-      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-      fbq("init", "3512314555595910");
-      fbq("track", "PageView");
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=3512314555595910&ev=PageView&noscript=1" alt="" />
-    </noscript>
   </body>
 </html>
