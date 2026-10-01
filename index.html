@@ -276,81 +276,113 @@
 
     <main>
       <section class="hero" style="position: relative">
-        <div class="wrap" style="position: relative; z-index: 3">
-          <span class="corner tl" aria-hidden="true"></span>
-          <span class="corner tr" aria-hidden="true"></span>
-          <span class="corner bl" aria-hidden="true"></span>
-          <span class="corner br" aria-hidden="true"></span>
+  <div class="wrap hero-grid" style="position: relative; z-index: 3">
+    <span class="corner tl" aria-hidden="true"></span>
+    <span class="corner tr" aria-hidden="true"></span>
+    <span class="corner bl" aria-hidden="true"></span>
+    <span class="corner br" aria-hidden="true"></span>
 
-          <h1 class="reveal">
-            Engineering that
-            <span
-              style="
-                font-family: var(--font-mono);
-                font-style: italic;
-                font-weight: 400;
-              "
-              >grows</span
-            ><br />
-            <span class="accent-word rotating-word">your business.</span>
-          </h1>
-          <p class="lede reveal">
-            Diseñamos el motor operativo que tu empresa necesita para crecer sin
-            multiplicar las horas de trabajo ni el estrés de tu equipo.
-          </p>
-          <div class="cta-row reveal">
-            <a
-              href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn"
-              >Reserva una llamada →</a
-            >
+    <!-- Columna Izquierda: Texto principal -->
+    <div class="hero-text-content">
+      <h1 class="reveal">
+        Engineering that
+        <span
+          style="
+            font-family: var(--font-mono);
+            font-style: italic;
+            font-weight: 400;
+          "
+          >grows</span
+        ><br />
+        <span class="accent-word rotating-word">your business.</span>
+      </h1>
+      <p class="lede reveal">
+        Diseñamos el motor operativo que tu empresa necesita para crecer sin
+        multiplicar las horas de trabajo ni el estrés de tu equipo.
+      </p>
+      <div class="cta-row reveal">
+        <a
+          href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+          >Reserva una llamada →</a
+        >
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Consola Terminal -->
+    <div class="hero-widget glass-card reveal">
+      <div class="terminal-header">
+        <div class="dots">
+          <span class="dot-btn red"></span>
+          <span class="dot-btn yellow"></span>
+          <span class="dot-btn green"></span>
+        </div>
+        <span class="terminal-title">florece-core // system.log</span>
+      </div>
+
+      <div class="terminal-body">
+        <div class="log-line"><span class="blue">[INFO]</span> Initializing Florece Core v2.4...</div>
+        <div class="log-line"><span class="green">[OK]</span> Connecting ERP & WhatsApp API...</div>
+        <div class="log-line"><span class="purple">[AGENT]</span> Processing incoming tickets (0ms delay)</div>
+
+        <div class="status-box">
+          <div class="status-item">
+            <span class="status-label">ESTADO DEL SISTEMA</span>
+            <span class="status-value green-text">● OPERATIVO 24/7</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">TAREAS / DÍA</span>
+            <span class="status-value">+1,400 auto</span>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section id="proceso" class="engineering-section">
-        <div class="wrap" style="position: relative; z-index: 3">
-          <div class="section-head reveal">
-            <div class="eyebrow">Cómo trabajamos</div>
-            <h2>Tres etapas. Sin vueltas.</h2>
-          </div>
-          <div class="process reveal">
-            <div class="step glass-card">
-              <span class="step-num">01 / DIAGNÓSTICO</span>
-              <h3>Miramos tu operación real</h3>
-              <p>
-                Identificamos una tarea puntual que se repite todos los días y
-                que tiene impacto medible si se automatiza — no una lista
-                genérica de "casos de uso de IA".
-              </p>
-              <span class="dur">Duración: 1 semana</span>
-            </div>
+<section id="proceso" class="engineering-section">
+  <div class="wrap" style="position: relative; z-index: 3">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2>Tres etapas. Sin vueltas.</h2>
+    </div>
+    <div class="process reveal">
+      <div class="step glass-card">
+        <span class="step-num">01 / DIAGNÓSTICO</span>
+        <h3>Miramos tu operación real</h3>
+        <p>
+          Identificamos una tarea puntual que se repite todos los días y
+          que tiene impacto medible si se automatiza — no una lista
+          genérica de "casos de uso de IA".
+        </p>
+        <span class="dur">Duración: 1 semana</span>
+      </div>
 
-            <div class="step glass-card">
-              <span class="step-num">02 / IMPLEMENTACIÓN</span>
-              <h3>El agente, sobre tus herramientas</h3>
-              <p>
-                Se integra a lo que ya usás — correo, WhatsApp, planillas y
-                más. Nada de plataformas genéricas que después tenés que
-                aprender a operar solo.
-              </p>
-              <span class="dur">Duración: 2–4 semanas</span>
-            </div>
+      <div class="step glass-card">
+        <span class="step-num">02 / IMPLEMENTACIÓN</span>
+        <h3>El agente, sobre tus herramientas</h3>
+        <p>
+          Se integra a lo que ya usás — correo, WhatsApp, planillas y
+          más. Nada de plataformas genéricas que después tenés que
+          aprender a operar solo.
+        </p>
+        <span class="dur">Duración: 2–4 semanas</span>
+      </div>
 
-            <div class="step glass-card">
-              <span class="step-num">03 / PUESTA EN MARCHA</span>
-              <h3>Sale a correr, con vos en control</h3>
-              <p>
-                Vos aprobás lo que importa. Se mide, se ajusta durante las
-                primeras semanas, y queda corriendo solo en lo rutinario.
-              </p>
-              <span class="dur">Soporte: 30 días incluidos</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="step glass-card">
+        <span class="step-num">03 / PUESTA EN MARCHA</span>
+        <h3>Sale a correr, con vos en control</h3>
+        <p>
+          Vos aprobás lo que importa. Se mide, se ajusta durante las
+          primeras semanas, y queda corriendo solo en lo rutinario.
+        </p>
+        <span class="dur">Soporte: 30 días incluidos</span>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="florece-core">
         <div class="wrap" style="position: relative; z-index: 3">
