@@ -290,11 +290,11 @@ header.header-hidden {
 h1 {
   font-family: var(--mono);
   font-weight: 700;
-  font-size: clamp(2.4rem, 4.8vw, 4.5rem);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin: 0 0 24px;
-  max-width: 16ch;
+  max-width: 18ch;
   color: var(--ink-primary);
   text-align: left;
 }
