@@ -998,7 +998,15 @@ footer {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Transición y estado inicial oculto */
 .cursor-dot,
 .cursor-ring {
+  opacity: 0; /* Oculto por defecto para evitar que se vea en la esquina */
   transition: opacity 0.3s ease, transform 0.15s ease-out;
+}
+
+/* Clase para mostrarlo solo cuando el mouse se mueve */
+.cursor-dot.visible,
+.cursor-ring.visible {
+  opacity: 1;
 }

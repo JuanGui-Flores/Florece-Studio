@@ -299,34 +299,55 @@ if (cursorDot && cursorRing) {
   let ringY = 0;
 
   window.addEventListener("mousemove", (e) => {
-    if (!mouseMoved) {
-      cursorDot.style.opacity = "1";
-      cursorRing.style.opacity = "1";
-      mouseMoved = true;
-    }
-
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // El punto se mueve de forma instantánea y exacta al mouse (con su offset de centrado de 3px)
+    if (!mouseMoved) {
+      // Ajusta la posición del anillo al instante en el primer movimiento para que no 'sople' desde (0,0)
+      ringX = mouseX - 18;
+      ringY = mouseY - 18;
+      mouseMoved = true;
+    }
+
+    // Muestra el cursor sólo cuando hay interacción activa
+    cursorDot.classList.add("visible");
+    cursorRing.classList.add("visible");
+
+    // El punto se mueve de forma instantánea al centro del puntero
     cursorDot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
   });
 
-  // Bucle de animación para que el anillo persiga al mouse con retraso (inercia)
-  function render() {
-    // El valor '0.15' controla la velocidad: más alto = más rápido, más bajo = más flotante/lento
-    ringX += (mouseX - ringX - 18) * 0.15;
-    ringY += (mouseY - ringY - 18) * 0.15;
+  // Oculta los elementos si el mouse sale de la ventana del navegador
+  document.addEventListener("mouseleave", () => {
+    cursorDot.classList.remove("visible");
+    cursorRing.classList.remove("visible");
+  });
 
-    cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+  // Vuelve a mostrarlos al reingresar (si ya hubo movimiento previo)
+  document.addEventListener("mouseenter", () => {
+    if (mouseMoved) {
+      cursorDot.classList.add("visible");
+      cursorRing.classList.add("visible");
+    }
+  });
+
+  // Bucle de animación para la inercia del anillo
+  function render() {
+    if (mouseMoved) {
+      ringX += (mouseX - ringX - 18) * 0.15;
+      ringY += (mouseY - ringY - 18) * 0.15;
+
+      cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+    }
 
     requestAnimationFrame(render);
   }
 
   render();
 
+  // Hover en elementos interactivos
   const interactives = document.querySelectorAll("a, button, .glass-card");
-  interactives.forEach(el => {
+  interactives.forEach((el) => {
     el.addEventListener("mouseenter", () => {
       cursorRing.style.borderColor = "var(--accent-blue)";
     });
@@ -334,5 +355,4 @@ if (cursorDot && cursorRing) {
       cursorRing.style.borderColor = "rgba(255, 255, 255, 0.6)";
     });
   });
-}
-});
+}});
