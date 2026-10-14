@@ -435,12 +435,12 @@ h1 {
   justify-content: center;
   padding: 12px 24px;
   border-radius: 6px;
-  background-color: var(--ink-primary) !important;
-  color: var(--bg-dark) !important;
+  background-color: var(--ink-primary);
+  color: var(--bg-dark) 
   font-weight: 600;
   text-decoration: none;
-  border: none !important;
-  transition: all 0.2s ease !important;
+  border: none 
+  transition: all 0.2s ease 
   cursor: pointer;
   letter-spacing: -0.01em;
 }
@@ -448,7 +448,7 @@ h1 {
 .btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15)
 }
 
 .btn-ghost {
