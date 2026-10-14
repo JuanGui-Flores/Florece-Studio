@@ -1,7 +1,7 @@
+
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Configuración Meta Básica (Siempre al inicio) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -11,14 +11,12 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://florece-studio.vercel.app/" />
 
-    <!-- SEO Principal -->
-    <title>Florece Studio — Presencia digital que exige excelencia!</title>
+    <title>Florece Studio — Desarrollo de Software, Apps e IA</title>
     <meta
       name="description"
-      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+      content="Desarrollamos páginas web, aplicaciones móviles, sistemas de gestión a medida y automatizaciones con inteligencia artificial para empresas y emprendedores."
     />
 
-    <!-- Preconexiones y Preloads -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,17 +42,17 @@
       gtag("config", "G-XEC072YVEM");
     </script>
 
-    <!-- Open Graph / Redes Sociales & WhatsApp -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://florece-studio.vercel.app/" />
     <meta property="og:site_name" content="Florece Studio" />
     <meta
       property="og:title"
-      content="Florece Studio — Presencia digital que exige excelencia!"
+      content="Florece Studio — Software, aplicaciones e inteligencia artificial"
     />
     <meta
       property="og:description"
-      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+      content="Creamos páginas web, aplicaciones móviles, sistemas de gestión y automatizaciones inteligentes adaptadas a cada negocio."
     />
     <meta
       property="og:image"
@@ -66,11 +64,11 @@
     <meta name="twitter:url" content="https://florece-studio.vercel.app/" />
     <meta
       name="twitter:title"
-      content="Florece Studio — Presencia digital que exige excelencia!"
+      content="Florece Studio — Desarrollo de Software e IA"
     />
     <meta
       name="twitter:description"
-      content="Diseñamos y desarrollamos soluciones tecnológicas de alto rendimiento para escalar la operación de tu empresa."
+      content="Soluciones digitales a medida: sitios web, aplicaciones móviles, sistemas de gestión y automatización con IA."
     />
     <meta
       name="twitter:image"
@@ -88,14 +86,224 @@
       href="https://florece-studio.vercel.app/assets/logo.png"
     />
 
-    <!-- Tipografías & Estilos -->
+    <!-- Tipografías y estilos -->
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Datos Estructurados JSON-LD -->
+    <!-- Estilos para Servicios y Proyectos -->
+    <style>
+      .services-grid,
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .service-card,
+      .project-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.025);
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .service-card {
+        padding: 28px;
+      }
+
+      .service-card:hover,
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(150, 190, 255, 0.4);
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .service-index,
+      .project-index {
+        color: var(--ink-dim);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+      }
+
+      .service-icon {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        margin: 22px 0 18px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 10px;
+        color: var(--ink);
+        font-size: 1.35rem;
+      }
+
+      .service-card h3,
+      .project-card h3 {
+        margin: 0 0 12px;
+        color: var(--ink);
+        font-size: 1.2rem;
+      }
+
+      .service-card p,
+      .project-card p {
+        margin: 0;
+        color: var(--ink-dim);
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .service-tags,
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .service-tags span,
+      .project-tags span {
+        padding: 6px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 5px;
+        color: var(--ink-dim);
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+      }
+
+      .projects-grid {
+        align-items: stretch;
+      }
+
+      .project-preview {
+        position: relative;
+        display: flex;
+        min-height: 210px;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        background:
+          radial-gradient(
+            circle at 50% 45%,
+            rgba(125, 145, 190, 0.16),
+            transparent 60%
+          ),
+          rgba(255, 255, 255, 0.025);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .project-preview::before,
+      .project-preview::after {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .project-preview::after {
+        width: 125px;
+        height: 125px;
+      }
+
+      .project-symbol {
+        z-index: 1;
+        color: var(--ink);
+        font-family: var(--font-mono);
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        font-weight: 600;
+        letter-spacing: -0.08em;
+      }
+
+      .project-status {
+        position: absolute;
+        z-index: 2;
+        top: 14px;
+        left: 14px;
+        padding: 7px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 5px;
+        background: rgba(10, 12, 16, 0.75);
+        color: var(--ink);
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+
+      .project-category {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--ink-dim);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .project-link {
+        display: inline-flex;
+        margin-top: 20px;
+        color: var(--ink);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        text-decoration: none;
+      }
+
+      .project-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .projects-note {
+        margin-top: 22px;
+        color: var(--ink-dim);
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 700px) {
+        .services-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-card {
+          padding: 23px;
+        }
+
+        .project-preview {
+          min-height: 175px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .service-card,
+        .project-card {
+          transition: none;
+        }
+
+        .service-card:hover,
+        .project-card:hover {
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Datos estructurados -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -106,7 +314,7 @@
             "name": "Florece Studio",
             "url": "https://florece-studio.vercel.app/",
             "logo": "https://florece-studio.vercel.app/assets/logo.png",
-            "description": "Creamos el motor operativo y digital para tu negocio. Sistemas eficientes, código robusto e integración tecnológica.",
+            "description": "Estudio de desarrollo de software que crea sitios web, aplicaciones móviles, sistemas de gestión y soluciones de automatización con inteligencia artificial.",
             "founder": {
               "@type": "Person",
               "name": "Juan Guillermo Flores Vargas",
@@ -132,10 +340,13 @@
             },
             "areaServed": "Worldwide",
             "serviceType": [
-              "Desarrollo de Software a Medida",
-              "Desarrollo de Agentes de IA",
-              "Automatización de Procesos con IA",
-              "Integración de LLMs en Producción"
+              "Desarrollo web",
+              "Desarrollo de aplicaciones móviles",
+              "Desarrollo de sistemas de gestión a medida",
+              "Desarrollo de software personalizado",
+              "Desarrollo de agentes de inteligencia artificial",
+              "Automatización de procesos con inteligencia artificial",
+              "Integración de APIs"
             ],
             "priceRange": "$$"
           }
@@ -143,7 +354,7 @@
       }
     </script>
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -181,8 +392,8 @@
         alt=""
       />
     </noscript>
-    <!-- End Meta Pixel Code -->
   </head>
+
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
 
@@ -199,6 +410,7 @@
           />
           <span class="wordmark-text">FLORECE<span>·</span>STUDIO</span>
         </a>
+
         <div style="display: flex; align-items: center; gap: 1rem">
           <div class="meta-row">
             <span>Agenda Abierta</span>
@@ -207,7 +419,12 @@
             <span class="dot">·</span>
             <span>2026</span>
           </div>
-          <button id="menuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
+
+          <button
+            id="menuBtn"
+            class="menu-toggle-btn"
+            aria-label="Abrir menú"
+          >
             <svg
               width="22"
               height="22"
@@ -239,7 +456,14 @@
             <span class="custom-close-x"></span>
           </button>
         </div>
+
         <ul class="sidebar-links-list">
+          <li>
+            <a href="#servicios" class="sidebar-link-item">Servicios</a>
+          </li>
+          <li>
+            <a href="#proyectos" class="sidebar-link-item">Proyectos</a>
+          </li>
           <li>
             <a href="#proceso" class="sidebar-link-item">Cómo trabajamos</a>
           </li>
@@ -248,7 +472,8 @@
               href="#florece-core"
               class="sidebar-link-item"
               style="color: var(--ink)"
-              >Florece Core
+            >
+              Florece Core
               <span
                 style="
                   font-size: 0.75rem;
@@ -258,136 +483,368 @@
                   border-radius: 4px;
                   vertical-align: middle;
                 "
-                >Motor</span
-              ></a
-            >
+              >Motor</span>
+            </a>
           </li>
           <li>
             <a href="#diferencia" class="sidebar-link-item">Por qué nosotros</a>
           </li>
-          <li><a href="#precios" class="sidebar-link-item">Precios</a></li>
+          <li>
+            <a href="#precios" class="sidebar-link-item">Precios</a>
+          </li>
           <li>
             <a href="#faq" class="sidebar-link-item">Preguntas Frecuentes</a>
           </li>
-          <li><a href="#contacto" class="sidebar-link-item">Contacto</a></li>
+          <li>
+            <a href="#contacto" class="sidebar-link-item">Contacto</a>
+          </li>
         </ul>
       </div>
     </div>
 
     <main>
+      <!-- HERO: se conserva el mensaje principal -->
       <section class="hero" style="position: relative">
-  <div class="wrap hero-grid" style="position: relative; z-index: 3">
-    <span class="corner tl" aria-hidden="true"></span>
-    <span class="corner tr" aria-hidden="true"></span>
-    <span class="corner bl" aria-hidden="true"></span>
-    <span class="corner br" aria-hidden="true"></span>
+        <div class="wrap hero-grid" style="position: relative; z-index: 3">
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
 
-    <!-- Columna Izquierda: Texto principal -->
-    <div class="hero-text-content">
-      <h1 class="reveal">
-        Engineering that
-        <span
-          style="
-            font-family: var(--font-mono);
-            font-style: italic;
-            font-weight: 400;
-          "
-          >grows</span
-        ><br />
-        <span class="accent-word rotating-word">your business.</span>
-      </h1>
-      <p class="lede reveal">
-        Diseñamos el motor operativo que tu empresa necesita para crecer sin
-        multiplicar las horas de trabajo ni el estrés de tu equipo.
-      </p>
-      <div class="cta-row reveal">
-        <a
-          href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          >Reserva una llamada →</a
-        >
-      </div>
-    </div>
+          <div class="hero-text-content">
+            <h1 class="reveal">
+              Engineering that
+              <span
+                style="
+                  font-family: var(--font-mono);
+                  font-style: italic;
+                  font-weight: 400;
+                "
+              >grows</span><br />
+              <span class="accent-word rotating-word">your business.</span>
+            </h1>
 
-    <!-- Columna Derecha: Consola Terminal -->
-    <div class="hero-widget glass-card reveal">
-      <div class="terminal-header">
-        <div class="dots">
-          <span class="dot-btn red"></span>
-          <span class="dot-btn yellow"></span>
-          <span class="dot-btn green"></span>
-        </div>
-        <span class="terminal-title">Florece Core</span>
-      </div>
+            <p class="lede reveal">
+              Diseñamos el motor operativo que tu empresa necesita para crecer
+              sin multiplicar las horas de trabajo ni el estrés de tu equipo.
+            </p>
 
-      <div class="terminal-body">
-        <div class="log-line"><span class="blue">[INFO]</span> Initializing Florece Core v2.4...</div>
-        <div class="log-line"><span class="green">[OK]</span> Connecting ERP & WhatsApp API...</div>
-        <div class="log-line"><span class="purple">[AGENT]</span> Processing incoming tickets (0ms delay)</div>
-
-        <div class="status-box">
-          <div class="status-item">
-            <span class="status-label">ESTADO DEL SISTEMA</span>
-            <span class="status-value green-text">● OPERATIVO 24/7</span>
+            <div class="cta-row reveal">
+              <a
+                href="https://calendar.app.google/gh8ZCkoaNxr1RTtV8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+              >Reserva una llamada →</a>
+            </div>
           </div>
-          <div class="status-item">
-            <span class="status-label">TAREAS / DÍA</span>
-            <span class="status-value">+1,400 auto</span>
+
+          <div class="hero-widget glass-card reveal">
+            <div class="terminal-header">
+              <div class="dots">
+                <span class="dot-btn red"></span>
+                <span class="dot-btn yellow"></span>
+                <span class="dot-btn green"></span>
+              </div>
+              <span class="terminal-title">Florece Core</span>
+            </div>
+
+            <div class="terminal-body">
+              <div class="log-line">
+                <span class="blue">[INFO]</span>
+                Initializing Florece Core v2.4...
+              </div>
+              <div class="log-line">
+                <span class="green">[OK]</span>
+                Connecting ERP &amp; WhatsApp API...
+              </div>
+              <div class="log-line">
+                <span class="purple">[AGENT]</span>
+                Processing incoming tickets...
+              </div>
+
+              <div class="status-box">
+                <div class="status-item">
+                  <span class="status-label">ARQUITECTURA</span>
+                  <span class="status-value green-text">● MODULAR</span>
+                </div>
+                <div class="status-item">
+                  <span class="status-label">SOLUCIONES</span>
+                  <span class="status-value">Software + IA</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<section id="proceso" class="engineering-section">
-  <div class="wrap" style="position: relative; z-index: 3">
-    <div class="section-head reveal">
-      <div class="eyebrow">Cómo trabajamos</div>
-      <h2>Tres etapas. Sin vueltas.</h2>
-    </div>
-    <div class="process reveal">
-      <div class="step glass-card">
-        <span class="step-num">01 / DIAGNÓSTICO</span>
-        <h3>Miramos tu operación real</h3>
-        <p>
-          Identificamos una tarea puntual que se repite todos los días y
-          que tiene impacto medible si se automatiza — no una lista
-          genérica de "casos de uso de IA".
-        </p>
-        <span class="dur">Duración: 1 semana</span>
-      </div>
+      <!-- SERVICIOS -->
+      <section id="servicios">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Qué hacemos</div>
+            <h2>Software pensado para hacer crecer tu negocio.</h2>
+            <p class="body-text">
+              Desde tu primera presencia digital hasta sistemas completos que
+              conectan y simplifican la operación de tu empresa.
+            </p>
+          </div>
 
-      <div class="step glass-card">
-        <span class="step-num">02 / IMPLEMENTACIÓN</span>
-        <h3>El agente, sobre tus herramientas</h3>
-        <p>
-          Se integra a lo que ya usás — correo, WhatsApp, planillas y
-          más. Nada de plataformas genéricas que después tenés que
-          aprender a operar solo.
-        </p>
-        <span class="dur">Duración: 2–4 semanas</span>
-      </div>
+          <div class="services-grid">
+            <article class="service-card glass-card reveal">
+              <span class="service-index">01 / WEB</span>
+              <div class="service-icon" aria-hidden="true">⌘</div>
+              <h3>Desarrollo web</h3>
+              <p>
+                Sitios web profesionales, páginas de aterrizaje y experiencias
+                digitales diseñadas para comunicar tu propuesta de valor,
+                presentar tus servicios y generar oportunidades comerciales.
+              </p>
+              <div class="service-tags">
+                <span>Sitios web</span>
+                <span>Landing pages</span>
+                <span>Diseño adaptable</span>
+              </div>
+              <a class="project-link" href="#contacto" data-interest="Desarrollo web">
+                Hablemos de tu web →
+              </a>
+            </article>
 
-      <div class="step glass-card">
-        <span class="step-num">03 / PUESTA EN MARCHA</span>
-        <h3>Sale a correr, con vos en control</h3>
-        <p>
-          Vos aprobás lo que importa. Se mide, se ajusta durante las
-          primeras semanas, y queda corriendo solo en lo rutinario.
-        </p>
-        <span class="dur">Soporte: 30 días incluidos</span>
-      </div>
-    </div>
-  </div>
-</section>
+            <article class="service-card glass-card reveal">
+              <span class="service-index">02 / MOBILE</span>
+              <div class="service-icon" aria-hidden="true">▣</div>
+              <h3>Aplicaciones móviles</h3>
+              <p>
+                Aplicaciones para Android e iOS orientadas a resolver problemas
+                concretos: desde herramientas para clientes hasta productos
+                digitales con cuentas, seguimiento y funcionalidades a medida.
+              </p>
+              <div class="service-tags">
+                <span>Android</span>
+                <span>iOS</span>
+                <span>Expo / React Native</span>
+              </div>
+              <a class="project-link" href="#contacto" data-interest="Aplicación móvil">
+                Hablemos de tu app →
+              </a>
+            </article>
 
+            <article class="service-card glass-card reveal">
+              <span class="service-index">03 / SYSTEMS</span>
+              <div class="service-icon" aria-hidden="true">▤</div>
+              <h3>Sistemas de gestión a medida</h3>
+              <p>
+                Plataformas adaptadas a tu forma de trabajar para organizar
+                clientes, ventas, inventario, turnos y operaciones desde un
+                sistema diseñado para las necesidades de tu negocio.
+              </p>
+              <div class="service-tags">
+                <span>Paneles de gestión</span>
+                <span>APIs</span>
+                <span>Bases de datos</span>
+              </div>
+              <a class="project-link" href="#contacto" data-interest="Sistema de gestión a medida">
+                Diseñemos tu sistema →
+              </a>
+            </article>
+
+            <article class="service-card glass-card reveal">
+              <span class="service-index">04 / AI AUTOMATION</span>
+              <div class="service-icon" aria-hidden="true">⌁</div>
+              <h3>Automatización e inteligencia artificial</h3>
+              <p>
+                Agentes de IA y flujos automatizados para responder consultas,
+                conectar herramientas y reducir tareas repetitivas con reglas
+                claras, validaciones y supervisión cuando sea necesaria.
+              </p>
+              <div class="service-tags">
+                <span>Agentes de IA</span>
+                <span>WhatsApp</span>
+                <span>Integraciones</span>
+              </div>
+              <a class="project-link" href="#contacto" data-interest="Automatización con inteligencia artificial">
+                Automatizá procesos →
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="proyectos">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Proyectos seleccionados</div>
+            <h2>Ideas que se convierten en productos.</h2>
+            <p class="body-text">
+              Una selección de productos digitales propios en desarrollo y
+              proyectos de software. Cada uno responde a una necesidad
+              diferente.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- EQUILIBRIA -->
+            <article class="project-card glass-card reveal">
+              <div class="project-preview">
+                <span class="project-status">EN DESARROLLO</span>
+                <span class="project-symbol">EQ.</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">01 / Salud y bienestar</span>
+                <h3>Equilibria</h3>
+                <p>
+                  Aplicación móvil en desarrollo orientada al bienestar físico
+                  y mental, con una propuesta de seguimiento personal,
+                  chequeos, rutinas y alertas.
+                </p>
+                <div class="project-tags">
+                  <span>Mobile</span>
+                  <span>Bienestar</span>
+                  <span>Seguimiento</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#contacto"
+                  data-interest="Proyecto Equilibria"
+                >Consultar por el proyecto →</a>
+              </div>
+            </article>
+
+            <!-- PULSO GYM PLANNER -->
+            <article class="project-card glass-card reveal">
+              <div class="project-preview">
+                <span class="project-status">EN DESARROLLO</span>
+                <span class="project-symbol">PULSO</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">02 / Fitness</span>
+                <h3>PULSO Gym Planner</h3>
+                <p>
+                  Aplicación móvil para organizar rutinas de entrenamiento,
+                  registrar ejercicios y seguir el progreso de cada sesión.
+                </p>
+                <div class="project-tags">
+                  <span>Mobile</span>
+                  <span>Rutinas</span>
+                  <span>Progreso</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#contacto"
+                  data-interest="Proyecto PULSO Gym Planner"
+                >Consultar por el proyecto →</a>
+              </div>
+            </article>
+
+            <!-- AGROPASSPORT -->
+            <article class="project-card glass-card reveal">
+              <div class="project-preview">
+                <span class="project-status">PROYECTO DIGITAL</span>
+                <span class="project-symbol">AP.</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">03 / Producto digital</span>
+                <h3>AgroPassport</h3>
+                <p>
+                  Proyecto digital desarrollado por Florece Studio. La
+                  presentación pública se completará con el enlace y los
+                  detalles confirmados del producto.
+                </p>
+                <div class="project-tags">
+                  <span>Software</span>
+                  <span>Producto digital</span>
+                </div>
+                <a
+                  class="project-link"
+                  href="#contacto"
+                  data-interest="Proyecto AgroPassport"
+                >Consultar por el proyecto →</a>
+              </div>
+            </article>
+
+            <!-- ESTAJOYA -->
+            <article class="project-card glass-card reveal">
+              <div class="project-preview">
+                <span class="project-status">PRÓXIMAMENTE</span>
+                <span class="project-symbol">EJ.</span>
+              </div>
+              <div class="project-content">
+                <span class="project-category">04 / Gestión automotor</span>
+                <h3>EstaJoya</h3>
+                <p>
+                  Proyecto de plataforma para la gestión y consulta de
+                  vehículos. Próximamente se presentará una vista previa
+                  visual del producto.
+                </p>
+                <div class="project-tags">
+                  <span>Software</span>
+                  <span>API</span>
+                  <span>Gestión de vehículos</span>
+                </div>
+                <span class="project-link">Presentación próximamente</span>
+              </div>
+            </article>
+          </div>
+
+          <p class="projects-note reveal">
+            Las tarjetas de proyectos en desarrollo son presentaciones
+            conceptuales, no capturas de pantallas finales. Las funcionalidades
+            y el estado de cada producto pueden evolucionar durante su
+            desarrollo.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROCESO -->
+      <section id="proceso" class="engineering-section">
+        <div class="wrap" style="position: relative; z-index: 3">
+          <div class="section-head reveal">
+            <div class="eyebrow">Cómo trabajamos</div>
+            <h2>Tres etapas. Sin vueltas.</h2>
+          </div>
+
+          <div class="process reveal">
+            <div class="step glass-card">
+              <span class="step-num">01 / DIAGNÓSTICO</span>
+              <h3>Entendemos tu necesidad</h3>
+              <p>
+                Analizamos tu idea, proceso o problema para definir el alcance
+                de la solución y las funcionalidades realmente necesarias.
+              </p>
+              <span class="dur">Etapa de análisis</span>
+            </div>
+
+            <div class="step glass-card">
+              <span class="step-num">02 / DESARROLLO</span>
+              <h3>Construimos la solución</h3>
+              <p>
+                Diseñamos y desarrollamos el producto con una arquitectura
+                adecuada, priorizando la claridad, la seguridad y la
+                posibilidad de evolucionar.
+              </p>
+              <span class="dur">Implementación a medida</span>
+            </div>
+
+            <div class="step glass-card">
+              <span class="step-num">03 / ENTREGA</span>
+              <h3>Probamos y ponemos en marcha</h3>
+              <p>
+                Validamos las funcionalidades acordadas, preparamos el
+                despliegue y definimos los siguientes pasos para mantener y
+                mejorar el producto.
+              </p>
+              <span class="dur">Entrega y próximos pasos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLORECE CORE -->
       <section id="florece-core">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="section-head reveal">
-            <div class="eyebrow">Arquitectura Propietaria</div>
+            <div class="eyebrow">Arquitectura propia</div>
             <h2>Florece Core. El motor detrás de cada producto.</h2>
           </div>
 
@@ -396,11 +853,10 @@
             style="padding: 40px; margin-bottom: 2rem"
           >
             <p class="body-text" style="margin-top: 0">
-              No armamos cada solución desde cero. Desarrollamos sobre una
-              base firme probada en entornos reales que encapsula la lógica
-              pesada: gestión de memoria de agentes, llamadas seguras a LLMs,
-              manejo de errores y pasarelas de integración con sistemas
-              legacy.
+              Desarrollamos soluciones con una base técnica modular que
+              permite integrar servicios, APIs, bases de datos y componentes
+              de inteligencia artificial según las necesidades de cada
+              proyecto.
             </p>
             <p
               class="body-text"
@@ -411,7 +867,8 @@
                 color: var(--ink);
               "
             >
-              ⚡ Despliegue inicial en entornos reales en menos de 14 días.
+              Un enfoque centrado en la integración, el mantenimiento y la
+              evolución del software.
             </p>
           </div>
 
@@ -432,24 +889,20 @@
                   display: block;
                   margin-bottom: 8px;
                 "
-                >01 / MODULAR</span
-              >
+              >01 / MODULAR</span>
               <h3
                 style="
                   font-size: 1.1rem;
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                Bloques de construcción listos
-              </h3>
+              >Componentes reutilizables</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Conectores pre-escritos para bases de datos relacionales, APIs
-                de mensajería y ERPs, permitiendo ensamblar flujos complejos
-                en días y no en meses.
+                Una estructura que facilita conectar servicios y ampliar las
+                funcionalidades a medida que evoluciona cada producto.
               </p>
             </div>
 
@@ -462,24 +915,20 @@
                   display: block;
                   margin-bottom: 8px;
                 "
-                >02 / RESILIENTE</span
-              >
+              >02 / RESILIENTE</span>
               <h3
                 style="
                   font-size: 1.1rem;
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                Control de alucinaciones y errores
-              </h3>
+              >Validaciones y manejo de errores</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Capas de validación determinista que aseguran que el agente no
-                invente datos ni ejecute acciones críticas sin la debida
-                confirmación de un humano.
+                Controles adecuados para reducir fallos, validar datos y
+                definir cuándo una acción necesita confirmación humana.
               </p>
             </div>
 
@@ -492,106 +941,110 @@
                   display: block;
                   margin-bottom: 8px;
                 "
-                >03 / AGNÓSTICO</span
-              >
+              >03 / INTEGRABLE</span>
               <h3
                 style="
                   font-size: 1.1rem;
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                Independencia de modelos
-              </h3>
+              >Conexión entre herramientas</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Diseñado para alternar entre Claude, OpenAI o modelos
-                open-source locales según el costo, la latencia y la
-                privacidad que exija tu negocio.
+                Integración con APIs, servicios externos y modelos de IA
+                cuando el alcance y los requisitos del proyecto lo necesitan.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- DIFERENCIA -->
       <section id="diferencia">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="section-head reveal">
-            <div class="eyebrow">Por qué esto es distinto</div>
-            <h2>La mayoría de proyectos de IA nunca llegan a producción.</h2>
+            <div class="eyebrow">Por qué Florece Studio</div>
+            <h2>Desarrollo pensado para resolver problemas reales.</h2>
           </div>
+
           <div class="diff-grid">
             <div class="glass-card reveal" style="padding: 32px">
               <p class="body-text">
-                Según el MIT, solo el 5% de las implementaciones de IA generan
-                un impacto real en el retorno de inversión. La razón, casi
-                siempre, es la misma: alguien vendió estrategia y nadie se
-                hizo cargo de la ingeniería real.
+                No todos los negocios necesitan la misma tecnología. Antes de
+                elegir una herramienta, entendemos qué querés conseguir y
+                construimos una solución acorde al alcance del proyecto.
               </p>
               <p class="body-text" style="margin-bottom: 0">
-                Florece Studio lo construye una persona que programa — no un
-                equipo comercial con un mazo de slides. Vos hablás con quien
-                después escribe el código y lo pone a funcionar.
+                Trabajás directamente con el desarrollador, con comunicación
+                clara, funcionalidades definidas y decisiones técnicas
+                explicadas durante el proceso.
               </p>
             </div>
+
             <div class="stat-block glass-card reveal">
-              <div class="big">5%</div>
+              <div class="big">A medida</div>
               <div class="cap">
-                de las implementaciones de IA logran ROI real — investigación
-                del MIT
+                Soluciones diseñadas según las necesidades, prioridades y
+                posibilidades de cada proyecto.
               </div>
               <div class="founder-line">
                 Detrás de Florece Studio:
-                <strong>Juan Guillermo Flores Vargas</strong>, desarrollador.
-                Un solo interlocutor, del diagnóstico al código en producción.
+                <strong>Juan Guillermo Flores Vargas</strong>, desarrollador
+                de software.
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- PRECIOS -->
       <section id="precios">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="section-head reveal">
             <div class="eyebrow">Precios</div>
-            <h2>Sin sorpresas.</h2>
+            <h2>Una propuesta acorde a tu proyecto.</h2>
           </div>
+
           <div class="price-list glass-card reveal">
             <div class="price-row">
               <div>
-                <div class="name">Diagnóstico Operativo</div>
+                <div class="name">Análisis y planificación</div>
                 <div class="desc">
-                  Mapeamos tu operación actual, detectamos cuellos de botella
-                  y diseñamos la arquitectura exacta de solución.
+                  Definimos objetivos, alcance, funcionalidades y una propuesta
+                  técnica para tu idea o necesidad.
                 </div>
               </div>
               <div class="amount">Propuesta a medida</div>
             </div>
+
             <div class="price-row">
               <div>
-                <div class="name">Implementación Llave en Mano</div>
+                <div class="name">Desarrollo de la solución</div>
                 <div class="desc">
-                  Desarrollo, integración total con tus sistemas, capacitación
-                  de tu equipo y 30 días de soporte garantizado.
+                  Diseño, programación, integraciones y entrega de acuerdo con
+                  el alcance previamente acordado.
                 </div>
               </div>
               <div class="amount">Cotización personalizada</div>
             </div>
           </div>
+
           <p class="price-note reveal">
-            Proyectos con alcance y precio fijo acordados previamente. Sin
-            costos ocultos ni sorpresas.
+            El presupuesto se define según la complejidad, las funcionalidades
+            y los servicios externos necesarios. Las condiciones se acuerdan
+            antes de comenzar.
           </p>
         </div>
       </section>
 
+      <!-- PREGUNTAS FRECUENTES -->
       <section id="faq">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="section-head reveal">
-            <div class="eyebrow">Preguntas Frecuentes</div>
-            <h2>Dudas reales. Respuestas sin filtro.</h2>
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Dudas reales. Respuestas claras.</h2>
           </div>
 
           <div
@@ -609,18 +1062,14 @@
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                ¿Por qué contratar un estudio y no usar herramientas
-                genéricas?
-              </h3>
+              >¿Qué tipo de proyectos desarrollan?</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Una suscripción a ChatGPT o Claude no se conecta a tu base de
-                datos ni procesa tus facturas solo. Nosotros construimos el
-                puente de código a medida para integrar la IA directamente en
-                la operación real de tu empresa.
+                Desarrollamos sitios web, landing pages, aplicaciones móviles,
+                sistemas de gestión y soluciones de automatización con IA. El
+                alcance se define según cada necesidad.
               </p>
             </div>
 
@@ -631,17 +1080,14 @@
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                ¿Cuánto tiempo toma ver el agente funcionando?
-              </h3>
+              >¿Puedo contratar un proyecto desde cero?</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Desde la semana 1 tenemos el primer entorno de pruebas
-                corriendo. No vendemos consultoría teórica de meses;
-                entregamos software funcional que opera desde el primer
-                sprint.
+                Sí. Podemos partir de una idea inicial, definir las
+                funcionalidades prioritarias y planificar las etapas de
+                desarrollo.
               </p>
             </div>
 
@@ -652,17 +1098,14 @@
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                ¿Qué pasa si mi equipo no sabe programar ni usar IA?
-              </h3>
+              >¿Pueden integrar herramientas que ya utilizo?</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Cero fricción. El agente se integra en los canales que tu
-                equipo ya usa (WhatsApp, correo, planillas de Google) sin que
-                tengan que aprender una interfaz nueva ni cambiar sus hábitos
-                operativos.
+                Podemos evaluar la integración con APIs, bases de datos,
+                plataformas de mensajería y otros servicios, según sus
+                posibilidades técnicas y las condiciones de acceso.
               </p>
             </div>
 
@@ -673,30 +1116,65 @@
                   margin-bottom: 12px;
                   color: var(--ink);
                 "
-              >
-                ¿Cómo se maneja la confidencialidad de los datos?
-              </h3>
+              >¿Cuánto cuesta desarrollar una solución?</h3>
               <p
                 class="body-text"
                 style="font-size: 0.95rem; margin-bottom: 0"
               >
-                Los datos operativos de tu empresa y tus clientes no se
-                utilizan para entrenar modelos públicos. Configuramos entornos
-                aislados, seguros y bajo estrictas normas de privacidad.
+                Depende del alcance, la complejidad, las integraciones y los
+                requisitos. Analizamos tu necesidad y preparamos una propuesta
+                personalizada antes de iniciar.
+              </p>
+            </div>
+
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >¿Pueden automatizar consultas por WhatsApp?</h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Sí, podemos evaluar agentes y flujos automatizados conectados
+                con WhatsApp y otras herramientas. La implementación depende
+                de los requisitos y de las cuentas o servicios necesarios.
+              </p>
+            </div>
+
+            <div class="glass-card reveal" style="padding: 32px">
+              <h3
+                style="
+                  font-size: 1.1rem;
+                  margin-bottom: 12px;
+                  color: var(--ink);
+                "
+              >¿Cómo se manejan los datos de mi negocio?</h3>
+              <p
+                class="body-text"
+                style="font-size: 0.95rem; margin-bottom: 0"
+              >
+                Los requisitos de seguridad, privacidad, acceso y conservación
+                de datos se analizan según el proyecto y deben quedar
+                definidos antes de la implementación.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- CONTACTO -->
       <section id="contacto">
         <div class="wrap" style="position: relative; z-index: 3">
           <div class="glass-card cta-final reveal">
-            <div class="eyebrow">EL SIGUIENTE PASO</div>
-            <h2>¿Listo para hacer crecer tu empresa sin frenos?</h2>
+            <div class="eyebrow">El siguiente paso</div>
+            <h2>¿Qué te gustaría construir?</h2>
             <p class="lede">
-              Agendá una llamada de 20 minutos sin costo o envianos un mensaje
-              directo.
+              Contanos tu idea o el desafío que querés resolver. Podemos
+              conversar sobre el alcance y los próximos pasos.
             </p>
 
             <div class="cta-row" style="margin-bottom: 2rem">
@@ -705,8 +1183,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn"
-                >Hablemos! →</a
-              >
+              >Hablemos →</a>
             </div>
 
             <form
@@ -719,7 +1196,7 @@
                 name="access_key"
                 value="7704586e-56f7-461e-a6f7-a25dbe4c482c"
               />
-              <!-- Honeypot optimizado -->
+
               <input
                 type="checkbox"
                 name="botcheck"
@@ -730,10 +1207,11 @@
                 aria-hidden="true"
                 autocomplete="off"
               />
+
               <input
                 type="hidden"
                 name="subject"
-                value="Nuevo lead desde Florece Studio"
+                value="Nueva consulta desde Florece Studio"
               />
 
               <div class="form-group">
@@ -743,7 +1221,7 @@
                   id="user-name"
                   name="name"
                   required
-                  placeholder="Ej: Martin Perez"
+                  placeholder="Ej.: Martín Pérez"
                 />
               </div>
 
@@ -754,42 +1232,80 @@
                   id="user-email"
                   name="email"
                   required
-                  placeholder="Ej: martin@empresa.com"
+                  placeholder="Ej.: martin@empresa.com"
                 />
               </div>
 
               <div class="form-group">
-                <label for="user-message">¿Qué te gustaría automatizar?</label>
+                <label for="user-interest">¿Qué solución necesitás?</label>
+                <select id="user-interest" name="interest" required>
+                  <option value="">Seleccioná una opción</option>
+                  <option>Desarrollo web</option>
+                  <option>Aplicación móvil</option>
+                  <option>Sistema de gestión a medida</option>
+                  <option>Automatización con inteligencia artificial</option>
+                  <option>Integración de APIs y servicios</option>
+                  <option>Consulta sobre un proyecto</option>
+                  <option>Otra solución</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message">Contanos tu idea</label>
                 <textarea
                   id="user-message"
                   name="message"
                   rows="4"
                   required
-                  placeholder="Contanos brevemente sobre tu operación..."
+                  placeholder="¿Qué querés desarrollar o qué problema te gustaría resolver?"
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn">Enviar mensaje →</button>
+              <button type="submit" class="btn">Enviar consulta →</button>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <script>
+      document.querySelectorAll("[data-interest]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const select = document.getElementById("user-interest");
+          if (!select) return;
+
+          const interest = link.dataset.interest;
+          const option = Array.from(select.options).find(
+            (item) => item.text === interest || item.value === interest,
+          );
+
+          if (option) {
+            select.value = option.value;
+          } else {
+            const message = document.getElementById("user-message");
+            if (message && !message.value.trim()) {
+              message.value = "Me interesa consultar sobre: " + interest;
+            }
+          }
+        });
+      });
+    </script>
 
     <footer class="site-footer">
-  <div class="wrap footer-content">
-    <p>© 2026 Florece Studio. Todos los derechos reservados.</p>
-    <nav aria-label="Navegación legal">
-      <ul class="legal-links">
-        <li><a href="privacidad.html">Política de Privacidad</a></li>
-        <li><a href="terminos.html">Términos y Condiciones</a></li>
-        <li><a href="cookies.html">Política de Cookies</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
+      <div class="wrap footer-content">
+        <p>© 2026 Florece Studio. Todos los derechos reservados.</p>
+        <nav aria-label="Navegación legal">
+          <ul class="legal-links">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="terminos.html">Términos y Condiciones</a></li>
+            <li><a href="cookies.html">Política de Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
   </body>
