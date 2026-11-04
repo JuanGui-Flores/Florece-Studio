@@ -105,7 +105,7 @@ export default function Projects() {
               >
                 
                 {/* Imagen del Proyecto Panorámica (Estilo Axus) */}
-                <div className="relative h-[380px] sm:h-[480px] lg:h-[560px] w-full rounded-2xl bg-[#0b3c8a]/5 overflow-hidden border border-[#0b3c8a]/15 shadow-[0_4px_24px_rgba(11,60,138,0.03)] group-hover:shadow-[0_20px_45px_rgba(11,60,138,0.12)] transition-all duration-700">
+                <div className="relative h-95 sm:h-[480px] lg:h-[560px] w-full rounded-2xl bg-[#0b3c8a]/5 overflow-hidden border border-[#0b3c8a]/15 shadow-[0_4px_24px_rgba(11,60,138,0.03)] group-hover:shadow-[0_20px_45px_rgba(11,60,138,0.12)] transition-all duration-700">
                   <Image
                     src={project.image}
                     alt={project.title}
