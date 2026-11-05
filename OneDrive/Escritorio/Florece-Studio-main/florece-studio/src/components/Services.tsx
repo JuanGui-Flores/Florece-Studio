@@ -148,13 +148,13 @@ export default function Services() {
                 </div>
 
                 {/* Columna Derecha: Imagen Bento con zoom al hacer hover */}
-                <div className="lg:col-span-5 h-[260px] sm:h-[340px] w-full overflow-hidden rounded-2xl relative">
+                <div className="lg:col-span-5 h-65 sm:h-85 w-full overflow-hidden rounded-2xl relative">
                   <img
                     src={service.imageSrc}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                 </div>
               </motion.div>
             );

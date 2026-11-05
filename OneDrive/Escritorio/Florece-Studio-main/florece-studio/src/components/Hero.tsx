@@ -7,12 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const wordsToRotate = ["enterprise", "industries", "company", "store"];
 
+const navItems = [
+  { label: "INICIO", href: "#inicio" },
+  { label: "PROYECTOS", href: "#proyectos" },
+  { label: "SERVICIOS", href: "#servicios" },
+  { label: "FLORECESAAS", href: "#saas" },
+  { label: "DETRÁS DE FLORECE", href: "#detras" },
+  { label: "CONTACTO", href: "#contacto" },
+];
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [emailInput, setEmailInput] = useState("");
 
-  // Referencias y estados para el efecto de linterna magnética del isotipo
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -42,7 +50,7 @@ export default function Hero() {
 
   return (
     <>
-      {/* Navbar Superior Fijo (Sticky) que permanece a lo largo de toda la web */}
+      {/* Navbar Superior Fijo */}
       <nav className="sticky top-0 w-full bg-white/90 backdrop-blur-md border-b border-[#0b3c8a]/5 z-50 py-5 px-8 sm:px-16">
         <div className="max-w-[1900px] mx-auto w-full flex items-center justify-between">
           <Link
@@ -53,86 +61,101 @@ export default function Hero() {
             <span className="tracking-widest">FLORECE·STUDIO</span>
           </Link>
 
-          {/* CTAs Superiores Masivos y Fijos */}
-          <div className="flex items-center gap-5 relative">
+          {/* Botones Superiores */}
+          <div className="flex items-center gap-4 relative">
+            {/* Botón Hablemos (Azul Sólido) */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
                 href="https://wa.me/5492646224354?text=Hola%20Florece%20Studio,%20quiero%20consultar%20sobre%20un%20proyecto%20web."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-10 py-4.5 rounded-full bg-[#0b3c8a] text-white font-bold text-sm sm:text-base tracking-[0.2em] uppercase hover:bg-[#082a63] transition-all shadow-2xl inline-block"
+                className="group relative px-6 py-3 rounded-full bg-[#0b3c8a] text-white border-2 border-[#0b3c8a] font-medium text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 shadow-md hover:bg-white hover:text-[#0b3c8a] transition-all duration-300 overflow-hidden cursor-pointer"
                 data-cursor="label"
                 data-cursor-text="WhatsApp"
               >
-                HABLEMOS •
+                {/* Flecha que entra desde la izquierda con transición smooth */}
+                <span className="inline-block max-w-0 opacity-0 group-hover:max-w-[20px] group-hover:opacity-100 transition-all duration-300 ease-in-out overflow-hidden text-sm">
+                  →
+                </span>
+
+                <span>HABLEMOS</span>
+
+                {/* Punto que se oculta al hacer hover */}
+                <span className="w-1.5 h-1.5 bg-white group-hover:bg-transparent rounded-full transition-all duration-300" />
               </a>
             </motion.div>
 
+            {/* Botón Menú / Cerrar (Centrado y equilibrado) */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="px-9 py-4.5 rounded-full border-2 border-[#0b3c8a]/30 text-[#0b3c8a] font-bold text-sm sm:text-base tracking-[0.2em] uppercase hover:border-[#0b3c8a] transition-all flex items-center gap-3 bg-white shadow-lg z-50"
+              className="px-6 py-3 rounded-full bg-white text-[#0b3c8a] border-2 border-[#0b3c8a] font-medium text-xs sm:text-sm tracking-wide flex items-center justify-center gap-3 shadow-sm hover:bg-[#0b3c8a]/5 transition-all cursor-pointer z-50 relative min-w-[115px]"
+              data-cursor="label"
+              data-cursor-text={isMenuOpen ? "Cerrar" : "Menú"}
             >
-              <span>{isMenuOpen ? "CERRAR" : "MENÚ"}</span>
-              <span className="flex gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#0b3c8a]" />
-                <span className="h-2 w-2 rounded-full bg-[#0b3c8a]" />
-              </span>
+              {/* Contenedor del texto centrado */}
+              <div className="relative h-5 overflow-hidden flex items-center w-[54px] justify-center">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={isMenuOpen ? "cerrar" : "menu"}
+                    initial={{ y: 15, opacity: 0, rotateX: -90 }}
+                    animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                    exit={{ y: -15, opacity: 0, rotateX: 90 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="absolute inline-block font-medium tracking-wide text-center w-full"
+                  >
+                    {isMenuOpen ? "CERRAR" : "MENÚ"}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+
+              {/* Puntos animados con rotación */}
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className={`flex items-center shrink-0 ${isMenuOpen ? "flex-row gap-1" : "flex-col gap-1"}`}
+              >
+                <span className="w-1.5 h-1.5 bg-[#0b3c8a] rounded-full" />
+                <span className="w-1.5 h-1.5 bg-[#0b3c8a] rounded-full" />
+              </motion.div>
             </motion.button>
           </div>
         </div>
 
-        {/* Menú Desplegable Interactivo */}
+        {/* Menú Desplegable Flotante */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -15, scale: 0.95 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="absolute top-24 right-8 sm:right-16 w-80 bg-white border border-[#0b3c8a]/15 rounded-3xl shadow-2xl z-50 p-6 flex flex-col gap-6 backdrop-blur-xl"
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-24 right-8 sm:right-16 w-[340px] sm:w-[380px] bg-white border border-[#0b3c8a]/15 rounded-3xl shadow-2xl z-50 p-6 sm:p-8 flex flex-col gap-6 backdrop-blur-xl"
             >
-              <div className="flex flex-col gap-4 font-medium text-sm text-[#0b3c8a]">
-                <Link
-                  href="#inicio"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:translate-x-1 transition-transform tracking-wider uppercase"
-                >
-                  Inicio
-                </Link>
-                <Link
-                  href="#proyectos"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:translate-x-1 transition-transform tracking-wider uppercase"
-                >
-                  Proyectos
-                </Link>
-                <Link
-                  href="#servicios"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:translate-x-1 transition-transform tracking-wider uppercase"
-                >
-                  Servicios
-                </Link>
-                <Link
-                  href="#contacto"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="hover:translate-x-1 transition-transform tracking-wider uppercase"
-                >
-                  Contacto
-                </Link>
-              </div>
+              <nav className="flex flex-col gap-5">
+                {navItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-xl sm:text-2xl font-normal tracking-tight text-[#0b3c8a] hover:opacity-70 transition-opacity"
+                    data-cursor="label"
+                    data-cursor-text="Ir"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
 
-              <div className="h-px w-full bg-[#0b3c8a]/10" />
-
-              <div className="bg-[#f8fafc] p-4 rounded-2xl border border-[#0b3c8a]/10 flex flex-col gap-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#0b3c8a]">
+              <div className="bg-[#f8f9fa] rounded-2xl p-5 border border-[#0b3c8a]/10 flex flex-col gap-4">
+                <h3 className="text-xl sm:text-2xl font-normal tracking-tight text-[#0b3c8a]">
                   Dejanos tu correo
-                </span>
+                </h3>
+
                 <form
                   onSubmit={handleSubscribe}
-                  className="flex items-center bg-white border border-[#0b3c8a]/20 rounded-full px-3 py-1.5 focus-within:border-[#0b3c8a] transition-all"
+                  className="relative flex items-center bg-white border border-[#0b3c8a]/20 rounded-xl px-4 py-3 focus-within:border-[#0b3c8a] transition-all"
                 >
                   <input
                     type="email"
@@ -140,13 +163,13 @@ export default function Hero() {
                     value={emailInput}
                     onChange={(e) => setEmailInput(e.target.value)}
                     required
-                    className="w-full bg-transparent text-xs text-[#0b3c8a] placeholder-[#0b3c8a]/40 focus:outline-none"
+                    className="w-full bg-transparent text-xs sm:text-sm text-[#0b3c8a] placeholder:text-[#0b3c8a]/40 focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="text-[#0b3c8a] font-bold text-xs hover:scale-110 transition-transform pl-2"
+                    className="text-[#0b3c8a] font-bold hover:scale-110 transition-transform pl-2"
                   >
-                    →
+                    <span className="text-lg">→</span>
                   </button>
                 </form>
               </div>
@@ -158,13 +181,12 @@ export default function Hero() {
       {/* Sección Hero Principal */}
       <section className="relative min-h-[calc(100vh-90px)] w-full flex flex-col justify-center bg-white text-[#0b3c8a] overflow-hidden selection:bg-[#0b3c8a] selection:text-white py-12 px-8 sm:px-16">
         <main className="max-w-[1900px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center relative z-10 gap-8">
-          
           {/* Titular Izquierdo Masivo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-4 text-left flex flex-col justify-center pl-4 lg:pl-10"
+            className="lg:col-span-4 text-left flex flex-col justify-center pl-4 lg:pl-10 z-20"
           >
             <h1 className="text-3xl sm:text-5xl lg:text-[50px] font-light text-[#0b3c8a] leading-[1.12] tracking-tight">
               Technology that grows <br />
@@ -186,7 +208,7 @@ export default function Hero() {
             </h1>
           </motion.div>
 
-          {/* Isotipo Central Masivo y Centrado con Linterna Magnética */}
+          {/* Isotipo Central Masivo (Flor azul limpia con linterna magnética) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -198,13 +220,13 @@ export default function Hero() {
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="relative w-80 h-80 sm:w-[420px] sm:h-[420px] lg:w-[540px] lg:h-[540px] flex items-center justify-center cursor-default group select-none"
+              className="relative w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] lg:w-[580px] lg:h-[580px] flex items-center justify-center cursor-default group select-none"
             >
               <Image
                 src="/logo.png"
                 alt="Florece Studio Base"
                 fill
-                className="object-contain opacity-25 filter grayscale contrast-125"
+                className="object-contain opacity-30 filter grayscale mix-blend-screen"
                 priority
               />
 
@@ -213,15 +235,15 @@ export default function Hero() {
                 animate={{ opacity: isHovered ? 1 : 0 }}
                 transition={{ duration: 0.2 }}
                 style={{
-                  WebkitMaskImage: `radial-gradient(circle 120px at ${mousePos.x}px ${mousePos.y}px, black 40%, transparent 100%)`,
-                  maskImage: `radial-gradient(circle 120px at ${mousePos.x}px ${mousePos.y}px, black 40%, transparent 100%)`,
+                  WebkitMaskImage: `radial-gradient(circle 140px at ${mousePos.x}px ${mousePos.y}px, black 40%, transparent 100%)`,
+                  maskImage: `radial-gradient(circle 140px at ${mousePos.x}px ${mousePos.y}px, black 40%, transparent 100%)`,
                 }}
               >
                 <Image
                   src="/logo.png"
                   alt="Florece Studio Color"
                   fill
-                  className="object-contain drop-shadow-[0_20px_40px_rgba(11,60,138,0.35)]"
+                  className="object-contain mix-blend-screen drop-shadow-[0_15px_35px_rgba(11,60,138,0.4)]"
                   priority
                 />
               </motion.div>
@@ -230,13 +252,13 @@ export default function Hero() {
                 className="absolute pointer-events-none rounded-full border border-[#0b3c8a]/40 flex items-center justify-center"
                 animate={{
                   opacity: isHovered ? 1 : 0,
-                  x: mousePos.x - 50,
-                  y: mousePos.y - 50,
+                  x: mousePos.x - 60,
+                  y: mousePos.y - 60,
                 }}
                 transition={{ type: "tween", ease: "backOut", duration: 0.08 }}
-                style={{ width: "100px", height: "100px", left: 0, top: 0 }}
+                style={{ width: "120px", height: "120px", left: 0, top: 0 }}
               >
-                <div className="w-2 h-2 bg-[#0b3c8a] rounded-full shadow-[0_0_10px_#0b3c8a]" />
+                <div className="w-2.5 h-2.5 bg-[#0b3c8a] rounded-full shadow-[0_0_12px_#0b3c8a]" />
               </motion.div>
             </div>
           </motion.div>
@@ -246,7 +268,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-            className="lg:col-span-4 text-left lg:text-right flex flex-col justify-center items-start lg:items-end pr-4 lg:pr-10"
+            className="lg:col-span-4 text-left lg:text-right flex flex-col justify-center items-start lg:items-end pr-4 lg:pr-10 z-20"
           >
             <p className="text-lg sm:text-xl text-[#0b3c8a]/85 font-light leading-relaxed max-w-[340px]">
               Soluciones digitales para empresas <br />

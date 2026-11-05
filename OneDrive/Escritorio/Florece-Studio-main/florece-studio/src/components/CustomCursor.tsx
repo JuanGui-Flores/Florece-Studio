@@ -62,7 +62,7 @@ export default function CustomCursor() {
     <>
       {/* Aro Exterior (nunca desaparece, se expande con gracia al hacer hover en CTAs) */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] border-[1.5px] border-[#0b3c8a] rounded-full will-change-transform flex items-center justify-center bg-[#0b3c8a]/5"
+        className="fixed top-0 left-0 pointer-events-none z-9999 border-[1.5px] border-[#0b3c8a] rounded-full will-change-transform flex items-center justify-center bg-[#0b3c8a]/5"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -79,7 +79,7 @@ export default function CustomCursor() {
 
       {/* Punto Central */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] w-1.5 h-1.5 bg-[#0b3c8a] rounded-full will-change-transform"
+        className="fixed top-0 left-0 pointer-events-none z-9999 w-1.5 h-1.5 bg-[#0b3c8a] rounded-full will-change-transform"
         style={{
           x: cursorX,
           y: cursorY,

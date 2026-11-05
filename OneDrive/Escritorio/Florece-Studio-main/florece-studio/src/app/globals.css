@@ -21,7 +21,39 @@ body {
 }
 
 @layer base {
-  html, body, * {
+  html {
+    /* Desplazamiento fluido nativo en todos los enlaces e interacciones */
+    scroll-behavior: smooth;
+
+    /* Optimización de hardware y renderizado tipográfico para eliminar vibraciones */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Evita saltos bruscos o bugs de desbordamiento horizontal en dispositivos móviles */
+  body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+  }
+}
+
+/* Ocultar el cursor nativo de Windows en elementos interactivos */
+a,
+button,
+[role="button"],
+[data-cursor] {
+  cursor: none !important;
+}
+
+@layer base {
+  /* Forzar cursor oculto globalmente cuando usas CustomCursor */
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  [data-cursor] {
     cursor: none !important;
   }
 }
