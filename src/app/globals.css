@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b3c8a; /* Azul corporativo exacto de tu isotipo */
+}
+
+body {
+  background-color: #ffffff;
+  color: #0b3c8a;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Tarjetas con efecto glassmorphism adaptadas a fondo blanco y acento azul */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(11, 60, 138, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(11, 60, 138, 0.08);
+}
+
+@layer base {
+  html {
+    /* Desplazamiento fluido nativo en todos los enlaces e interacciones */
+    scroll-behavior: smooth;
+
+    /* Optimización de hardware y renderizado tipográfico para eliminar vibraciones */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Evita saltos bruscos o bugs de desbordamiento horizontal en dispositivos móviles */
+  body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+  }
+}
+
+/* Ocultar el cursor nativo de Windows en elementos interactivos */
+a,
+button,
+[role="button"],
+[data-cursor] {
+  cursor: none !important;
+}
+
+@layer base {
+  /* Forzar cursor oculto globalmente cuando usas CustomCursor */
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  [data-cursor] {
+    cursor: none !important;
+  }
+}
